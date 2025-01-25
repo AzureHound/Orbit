@@ -45,8 +45,6 @@ fish_add_path /opt/homebrew/opt/curl/bin
 set -g theme_nerd_fonts yes
 
 # aliasis
-alias .='cd'
-alias ..='cd ./..'
 alias la='eza -a --icons'
 alias ls='eza --icons'
 alias ll='eza -a -l --icons'
