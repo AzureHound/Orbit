@@ -1,0 +1,21 @@
+# .gitignore
+
+# configs
+.config/dconf
+.config/gh
+.config/go
+.config/pulse
+.config/obsidian
+.config/nvim
+
+# fish
+.config/fish/fish_variables
+.config/fish/completions
+.config/fish/conf.d
+.config/fish/functions
+.config/fish/themes
+
+# yazi
+.config/yazi/flavors
+.config/yazi/plugins
+.config/yazi/package.toml

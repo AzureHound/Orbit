@@ -176,7 +176,6 @@ require("yatline-githead"):setup({
     untracked_color = catppuccin_palette.pink,
 })
 
--- require("git"):setup()
 require("git"):setup()
 
 -- Function
