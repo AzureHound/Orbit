@@ -3,10 +3,12 @@
 # configs
 .config/dconf
 .config/gh
+.config/github-copilot
 .config/go
 .config/pulse
 .config/obsidian
 .config/nvim
+.config/whoozle.github.io
 
 # fish
 .config/fish/fish_variables
