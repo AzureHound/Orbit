@@ -3,14 +3,10 @@ plugins = ["scratchpads", "magnify", "wallpapers"]
 
 [scratchpads.terminal]
 command = "kitty --class scratchpad-large"
-unfocus = "hide"
-hysteresis = 0.1
 lazy = true
 
 [scratchpads.asciiquarium]
 command = "kitty --class scratchpad-larger asciiquarium -t"
-unfocus = "hide"
-hysteresis = 0.1
 lazy = true
 
 [scratchpads.bluetui]
@@ -21,8 +17,6 @@ lazy = true
 
 [scratchpads.bonsai]
 command = "kitty --class scratchpad-large cbonsai --seed 119 --live"
-unfocus = "hide"
-hysteresis = 0.1
 lazy = true
 
 [scratchpads.btop]
@@ -33,8 +27,6 @@ lazy = true
 
 [scratchpads.cava]
 command = "kitty --class scratchpad cava"
-unfocus = "hide"
-hysteresis = 0.1
 lazy = true
 
 [scratchpads.gpt]
@@ -69,8 +61,6 @@ lazy = true
 
 [scratchpads.pipes]
 command = "kitty --class scratchpad-larger bash-pipes"
-unfocus = "hide"
-hysteresis = 0.1
 lazy = true
 
 [scratchpads.tt]
@@ -86,15 +76,13 @@ hysteresis = 0.1
 lazy = true
 
 [scratchpads.tty]
-command = "kitty --class scratchpad-mini tty-clock -DScC6b"
+command = "kitty --class scratchpad-mini tty-clock -DSscC1b"
 unfocus = "hide"
 hysteresis = 0.1
 lazy = true
 
 [scratchpads.unimatrix]
 command = "kitty --class scratchpad-larger unimatrix -n -c red -s 90 -l 'o'"
-unfocus = "hide"
-hysteresis = 0.1
 lazy = true
 
 [scratchpads.vim]
