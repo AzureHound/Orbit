@@ -16,7 +16,7 @@ pypr --debug /tmp/pypr.log &
 swaync &
 
 # OSD Window
-# swayosd-server &
+swayosd-server &
 
 # Notify about devices connecting and disconnecting
 devify &

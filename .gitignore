@@ -5,6 +5,7 @@
 .config/gh
 .config/github-copilot
 .config/go
+.config/keepassxc
 .config/pulse
 .config/obsidian
 .config/nvim
