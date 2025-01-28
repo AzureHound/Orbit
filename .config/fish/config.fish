@@ -53,6 +53,7 @@ alias lta4="eza -lTag --git-ignore --level=4 --icons"
 alias rm='trash put'
 alias rg='rg -i'
 alias ssh="kitten ssh"
+alias histwipe="cliphist wipe"
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
 alias preview='kitten icat'
 alias gen='tgpt -i'
