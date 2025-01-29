@@ -96,21 +96,6 @@ fi
 # I-beam cursor
 echo -ne "\e[5 q"
 
-# nvims
-#function nvims() {
-#  items=$(find $HOME/.config -maxdepth 2 -name "init.lua" -type f -execdir sh -c 'pwd | xargs basename' \;)
-#  selected=$(printf "%s\n" "${items[@]}" | \
-#    FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS-} --prompt='   Neovim Configs' --preview-window 'right:border-left:50%:<40(right:border-left:50%:hidden)' --preview 'lsd -l -A --tree --depth=1 --color=always --blocks=size,name ~/.config/{} | head -200'" \
-#    fzf)
-#
-#  if [[ -z $selected ]]; then
-#    return 0
-#  elif [[ $selected == "nvim" ]]; then
-#    selected=""
-#  fi
-#  NVIM_APPNAME=$selected nvim "$@"
-#}
-
 # fzf-nvim
 function fzf-nvim {
     file=$(fzf --height 100% --preview 'bat --style=numbers --color=always {}')
@@ -156,6 +141,7 @@ alias lta4="eza -lTag --git-ignore --level=4 --icons"
 alias rm='trash-put'
 alias rg='rg -i'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
+alias emoji='~/.config/hypr/scripts/emojifzf'
 alias preview='kitten icat'
 alias gen='tgpt -i'
 alias profile='preview ~/.face.icon'
@@ -166,6 +152,6 @@ alias clock='tty-clock -DScC6b'
 alias bonsai='cbonsai --seed 119'
 alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"
 alias doom='~/.local/bin/doom'
-alias weather='curl "wttr.in/Agartala?F"'
+alias weather='curl "v2.wttr.in/Agartala?F"'
 alias zed='zeditor'
 alias asciiquarium='asciiquarium -t'

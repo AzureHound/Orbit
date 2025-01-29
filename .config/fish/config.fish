@@ -36,11 +36,6 @@ end
 # bat
 set -gx BAT_THEME "Catppuccin Macchiato" # base16-256, Catppuccin Macchiato, Dracula
 
-# curl
-fish_add_path /opt/homebrew/opt/curl/bin
-  set -gx LDFLAGS "-L/opt/homebrew/opt/curl/lib"
-  set -gx CPPFLAGS "-I/opt/homebrew/opt/curl/include"
-
 # fish
 set -g theme_nerd_fonts yes
 
@@ -55,6 +50,7 @@ alias rg='rg -i'
 alias ssh="kitten ssh"
 alias histwipe="cliphist wipe"
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
+alias emoji='~/.config/hypr/scripts/emojifzf'
 alias preview='kitten icat'
 alias gen='tgpt -i'
 alias profile='preview ~/.face.icon'
@@ -66,26 +62,12 @@ alias clock='tty-clock -DScC6b'
 alias bonsai='cbonsai --seed 119'
 alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"
 alias doom='~/.local/bin/doom'
-alias weather='curl "wttr.in/Agartala?F"'
+alias weather='curl "v2.wttr.in/Agartala?F"'
 alias zed='zeditor'
 
-# homebrew
-set -x HOMEBREW_NO_ENV_HINTS 1
-
-if test -d /home/linuxbrew/.linuxbrew
-
-      set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew"
-      set -gx HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar"
-      set -gx HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew"
-      set -gx PATH "/home/linuxbrew/.linuxbrew/bin" "/home/linuxbrew/.linuxbrew/sbin" $PATH
-      set -q MANPATH; or set MANPATH ''
-      set -gx MANPATH "/home/linuxbrew/.linuxbrew/share/man" $MANPATH
-      set -q INFOPATH; or set INFOPATH ''
-      set -gx INFOPATH "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH
-      set -gx HOMEBREW_GITHUB_API_TOKEN {api token goes here, don't remember where that's created}
-  else if test -d /opt/homebrew
-      /opt/homebrew/bin/brew shellenv | source
-end
+# Keybinds
+bind \ce 'emoji'
+bind \ct 'tv'
 
 # FZF
 set -xg FZF_DEFAULT_COMMAND fd
@@ -119,21 +101,6 @@ end
 set -xg EDITOR nvim
 set -xg VISUAL $EDITOR
 set -xg SUDO_EDITOR $EDITOR
-
-# nvims
-#function neovims
-#    set items (find $HOME/.config -maxdepth 2 -name "init.lua" -type f -execdir sh -c 'pwd | xargs basename' \;)
-#    set selected (printf "%s\n" $items | fzf --prompt='   Neovim Configs ' --preview-window 'right:border-left:50%:<40(right:border-left:50%:hidden)' --preview 'lsd -l -A --tree --depth=1 --color=always --blocks=size,name ~/.config/{} | head -200')
-#
-#    if test -z "$selected"
-#        return 0
-#    else if test "$selected" = "nvim"
-#        set selected ""
-#    end
-#
-#    set NVIM_APPNAME $selected
-#    nvim $argv
-#end
 
 # ollama
 function ollama-serve
