@@ -1,6 +1,7 @@
 # .gitignore
 
 # configs
+.config/Bitwarden CLI
 .config/dconf
 .config/gh
 .config/github-copilot

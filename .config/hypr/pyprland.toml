@@ -97,19 +97,6 @@ unfocus = "hide"
 hysteresis = 0.1
 lazy = true
 
-# [scratchpads.bluetooth]
-# command = "overskride"
-# animation = "fromRight"
-# margin = 20
-# lazy = true
-
-# [scratchpads.volume]
-# command = "pavucontrol"
-# unfocus = "hide"
-# position = "1% 8%"
-# lazy = true
-# force_monitor = "DP-1"
-
 [wallpapers]
 path = "~/Developer/repos/Wallpapers/"
 interval = 10 # minutes
