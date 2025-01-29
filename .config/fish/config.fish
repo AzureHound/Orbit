@@ -50,7 +50,7 @@ alias rg='rg -i'
 alias ssh="kitten ssh"
 alias histwipe="cliphist wipe"
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
-alias emoji='~/.config/hypr/scripts/emojifzf'
+alias emoji='~/.local/bin/emojifzf'
 alias preview='kitten icat'
 alias gen='tgpt -i'
 alias profile='preview ~/.face.icon'
@@ -67,6 +67,7 @@ alias zed='zeditor'
 
 # Keybinds
 bind \ce 'emoji'
+bind \cf 'fzf'
 bind \ct 'tv'
 
 # FZF
