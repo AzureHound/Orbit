@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Change Hyprland Layouts (Master or Dwindle) on the fly
 
-notif="$HOME/.config/hypr/theme/icons/scalable/devices/computer.svg"
+notif="$HOME/.config/hypr/theme/icons/scalable/places/network-workgroup.svg"
 
 LAYOUT=$(hyprctl -j getoption general:layout | jq '.str' | sed 's/"//g')
 

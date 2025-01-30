@@ -7,6 +7,7 @@
 .config/github-copilot
 .config/go
 .config/keepassxc
+.config/libreoffice
 .config/pulse
 .config/obsidian
 .config/nvim
