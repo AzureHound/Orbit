@@ -84,6 +84,12 @@ set -xg fzf_preview_dir_cmd eza --long --header --icons --all --color=always --g
 set -xg fzf_fd_opts --hidden --color=always
 set -xg _ZO_FZF_OPTS $FZF_DEFAULT_OPTS '--preview "{$fzf_preview_dir_cmd} {2}"'
 
+# Npm
+set NPM_PACKAGES "$HOME/.npm-packages"
+set PATH $PATH $NPM_PACKAGES/bin
+set MANPATH $NPM_PACKAGES/share/man $MANPATH
+
+# Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 starship init fish | source
 enable_transience

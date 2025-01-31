@@ -129,6 +129,11 @@ PERL_MB_OPT="--install_base \"/home/eyes/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/eyes/perl5"; export PERL_MM_OPT;
 export PERL5LIB=/home/eyes/perl5/lib/perl5:$PERL5LIB
 
+# NPM
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
 # aliasis
 alias .='cd'
 alias ..='cd ./..'
