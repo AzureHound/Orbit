@@ -2,9 +2,9 @@
 image/png=qimgv.desktop
 video/webm=mpv.desktop
 video/mp4=mpv.desktop
-x-scheme-handler/mailto=userapp-Thunderbird-7H7W02.desktop
-message/rfc822=userapp-Thunderbird-7H7W02.desktop
-x-scheme-handler/mid=userapp-Thunderbird-7H7W02.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-XO5T02.desktop
+message/rfc822=userapp-Thunderbird-XO5T02.desktop
+x-scheme-handler/mid=userapp-Thunderbird-XO5T02.desktop
 image/jpeg=qimgv.desktop
 image/svg+xml=qimgv.desktop
 
@@ -12,7 +12,7 @@ image/svg+xml=qimgv.desktop
 image/png=qimgv.desktop;
 video/webm=mpv.desktop;
 video/mp4=mpv.desktop;
-x-scheme-handler/mailto=userapp-Thunderbird-7H7W02.desktop;
-x-scheme-handler/mid=userapp-Thunderbird-7H7W02.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-7H7W02.desktop;userapp-Thunderbird-XO5T02.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-7H7W02.desktop;userapp-Thunderbird-XO5T02.desktop;
 image/jpeg=qimgv.desktop;
 image/svg+xml=qimgv.desktop;
