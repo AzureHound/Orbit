@@ -29,6 +29,12 @@ lazy = true
 command = "kitty --class scratchpad cava"
 lazy = true
 
+[scratchpads.dash]
+command = "kitty --class scratchpad-large gh dash"
+unfocus = "hide"
+hysteresis = 0.1
+lazy = true
+
 [scratchpads.gpt]
 command = "kitty --class scratchpad-large tgpt -m"
 unfocus = "hide"
