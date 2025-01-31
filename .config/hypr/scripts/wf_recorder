@@ -40,7 +40,8 @@ fi
 
 # Send notification with actions
 send_notification() {
-  local message="Recording Saved"
+  # local message="Recording Captured"$'\n'"Video saved in $outputFile"
+local message="Recording Captured"$'\n'"$(echo "Video saved in $outputFile" | fold -s -w 70)"
 
   # Show notification with clickable actions
   action=$(notify-send -i "$HOME/.icons/scalable/mimetypes/video-x-generic.svg" -u normal -a "Screen Recorder" "$message" \
