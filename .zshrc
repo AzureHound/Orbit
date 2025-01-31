@@ -61,8 +61,10 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -a -1 --show-symlinks --git-ign
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -a -1 --show-symlinks --git-ignore --icons --color=always $realpath'
 
 # shell integrations
-eval "$(fzf --zsh)"
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
 eval "$(atuin init zsh)"
+eval "$(fzf --zsh)"
+eval "$(tv init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # fzf integrations
@@ -83,15 +85,6 @@ export BAT_THEME="Catppuccin Macchiato" # base16-256, Dracula
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 export SUDO_EDITOR $EDITOR
-
-# Starship
-# eval "$(starship init zsh)"
-# export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
-# Ohmyposh
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
- eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
-fi
 
 # I-beam cursor
 echo -ne "\e[5 q"

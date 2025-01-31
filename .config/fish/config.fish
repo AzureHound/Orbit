@@ -45,7 +45,7 @@ alias ls='eza --icons'
 alias ll='eza -a -l --icons'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
-alias rm='trash put'
+# alias rm='trash put'
 alias rg='rg -i'
 alias ssh="kitten ssh"
 alias histwipe="cliphist wipe"
