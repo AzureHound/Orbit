@@ -5,6 +5,7 @@
 .config/dconf
 .config/gh
 .config/github-copilot
+.config/gtk-4.0/servers
 .config/go
 .config/keepassxc
 .config/libreoffice
@@ -12,6 +13,13 @@
 .config/obsidian
 .config/nvim
 .config/whoozle.github.io
+
+# VSCodium
+.config/VSCodium/*
+!.config/VSCodium/User/
+.config/VSCodium/User/*
+!.config/VSCodium/User/keybindings.json
+!.config/VSCodium/User/settings.json
 
 # fish
 .config/fish/fish_variables
