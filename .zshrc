@@ -136,7 +136,6 @@ alias ls='eza --icons'
 alias ll='eza -a -l --icons'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
-alias rm='trash-put'
 alias rg='rg -i'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
 alias emoji='~/.config/hypr/scripts/emojifzf'
