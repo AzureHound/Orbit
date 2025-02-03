@@ -1,12 +1,7 @@
-fish_config theme choose "Catppuccin Macchiato" # Catppuccin Macchiato, Dracula Official
+source ~/.config/fish/user_variables.fish
+source ~/.config/fish/abbreviations.fish
 
-# XDG Directories
-set -xg XDG_CONFIG_HOME $HOME/.config
-set -xg XDG_CACHE_HOME $HOME/.cache
-set -xg XDG_DATA_HOME $HOME/.local/share
-set -xg XDG_STATE_HOME $HOME/.local/state
-set -xg XDG_BIN_HOME $HOME/.local/bin
-set -x MANPATH /usr/share/man:/usr/local/man:/usr/local/share/man
+fish_config theme choose "Catppuccin Macchiato" # Catppuccin Macchiato, Dracula Official
 
 # Fisher
 if not type -q fisher
