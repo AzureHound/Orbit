@@ -49,3 +49,10 @@ fish_add_path $HOME/.yarn/bin
 set -xg EDITOR nvim
 set -xg VISUAL $EDITOR
 set -xg SUDO_EDITOR $EDITOR
+
+# GPG/LANG
+set -xg GPG_TTY (tty)
+
+##
+set -x MANPATH /usr/share/man:/usr/local/man:/usr/local/share/man
+set PATH $PATH /home/eyes/Developer/repos/Orbit/.local/bin
