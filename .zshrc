@@ -128,27 +128,26 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 # aliasis
-alias .='cd'
-alias ..='cd ./..'
-alias ...='cd ./../..'
 alias la='eza -a --icons'
 alias ls='eza --icons'
 alias ll='eza -a -l --icons'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
+alias histwipe="cliphist wipe"
 alias rg='rg -i'
-alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
+
+alias asciiquarium='asciiquarium -t'
+alias bonsai='cbonsai --seed 119'
+alias clock='tty-clock -DScC6b'
 alias emoji='~/.config/hypr/scripts/emojifzf'
 alias preview='kitten icat'
-alias gen='tgpt -i'
-alias profile='preview ~/.face.icon'
-alias preview='kitten icat'
-alias powertop='sudo powertop'
 alias words='tt -theme ~/.tt/Catppuccin-Macchiato'
-alias clock='tty-clock -DScC6b'
-alias bonsai='cbonsai --seed 119'
 alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"
-alias doom='~/.local/bin/doom'
 alias weather='curl "v2.wttr.in/Agartala?F"'
+
+alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
+alias commits='o~/.local/bin/git-commits.sh'
+alias gen='tgpt -i'
+alias ssh="kitten ssh"
+alias powertop='sudo powertop'
 alias zed='zeditor'
-alias asciiquarium='asciiquarium -t'
