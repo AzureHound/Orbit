@@ -1,5 +1,3 @@
-# .gitignore
-
 # configs
 .config/Bitwarden CLI
 .config/dconf
@@ -32,3 +30,6 @@
 .config/yazi/flavors
 .config/yazi/plugins
 .config/yazi/package.toml
+
+# Others
+.local/bin/spotdl
