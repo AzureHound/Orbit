@@ -7,6 +7,7 @@ message/rfc822=userapp-Thunderbird-XO5T02.desktop
 x-scheme-handler/mid=userapp-Thunderbird-XO5T02.desktop
 image/jpeg=qimgv.desktop
 image/svg+xml=qimgv.desktop
+video/x-matroska=mpv.desktop
 
 [Added Associations]
 image/png=qimgv.desktop;
@@ -16,3 +17,4 @@ x-scheme-handler/mailto=userapp-Thunderbird-7H7W02.desktop;userapp-Thunderbird-X
 x-scheme-handler/mid=userapp-Thunderbird-7H7W02.desktop;userapp-Thunderbird-XO5T02.desktop;
 image/jpeg=qimgv.desktop;
 image/svg+xml=qimgv.desktop;
+video/x-matroska=mpv.desktop;
