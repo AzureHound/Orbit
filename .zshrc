@@ -125,7 +125,7 @@ export PERL5LIB=/home/eyes/perl5/lib/perl5:$PERL5LIB
 # NPM
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$PATH:$NPM_PACKAGES/bin"
-export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+# export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 # aliasis
 alias la='eza -a --icons'
@@ -147,6 +147,7 @@ alias weather='curl "v2.wttr.in/Agartala?F"'
 
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
 alias commits='o~/.local/bin/git-commits.sh'
+alias glog='git log --oneline --graph --all'
 alias gen='tgpt -i'
 alias ssh="kitten ssh"
 alias powertop='sudo powertop'
