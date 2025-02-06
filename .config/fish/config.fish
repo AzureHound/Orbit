@@ -55,6 +55,7 @@ alias weather='curl "v2.wttr.in/Agartala?F"'
 
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
 alias commits="~/.local/bin/git-branch.sh"
+alias glog='git log --oneline --graph --all'
 alias gen='tgpt -i'
 alias ssh="kitten ssh"
 alias powertop='sudo powertop'
