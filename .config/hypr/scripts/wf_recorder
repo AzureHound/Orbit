@@ -32,8 +32,8 @@ audio_source="alsa_output.pci-0000_00_1f.3.analog-stereo.monitor"
 # External audio source
 # audio_source="default"
 
-# Start recording with the chosen audio source
-if ! wf-recorder --bframes max_b_frames --audio="$audio_source" -f "$outputFile"; then
+# Start recording with the chosen audio source and NVIDIA GPU encoding
+if ! wf-recorder --bframes max_b_frames --audio="$audio_source" -f "$outputFile" -c h264_nvenc; then
     notify-send -u critical "Recording failed!" "There was an error starting the recording."
     exit 1
 fi
