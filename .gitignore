@@ -12,13 +12,6 @@
 .config/nvim
 .config/whoozle.github.io
 
-# VSCodium
-.config/VSCodium/*
-!.config/VSCodium/User/
-.config/VSCodium/User/*
-!.config/VSCodium/User/keybindings.json
-!.config/VSCodium/User/settings.json
-
 # fish
 .config/fish/fish_variables
 .config/fish/completions
@@ -33,3 +26,15 @@
 
 # Others
 .local/bin/spotdl
+
+# OBS Studio
+.config/obs-studio/*
+!.config/obs-studio/themes
+
+# VSCodium
+.config/VSCodium/*
+!.config/VSCodium/User/
+.config/VSCodium/User/*
+!.config/VSCodium/User/keybindings.json
+!.config/VSCodium/User/settings.json
+
