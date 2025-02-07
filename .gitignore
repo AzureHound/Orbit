@@ -27,6 +27,9 @@
 # Others
 .local/bin/spotdl
 
+# Spotify
+.config/spotify
+
 # OBS Studio
 .config/obs-studio/*
 !.config/obs-studio/themes
