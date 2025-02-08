@@ -8,6 +8,7 @@ x-scheme-handler/mid=userapp-Thunderbird-XO5T02.desktop
 image/jpeg=qimgv.desktop
 image/svg+xml=qimgv.desktop
 video/x-matroska=mpv.desktop
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
 
 [Added Associations]
 image/png=qimgv.desktop;
@@ -18,3 +19,4 @@ x-scheme-handler/mid=userapp-Thunderbird-7H7W02.desktop;userapp-Thunderbird-XO5T
 image/jpeg=qimgv.desktop;
 image/svg+xml=qimgv.desktop;
 video/x-matroska=mpv.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
