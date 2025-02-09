@@ -27,4 +27,3 @@ call plug#begin()
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 call plug#end()
-
