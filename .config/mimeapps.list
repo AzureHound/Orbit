@@ -9,6 +9,7 @@ image/jpeg=qimgv.desktop
 image/svg+xml=qimgv.desktop
 video/x-matroska=mpv.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+image/gif=qimgv.desktop
 
 [Added Associations]
 image/png=qimgv.desktop;
@@ -20,3 +21,4 @@ image/jpeg=qimgv.desktop;
 image/svg+xml=qimgv.desktop;
 video/x-matroska=mpv.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+image/gif=qimgv.desktop;
