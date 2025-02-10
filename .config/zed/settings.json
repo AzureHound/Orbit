@@ -4,6 +4,7 @@
   "ui_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 15,
   "buffer_font_family": "JetBrainsMono Nerd Font",
+  "show_user_picture": false,
   "buffer_font_size": 15,
   "relative_line_numbers": false,
   "current_line_highlight": "none",
@@ -11,13 +12,16 @@
     "breadcrumbs": false,
     "quick_actions": false
   },
+    "tab_bar": {
+    "show": false
+  },
   "scrollbar": {
     "show": "never"
   },
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Macchiato (Blue Blur+)"
+    "dark": "Catppuccin Espresso (Blur)"
   },
 
   // Panels
@@ -28,16 +32,26 @@
     "git_status": true
   },
   "notification_panel": {
+    "button": false,
     "default_width": 300,
     "dock": "right"
   },
   "collaboration_panel": {
     "button": false
   },
+  "outline_panel": {
+    "button": false
+  },
   "terminal": {
     "font_family": "JetBrainsMono Nerd Font",
-    "dock": "bottom",
-    "copy_on_select": true
+    "dock": "left",
+    "copy_on_select": true,
+    "shell": {
+      "with_arguments": {
+        "program": "/sbin/zsh",
+        "args": ["--login"]
+      }
+    }
   },
 
   // Features
@@ -45,14 +59,15 @@
     "git_gutter": "tracked_files",
     "inline_blame": {
       "enabled": true,
-      "position": "right"
+      "position": "left"
     }
   },
 
   //Vim
-  "vim_mode": true,
+  "vim_mode": false,
 
   // Tweaks
+  "format_on_save": "on",
   "ensure_final_newline_on_save": false,
   "remove_trailing_whitespace_on_save": false,
   "tabs": {
