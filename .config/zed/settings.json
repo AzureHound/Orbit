@@ -12,7 +12,7 @@
     "breadcrumbs": false,
     "quick_actions": false
   },
-    "tab_bar": {
+  "tab_bar": {
     "show": false
   },
   "scrollbar": {
@@ -85,7 +85,6 @@
   "assistant_v2": {
     "enabled": false
   },
-
   // Telemetry
   "telemetry": {
     "diagnostics": false,
