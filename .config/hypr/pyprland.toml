@@ -103,6 +103,10 @@ unfocus = "hide"
 hysteresis = 0.1
 lazy = true
 
+[scratchpads.weather]
+command = "kitty --class scratchpad-larger fish -c 'curl \"v2.wttr.in/Agartala?F\"; sleep 120'"
+lazy = true
+
 [wallpapers]
 path = "~/Developer/repos/Wallpapers/"
 interval = 10 # minutes
