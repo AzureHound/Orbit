@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==2{print $2}')
+HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
 
 # Hyprland performance
 if [ "$HYPRGAMEMODE" = 1 ]; then
@@ -12,7 +12,9 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword general:gaps_out 0;\
         keyword general:border_size 1;\
         keyword decoration:rounding 0"
+
+  swww kill
 	exit
 fi
 
-hyprctl reload > /dev/null 2>&1 &
+hyprctl reload && swww-daemon --format xrgb > /dev/null 2>&1 &
