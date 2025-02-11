@@ -21,6 +21,8 @@ $character"""
 
 add_newline = true 
 palette = 'space' # catppuccin, nord, onedark, space
+scan_timeout = 30
+command_timeout = 500
 
 [os]
 format = '[$symbol](blue)'

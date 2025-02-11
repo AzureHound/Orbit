@@ -25,7 +25,9 @@ devify &
 hypridle &
 
 # Clipboard
-wl-paste --watch cliphist store &
+# wl-paste --watch cliphist store &
+wl-paste --type text --watch cliphist store &
+wl-paste --type image --watch cliphist store &
 
 # Polkit authentication
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
