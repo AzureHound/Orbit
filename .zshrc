@@ -140,6 +140,7 @@ alias asciiquarium='asciiquarium -t'
 alias bonsai='cbonsai --seed 119'
 alias clock='tty-clock -DScC6b'
 alias emoji='~/.config/hypr/scripts/emojifzf'
+alias lofi='lowfi'
 alias preview='kitten icat'
 alias words='tt -theme ~/.tt/Catppuccin-Macchiato'
 alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"
