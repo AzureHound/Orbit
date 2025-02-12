@@ -44,4 +44,3 @@
 .config/VSCodium/User/*
 !.config/VSCodium/User/keybindings.json
 !.config/VSCodium/User/settings.json
-

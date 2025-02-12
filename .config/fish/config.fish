@@ -74,6 +74,7 @@ alias bonsai='cbonsai --seed 119'
 alias colors='~/.local/bin/colorscript -r'
 alias clock='tty-clock -DScC6b'
 alias emoji='~/.local/bin/emojifzf'
+alias lofi='lowfi'
 alias preview='kitten icat'
 alias words='tt -theme ~/.tt/Catppuccin-Macchiato'
 alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"

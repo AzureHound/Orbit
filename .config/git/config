@@ -21,10 +21,15 @@
 
 [delta]
   features = catppuccin-macchiato
-  side-by-side = false
-  true-color = always
   hyperlinks = true
+  side-by-side = true
+  true-color = always
   line-numbers = true
+  line-numbers-left-format = ""
+  line-numbers-right-format = "│ "
+
+[merge]
+    conflictstyle = zdiff3
 
 [pull]
   rebase = false
