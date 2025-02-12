@@ -1,13 +1,6 @@
 // Zed settings
 {
   // User Interface
-  "assistant": {
-    "default_model": {
-      "provider": "ollama",
-      "model": "deepseek-r1:8b"
-    },
-    "version": "2"
-  },
   "ui_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 15,
   "buffer_font_family": "JetBrainsMono Nerd Font",
@@ -81,6 +74,15 @@
     "show_icons": true,
     "git_status": true,
     "close_position": "right"
+  },
+
+  // Assistant
+    "assistant": {
+    "default_model": {
+      "provider": "ollama",
+      "model": "deepseek-r1:8b"
+    },
+    "version": "2"
   },
 
   // Telemetry
