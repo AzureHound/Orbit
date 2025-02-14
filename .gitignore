@@ -42,5 +42,6 @@
 .config/VSCodium/*
 !.config/VSCodium/User/
 .config/VSCodium/User/*
+!.config/VSCodium/User/extensions.txt
 !.config/VSCodium/User/keybindings.json
 !.config/VSCodium/User/settings.json
