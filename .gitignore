@@ -12,6 +12,7 @@
 .config/obsidian
 .config/nvim
 .config/whoozle.github.io
+.config/electron-builder.json
 
 # fish
 .config/fish/fish_variables
