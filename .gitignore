@@ -1,6 +1,7 @@
 # configs
 .config/Bitwarden CLI
 .config/BraveSoftware/*
+.config/borg
 .config/dconf
 .config/gh
 .config/github-copilot
@@ -8,9 +9,9 @@
 .config/go
 .config/keepassxc
 .config/libreoffice
+.config/pika-backup
 .config/pulse
 .config/obsidian
-.config/nvim
 .config/whoozle.github.io
 .config/electron-builder.json
 

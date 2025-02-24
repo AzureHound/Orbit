@@ -26,9 +26,6 @@ function backup --argument filename
     cp $filename $filename.bak
 end
 
-# bat
-set -gx BAT_THEME "Catppuccin Macchiato" # base16-256, Catppuccin Macchiato, Dracula
-
 # fish
 set -g theme_nerd_fonts yes
 
@@ -85,6 +82,7 @@ alias commits="~/.local/bin/commits"
 alias glog='git log --oneline --graph --all'
 alias gen='tgpt -i'
 alias ssh="kitten ssh"
+alias tmux='~/.config/hypr/scripts/session'
 alias powertop='sudo powertop'
 alias zed='zeditor'
 
