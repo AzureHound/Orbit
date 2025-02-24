@@ -22,7 +22,7 @@ $character"""
 add_newline = true 
 palette = 'space' # catppuccin, nord, onedark, space
 scan_timeout = 30
-command_timeout = 500
+command_timeout = 5000
 
 [os]
 format = '[$symbol](blue)'
@@ -38,6 +38,7 @@ Windows = ' '
 [character]
 success_symbol = '[➜](bold green)'
 error_symbol = '[➜](bold red)'
+vicmd_symbol = "[](green)"
 
 [directory]
 style = 'bold fg:dark_blue'

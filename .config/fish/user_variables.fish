@@ -56,7 +56,7 @@ set -xg GPG_TTY (tty)
 
 # FZF
 set -xg FZF_DEFAULT_COMMAND fd
-set -xg FZF_DEFAULT_OPTS "--height=90% --layout=reverse --info=inline --border rounded --margin=1 --padding=1 \
+set -xg FZF_DEFAULT_OPTS "--height=90% --layout=reverse --info=inline --border rounded --pointer='' --margin=1 --padding=1 \
 --color=bg+:-1,gutter:-1,spinner:#f4dbd6,hl:#ed8796 \
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
 --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
