@@ -60,6 +60,15 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -a -1 --show-symlinks --git-ignore --icons --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -a -1 --show-symlinks --git-ignore --icons --color=always $realpath'
 
+# Filter ZSH Error History
+zshaddhistory() {
+  local j=1
+  while ([[ ${${(z)1}[$j]} == *=* ]]) {
+    ((j++))
+  }
+  whence ${${(z)1}[$j]} >| /dev/null || return 1
+}
+
 # shell integrations
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
 eval "$(atuin init zsh)"
@@ -73,15 +82,18 @@ fcd() {
   dir=$(find . -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
-# Export
-export FZF_DEFAULT_OPTS=" \
+# FZF
+export FZF_DEFAULT_OPTS="--height=90% --layout=reverse --info=inline --border rounded --pointer='' --margin=1 --padding=1 \
 --color=bg+:-1,gutter:-1,spinner:#f4dbd6,hl:#ed8796 \
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
---color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
+--color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
 --color=selected-bg:#494d64 \
+--bind 'ctrl-u:preview-half-page-up'
+--bind 'ctrl-d:preview-half-page-down'
+--bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)'
 --multi"
 
-export BAT_THEME="Catppuccin Macchiato" # base16-256, Dracula
+# Export
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 export SUDO_EDITOR $EDITOR
@@ -131,6 +143,9 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 alias la='eza -a --icons'
 alias ls='eza --icons'
 alias ll='eza -a -l --icons'
+alias cp='cp -i'
+alias mv='mv -i'
+alias df='df -h'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
 alias histwipe="cliphist wipe"
