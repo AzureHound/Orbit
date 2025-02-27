@@ -72,17 +72,11 @@ zshaddhistory() {
 # shell integrations
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
 eval "$(atuin init zsh)"
-eval "$(fzf --zsh)"
 eval "$(tv init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-# fzf integrations
-fcd() {
-  local dir
-  dir=$(find . -type d 2> /dev/null | fzf +m) && cd "$dir"
-}
-
 # FZF
+source <(fzf --zsh)
 export FZF_DEFAULT_OPTS="--height=90% --layout=reverse --info=inline --border rounded --pointer='' --margin=1 --padding=1 \
 --color=bg+:-1,gutter:-1,spinner:#f4dbd6,hl:#ed8796 \
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
@@ -133,6 +127,7 @@ PERL_LOCAL_LIB_ROOT="/home/eyes/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_RO
 PERL_MB_OPT="--install_base \"/home/eyes/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/eyes/perl5"; export PERL_MM_OPT;
 export PERL5LIB=/home/eyes/perl5/lib/perl5:$PERL5LIB
+
 
 # NPM
 NPM_PACKAGES="${HOME}/.npm-packages"
