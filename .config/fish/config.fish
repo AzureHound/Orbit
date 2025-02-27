@@ -19,6 +19,7 @@ function starship_transient_rprompt_func
   starship module time
 end
 
+# atuin
 atuin init fish | source
 
 # backups
@@ -36,6 +37,9 @@ fzf --fish | source
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 starship init fish | source
 enable_transience
+
+# television
+# tv init fish | source
 
 # yazi
 function y
@@ -95,6 +99,6 @@ alias zed='zeditor'
 
 # Keybinds
 bind \ce 'emoji'
-bind \ct 'tv'
+bind \e\ct 'tv'
 
 set -g fish_greeting ""

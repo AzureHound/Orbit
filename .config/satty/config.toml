@@ -18,10 +18,10 @@ style = "Regular"
 
 [color-palette]
 palette = [
-    "#8aadf4", # Blue
-    "#ed8796", # Red
-    "#a6da95", # Green
-    "#eed49f", # Yellow
-    "#c6a0f6", # Mauve
-    "#cad3f5", # White
+  "#8aadf4", # Blue
+  "#ed8796", # Red
+  "#a6da95", # Green
+  "#eed49f", # Yellow
+  "#c6a0f6", # Mauve
+  "#cad3f5", # White
 ]
