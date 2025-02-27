@@ -37,6 +37,9 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 starship init fish | source
 enable_transience
 
+# television
+# tv init fish | source
+
 # yazi
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -95,6 +98,6 @@ alias zed='zeditor'
 
 # Keybinds
 bind \ce 'emoji'
-bind \ct 'tv'
+bind \e\ct 'tv'
 
 set -g fish_greeting ""
