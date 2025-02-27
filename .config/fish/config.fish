@@ -29,6 +29,9 @@ end
 # fish
 set -g theme_nerd_fonts yes
 
+# fzf
+fzf --fish | source
+
 # Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 starship init fish | source
@@ -92,7 +95,6 @@ alias zed='zeditor'
 
 # Keybinds
 bind \ce 'emoji'
-bind \cf 'fzf'
 bind \ct 'tv'
 
 set -g fish_greeting ""
