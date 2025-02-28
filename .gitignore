@@ -13,6 +13,7 @@
 .config/pulse
 .config/obsidian
 .config/whoozle.github.io
+.config/zsh/.zcompdump
 .config/electron-builder.json
 
 # fish
