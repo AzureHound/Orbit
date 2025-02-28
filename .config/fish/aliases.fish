@@ -22,7 +22,6 @@ alias words='tt -theme ~/.tt/Catppuccin-Macchiato'
 alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"
 alias weather='curl "v2.wttr.in/Agartala?F"'
 
-# alias checkout ='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
 alias glog='git log --oneline --graph --all'
 alias gen='tgpt -i'
 alias ssh="kitten ssh"
