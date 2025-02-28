@@ -4,6 +4,9 @@ source ~/.config/fish/aliases.fish
 
 fish_config theme choose "Catppuccin Macchiato" # Catppuccin Macchiato, Dracula Official
 
+# Fish
+set -g theme_nerd_fonts yes
+
 # Fisher
 if not type -q fisher
     curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source 
@@ -11,13 +14,17 @@ end
 
 set sponge_allow_previously_successful false #sponge fish plugin
 
-# Starship Prompt
-function starship_transient_prompt_func
-  starship module character
-end
+# Cursor
+if status is-interactive
+  set fish_cursor_default     line     blink
+  set fish_cursor_insert      line     blink
+  set fish_cursor_replace_one line     blink
+  set fish_cursor_visual      line    blink
 
-function starship_transient_rprompt_func
-  starship module time
+  function fish_user_key_bindings
+    # fish_default_key_bindings -M insert
+    fish_vi_key_bindings --no-erase insert
+  end
 end
 
 # atuin
@@ -28,13 +35,18 @@ function backup --argument filename
     cp $filename $filename.bak
 end
 
-# fish
-set -g theme_nerd_fonts yes
-
 # fzf
 fzf --fish | source
 
 # Starship
+function starship_transient_prompt_func
+  starship module character
+end
+
+function starship_transient_rprompt_func
+  starship module time
+end
+
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 starship init fish | source
 enable_transience
