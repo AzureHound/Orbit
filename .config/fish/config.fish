@@ -93,7 +93,6 @@ alias commits="~/.local/bin/commits"
 alias glog='git log --oneline --graph --all'
 alias gen='tgpt -i'
 alias ssh="kitten ssh"
-alias tmux='~/.config/hypr/scripts/session'
 alias powertop='sudo powertop'
 alias zed='zeditor'
 
