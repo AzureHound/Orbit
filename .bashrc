@@ -14,18 +14,7 @@ echo -ne "\e[5 q"
 
 export EDITOR=nvim
 export VISUAL="$EDITOR"
-export SUDO_EDITOR $EDITOR
-
-# FZF
-export FZF_DEFAULT_OPTS="--height=90% --layout=reverse --info=inline --border rounded --pointer='' --margin=1 --padding=1 \
---color=bg+:-1,gutter:-1,spinner:#f4dbd6,hl:#ed8796 \
---color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
---color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
---color=selected-bg:#494d64 \
---bind 'ctrl-u:preview-half-page-up'
---bind 'ctrl-d:preview-half-page-down'
---bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)'
---multi"
+export SUDO_EDITOR="vim"
 
 # yazi
 function y() {
