@@ -42,6 +42,8 @@ fish_add_path /sbin
 fish_add_path /usr/lib/rustup/bin
 fish_add_path /usr/lib/go/bin
 fish_add_path $HOME/.dotnet/tools
+fish_add_path $XDG_DATA_HOME/nvim
+fish_add_path $XDG_DATA_HOME/nvim/mason/bin
 fish_add_path $XDG_DATA_HOME/npm/bin
 fish_add_path $HOME/.yarn/bin
 fish_add_path $XDG_DATA_HOME/pnpm
@@ -76,3 +78,4 @@ set MANPATH $NPM_PACKAGES/share/man $MANPATH
 ##
 set -x MANPATH /usr/share/man:/usr/local/man:/usr/local/share/man
 # set PATH $PATH /home/eyes/Developer/repos/Orbit/.local/bin
+set -xg STARSHIP_LOG error
