@@ -16,6 +16,9 @@ export EDITOR=nvim
 export VISUAL="$EDITOR"
 export SUDO_EDITOR="vim"
 
+# vivid
+export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+
 # yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
