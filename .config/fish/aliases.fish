@@ -1,6 +1,5 @@
 # aliasis
 alias la='eza -a --icons'
-alias ls='eza --icons'
 alias ll='eza -a -l --icons'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -13,8 +12,6 @@ alias rg='rg -i'
 
 alias asciiquarium='asciiquarium -t'
 alias bonsai='cbonsai --seed 119'
-alias colors='colorscript -r'
-alias clock='tty-clock -DScC6b'
 alias emoji='~/.local/bin/emojifzf'
 alias lofi='lowfi'
 alias preview='kitten icat'
