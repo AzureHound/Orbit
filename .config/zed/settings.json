@@ -23,7 +23,6 @@
     "light": "One Light",
     "dark": "Catppuccin Espresso (Blur)"
   },
-
   // Panels
   "project_panel": {
     "default_width": 300,
@@ -49,11 +48,12 @@
     "shell": {
       "with_arguments": {
         "program": "/sbin/zsh",
-        "args": ["--login"]
+        "args": [
+          "--login"
+        ]
       }
     }
   },
-
   // Features
   "git": {
     "git_gutter": "tracked_files",
@@ -62,20 +62,17 @@
       "position": "left"
     }
   },
-
   //Vim
   "vim_mode": false,
-
   // Tweaks
   "format_on_save": "on",
   "ensure_final_newline_on_save": false,
-  "remove_trailing_whitespace_on_save": false,
+  "remove_trailing_whitespace_on_save": true,
   "tabs": {
     "show_icons": true,
     "git_status": true,
     "close_position": "right"
   },
-
   // Assistant
   "assistant": {
     "default_model": {
@@ -85,7 +82,6 @@
     "version": "2",
     "default_width": 440
   },
-
   // Telemetry
   "telemetry": {
     "diagnostics": false,
