@@ -50,6 +50,7 @@ export GPG_TTY="$(tty)"
 # FZF
 export FZF_DEFAULT_COMMAND="fd"
 export fzf_fd_opts="--hidden --color=always"
+export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --preview '{$fzf_preview_dir_cmd} {2}'"
 export fzf_preview_dir_cmd="eza --long --header --icons --all --color=always --group-directories-first --hyperlink"
 export FZF_DEFAULT_OPTS="--height=90% --layout=reverse --info=inline --border rounded --pointer='' --margin=1 --padding=1 \
 --color=bg+:-1,gutter:-1,spinner:#f4dbd6,hl:#ed8796 \
@@ -60,8 +61,6 @@ export FZF_DEFAULT_OPTS="--height=90% --layout=reverse --info=inline --border ro
 --bind 'ctrl-d:preview-half-page-down' \
 --bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)' \
 --multi"
-
-export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --preview '{$fzf_preview_dir_cmd} {2}'"
 
 # MANPATH
 export MANPATH="/usr/share/man:/usr/local/man:/usr/local/share/man"
