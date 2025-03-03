@@ -40,3 +40,5 @@ stylua.toml
 # vscode
 .vscode
 
+# yarn
+.yarn
