@@ -68,7 +68,7 @@ symbol = ' '
 format = '[$symbol$branch ]($style)'
 
 [git_status]
-format = '([$conflicted$ahead_behind$diverged$untracked$stashed$modified$staged$renamed$deleted]($style) )'
+format = '([$conflicted$ahead_behind$diverged$untracked$modified$stashed$staged$renamed$deleted]($style) )'
 conflicted = '=${count}'
 ahead = '↑${count}'
 behind = '↓${count}'
