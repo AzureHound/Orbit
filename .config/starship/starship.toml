@@ -41,8 +41,8 @@ Windows = ' '
 
 [time]
 disabled = false
-style = "yellow dimmed"
-format = '[$time]($style) '
+style = "#d0be85"
+format = '[$time]($style)'
 time_format = "%T"
 # utc_time_offset = "-5"
 # time_range = "10:00:00-14:00:00"
@@ -68,7 +68,7 @@ symbol = ' '
 format = '[$symbol$branch ]($style)'
 
 [git_status]
-format = '([$conflicted$ahead_behind$diverged$untracked$modified$stashed$staged$renamed$deleted]($style) )'
+format = '([$conflicted$ahead_behind$diverged$modified$stashed$staged$renamed$deleted$untracked]($style) )'
 conflicted = '=${count}'
 ahead = '↑${count}'
 behind = '↓${count}'
