@@ -12,7 +12,6 @@ alias rg='rg -i'
 
 alias asciiquarium='asciiquarium -t'
 alias bonsai='cbonsai --seed 119'
-alias emoji='~/.local/bin/emojifzf'
 alias lofi='lowfi'
 alias preview='kitten icat'
 alias words='tt -theme ~/.tt/Catppuccin-Macchiato'
