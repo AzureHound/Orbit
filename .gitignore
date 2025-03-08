@@ -11,6 +11,7 @@
 .config/libreoffice
 .config/pika-backup
 .config/pulse
+.config/ripgrep-all
 .config/obsidian
 .config/whoozle.github.io
 .config/zsh/.zcompdump
