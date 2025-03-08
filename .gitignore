@@ -1,21 +1,25 @@
 # configs
-.config/Bitwarden CLI
-.config/BraveSoftware/*
+.config/BraveSoftware
 .config/borg
 .config/dconf
 .config/gh
 .config/github-copilot
-.config/gtk-4.0/servers
 .config/go
 .config/keepassxc
 .config/libreoffice
+.config/obsidian
 .config/pika-backup
 .config/pulse
 .config/ripgrep-all
-.config/obsidian
+.config/systemd
 .config/whoozle.github.io
+
+.config/gtk-4.0/servers
 .config/zsh/.zcompdump
+
 .config/electron-builder.json
+.config/QtProject.conf
+.config/pavucontrol.ini
 
 # fish
 .config/fish/fish_variables
@@ -43,9 +47,7 @@
 !.config/obs-studio/themes
 
 # VSCodium
-.config/VSCodium/*
-!.config/VSCodium/User/
-.config/VSCodium/User/*
+.config/VSCodium
 !.config/VSCodium/User/extensions.txt
 !.config/VSCodium/User/keybindings.json
 !.config/VSCodium/User/settings.json
