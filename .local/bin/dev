@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Constants
-onefetch="onefetch -d churn contributors --no-color-palette --no-title"
+gfetch="gfetch -d churn contributors --no-color-palette --no-title"
 ls="eza --header --icons --all --color=always --group-directories-first --hyperlink"
 projects_dir="$HOME/Developer"
 projects_command="find $projects_dir -mindepth 2 -maxdepth 2 -type d"
@@ -60,7 +60,7 @@ handle_kitty() {
   kitty @ set-tab-title "$tab_title"
   cd "$selected_dir"
   zoxide_score
-  $onefetch
+  $gfetch
   $ls
 }
 
@@ -83,7 +83,7 @@ selected_dir=$($projects_command | $fzf_command --prompt='Select a directory: ' 
   --header='CTRL-P: Projects / CTRL-Z: Zoxide' \
   --bind "ctrl-p:reload($projects_command)" \
   --bind "ctrl-z:reload(zoxide query -l)" \
-  --preview "$onefetch {} 2>&1 | grep -v 'Error: Could not find a git repository in' || true && $ls {} || $ls {}")
+  --preview "$gfetch {} 2>&1 | grep -v 'Error: Could not find a git repository in' || true && $ls {} || $ls {}")
 
 tab_title=$(basename "$selected_dir")
 
