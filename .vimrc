@@ -1,6 +1,7 @@
 " vim settings
 set wrap
 set ruler
+set number
 set mouse=a
 set showcmd
 set nobackup
@@ -18,6 +19,7 @@ set nocursorline
 set relativenumber
 set nocursorcolumn
 set encoding=UTF-8
+set clipboard=unnamedplus
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
