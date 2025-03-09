@@ -76,11 +76,10 @@
   // Assistant
   "assistant": {
     "default_model": {
-      "provider": "ollama",
-      "model": "deepseek-r1:8b"
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
     },
-    "version": "2",
-    "default_width": 440
+    "version": "2"
   },
   // Telemetry
   "telemetry": {
