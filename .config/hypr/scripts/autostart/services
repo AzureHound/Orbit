@@ -38,3 +38,6 @@ easyeffects --gapplication-service &
 
 # RGB
 openrgb --startminimized -p "Profile 1" &
+
+# Sync
+syncthing -no-browser &
