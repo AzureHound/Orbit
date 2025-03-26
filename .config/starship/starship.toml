@@ -24,7 +24,7 @@ $character"""
 # right_format = """$time"""
 
 add_newline = false
-palette = 'space' # catppuccin, nord, onedark, space
+palette = 'space'      # catppuccin, nord, onedark, space
 scan_timeout = 30
 command_timeout = 5000
 
@@ -34,10 +34,12 @@ disabled = false
 
 [os.symbols]
 Arch = '󰣇'
-Debian = " "
+Debian = ' '
 Ubuntu = ' '
 Macos = '󰀵'
 Windows = ' '
+SUSE = ' '
+Redhat = '󱄛 '
 
 [time]
 disabled = false
@@ -54,7 +56,7 @@ vicmd_symbol = "[](green)"
 
 [directory]
 style = 'bold fg:dark_blue'
-format = '[$path ]($style)[$read_only]($read_only_style)' 
+format = '[$path ]($style)[$read_only]($read_only_style)'
 truncation_length = 8
 truncation_symbol = '…/'
 fish_style_pwd_dir_length = 1
@@ -181,20 +183,20 @@ yellow = '#EBCB8B'
 purple = '#B48EAD'
 gray = '#434C5E'
 black = '#2E3440'
-white='#D8DEE9'
+white = '#D8DEE9'
 
 [palettes.onedark]
-dark_blue='#61afef'
-blue='#56b6c2'
-red='#e06c75'
-green='#98c379'
-purple='#c678dd'
-cyan='#56b6c2'
-orange='#be5046'
-yellow='#e5c07b'
-gray='#828997'
-white ='#abb2bf'
-black='#2c323c'
+dark_blue = '#61afef'
+blue = '#56b6c2'
+red = '#e06c75'
+green = '#98c379'
+purple = '#c678dd'
+cyan = '#56b6c2'
+orange = '#be5046'
+yellow = '#e5c07b'
+gray = '#828997'
+white = '#abb2bf'
+black = '#2c323c'
 
 [palettes.space]
 dark_blue = '#00B5E2'
@@ -203,9 +205,8 @@ teal = '#0DFF82'
 red = '#F44B5A'
 orange = '#F44B5A'
 green = '#0DFF82'
-yellow = '#D9D9D9'
+yellow = '#eed49f'
 purple = '#F44B5A'
 gray = '#4A4A4A'
 black = '#4A4A4A'
 white = '#D9D9D9'
-
