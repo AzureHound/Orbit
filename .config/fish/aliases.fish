@@ -11,7 +11,7 @@ alias private='fish -P'
 alias rg='rg -i'
 alias glog='git log --oneline --graph --all'
 alias gen='tgpt -i'
-alias ssh="kitten ssh"
+alias ssh="kitty +kitten ssh"
 alias powertop='sudo powertop'
 alias zed='zeditor'
 
