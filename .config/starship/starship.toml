@@ -24,7 +24,7 @@ $character"""
 # right_format = """$time"""
 
 add_newline = false
-palette = 'space'      # catppuccin, nord, onedark, space
+palette = 'catppuccin' # catppuccin, nord, onedark
 scan_timeout = 30
 command_timeout = 5000
 
@@ -50,9 +50,9 @@ time_format = "%T"
 # time_range = "10:00:00-14:00:00"
 
 [character]
-success_symbol = '[➜](bold green)'
+success_symbol = '[➜](green_bold)'
 error_symbol = '[➜](bold red)'
-vicmd_symbol = "[](green)"
+vicmd_symbol = "[](green_bold)"
 
 [directory]
 style = 'bold fg:dark_blue'
@@ -65,7 +65,7 @@ read_only_style = '197'
 read_only = '󰌾'
 
 [git_branch]
-style = 'fg:green'
+style = 'fg:green_bold'
 symbol = ' '
 format = '[$symbol$branch ]($style)'
 
@@ -81,7 +81,7 @@ modified = '!${count}'
 renamed = '»${count}'
 staged = "${count}"
 deleted = "✘${count}"
-style = 'fg:#CB727F'
+style = 'fg:red'
 
 [fill]
 symbol = ' '
@@ -126,7 +126,7 @@ format = '[$symbol($profile )(\[$duration\] )]($style)'
 
 [docker_context]
 symbol = ' '
-style = 'fg:#06969A'
+style = 'fg:sapphire'
 format = '[$symbol]($style) $path'
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 detect_extensions = ['Dockerfile']
@@ -154,6 +154,7 @@ maroon = "#ee99a0"
 peach = "#f5a97f"
 yellow = "#eed49f"
 green = "#a6da95"
+green_bold = "#0DFF82"
 teal = "#8bd5ca"
 sky = "#91d7e3"
 sapphire = "#7dc4e4"
@@ -197,16 +198,3 @@ yellow = '#e5c07b'
 gray = '#828997'
 white = '#abb2bf'
 black = '#2c323c'
-
-[palettes.space]
-dark_blue = '#00B5E2'
-blue = '#00B5E2'
-teal = '#0DFF82'
-red = '#F44B5A'
-orange = '#F44B5A'
-green = '#0DFF82'
-yellow = '#eed49f'
-purple = '#F44B5A'
-gray = '#4A4A4A'
-black = '#4A4A4A'
-white = '#D9D9D9'
