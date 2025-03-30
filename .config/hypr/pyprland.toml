@@ -75,6 +75,12 @@ lazy = true
 command = "kitty --class scratchpad-larger bash-pipes"
 lazy = true
 
+[scratchpads.superfile]
+command = "kitty --class scratchpad-larger fish -c spf"
+unfocus = "hide"
+hysteresis = 0.1
+lazy = true
+
 [scratchpads.tt]
 command = "kitty --class scratchpad-large tt -theme ~/.tt/Catppuccin-Macchiato"
 unfocus = "hide"
