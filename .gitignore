@@ -6,6 +6,7 @@
 .config/gh
 .config/github-copilot
 .config/go
+.config/jftui
 .config/keepassxc
 .config/libreoffice
 .config/obsidian
