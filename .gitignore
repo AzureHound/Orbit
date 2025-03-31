@@ -9,6 +9,7 @@
 .config/jftui
 .config/keepassxc
 .config/libreoffice
+.config/nushell
 .config/obsidian
 .config/pika-backup
 .config/pulse
