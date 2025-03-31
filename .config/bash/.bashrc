@@ -2,7 +2,7 @@
 BASH_HOME=~/.config/bash
 
 # Source
-source $BASH_HOME/aliases
+source $BASH_HOME/.bash_aliases
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -26,12 +26,12 @@ export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 
 # yazi
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 # NPM
