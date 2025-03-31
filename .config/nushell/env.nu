@@ -8,6 +8,11 @@ $env.config.show_banner = false
 $env.config.edit_mode = "vi"
 $env.config.buffer_editor = "nvim"
 
+# Carapace
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash'
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
 # Time
 
 # Prompt
