@@ -23,12 +23,12 @@
   "transition-time": 200,
   "hide-on-clear": false,
   "hide-on-action": true,
-  "widgets": ["title", "notifications", "mpris"],
+  "widgets": ["title", "notifications", "mpris", "dnd"],
   "widget-config": {
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear All"
+      "button-text": " 󰎟 "
     },
     "dnd": {
       "text": "Do Not Disturb"
@@ -58,23 +58,11 @@
         },
         {
           "label": "󰍃",
-          "command": "swaymsg exit"
+          "command": "hyprctl dispatch exit"
         },
         {
           "label": "󰏥",
           "command": "systemctl suspend"
-        },
-        {
-          "label": "󰛳",
-          "command": "nm-connection-editor"
-        },
-        {
-          "label": "󰂯",
-          "command": "blueman-manager"
-        },
-        {
-          "label": "",
-          "command": "kooha"
         }
       ]
     }
