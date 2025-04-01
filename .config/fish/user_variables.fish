@@ -48,6 +48,10 @@ fish_add_path $XDG_DATA_HOME/npm/bin
 fish_add_path $HOME/.yarn/bin
 fish_add_path $XDG_DATA_HOME/pnpm
 
+# Carapace
+set -Ux CARAPACE_BRIDGES 'zsh,fish,bash'
+carapace _carapace | source
+
 # Fish
 fish_config theme choose "Catppuccin Macchiato" # Catppuccin Macchiato, Dracula Official
 set -g theme_nerd_fonts yes
@@ -57,9 +61,6 @@ set sponge_allow_previously_successful false #sponge fish plugin
 set -xg EDITOR nvim
 set -xg VISUAL $EDITOR
 set -xg SUDO_EDITOR vim
-
-# GPG/LANG
-set -xg GPG_TTY (tty)
 
 # FZF
 set -xg FZF_DEFAULT_COMMAND fd
@@ -86,13 +87,16 @@ function y
     rm -f -- "$tmp"
 end
 
+# GPG/LANG
+set -xg GPG_TTY (tty)
+
+# Man
+set -x MANPATH /usr/share/man:/usr/local/man:/usr/local/share/man
+
 # Npm
 set NPM_PACKAGES "$HOME/.npm-packages"
 set PATH $PATH $NPM_PACKAGES/bin
 set MANPATH $NPM_PACKAGES/share/man $MANPATH
-
-# Man
-set -x MANPATH /usr/share/man:/usr/local/man:/usr/local/share/man
 
 # Other
 if type -q vivid
