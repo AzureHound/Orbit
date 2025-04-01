@@ -47,6 +47,12 @@ unfocus = "hide"
 hysteresis = 0.1
 lazy = true
 
+[scratchpads.jellyfin]
+command = "kitty --class scratchpad-large jftui"
+unfocus = "hide"
+hysteresis = 0.1
+lazy = true
+
 [scratchpads.lazydocker]
 command = "kitty --class scratchpad-large lazydocker"
 unfocus = "hide"
