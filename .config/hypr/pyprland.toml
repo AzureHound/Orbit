@@ -35,6 +35,12 @@ unfocus = "hide"
 hysteresis = 0.1
 lazy = true
 
+[scratchpads.explorer]
+command = "kitty --class scratchpad-larger explorer"
+unfocus = "hide"
+hysteresis = 0.1
+lazy = true
+
 [scratchpads.gpt]
 command = "kitty --class scratchpad-large tgpt -m"
 unfocus = "hide"
@@ -43,12 +49,6 @@ lazy = true
 
 [scratchpads.htop]
 command = "kitty --class scratchpad-large htop"
-unfocus = "hide"
-hysteresis = 0.1
-lazy = true
-
-[scratchpads.jellyfin]
-command = "kitty --class scratchpad-large jftui"
 unfocus = "hide"
 hysteresis = 0.1
 lazy = true
