@@ -52,7 +52,7 @@ time_format = "%T"
 [character]
 success_symbol = '[➜](green_bold)'
 error_symbol = '[➜](bold red)'
-vicmd_symbol = "[](green_bold)"
+vimcmd_symbol = "[](green_bold)"
 
 [directory]
 style = 'bold fg:dark_blue'
