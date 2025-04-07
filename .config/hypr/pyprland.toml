@@ -5,6 +5,11 @@ plugins = ["scratchpads", "magnify", "wallpapers"]
 command = "kitty --class scratchpad-large"
 lazy = true
 
+[scratchpads.anime]
+command = "kitty --class scratchpad-larger fish -c 'fastanime anilist'"
+hysteresis = 0.1
+lazy = true
+
 [scratchpads.asciiquarium]
 command = "kitty --class scratchpad-larger asciiquarium -t"
 lazy = true
