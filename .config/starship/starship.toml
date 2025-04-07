@@ -53,6 +53,8 @@ time_format = "%T"
 success_symbol = '[➜](green_bold)'
 error_symbol = '[➜](bold red)'
 vimcmd_symbol = "[](green_bold)"
+# vimcmd_visual_symbol = "[](green_bold)"
+# vimcmd_replace_symbol = "[](green_bold)"
 
 [directory]
 style = 'bold fg:dark_blue'
@@ -66,7 +68,7 @@ read_only = '󰌾'
 
 [git_branch]
 style = 'fg:green_bold'
-symbol = ' '
+symbol = '󰘬 '
 format = '[$symbol$branch ]($style)'
 
 [git_status]
