@@ -1,55 +1,55 @@
 #!/usr/bin/env bash
 
 # Variables
-base_directory="$HOME/Downloads/Anime"
+base_directory="$HOME/Videos/Anime"
 
 # Function to display a menu and get the user's choice using fzf
 function show_menu() {
-    choice=$(echo -e "Seasons\nEpisodes" | fzf)
+  choice=$(echo -e "Seasons\nEpisodes" | fzf)
 }
 
 # Function to download seasons or episodes
 function download_content() {
-    # Prompt for anime name
-    read -p "Enter Anime Name: " anime_name
+  # Prompt for anime name
+  read -p "Enter Anime Name: " anime_name
 
-    # Ensure the base download directory exists
-    if [ ! -d "$base_directory" ]; then
-        echo "Creating base directory $base_directory."
-        mkdir -p "$base_directory"
+  # Ensure the base download directory exists
+  if [ ! -d "$base_directory" ]; then
+    echo "Creating base directory $base_directory."
+    mkdir -p "$base_directory"
+  fi
+
+  case $choice in
+  "Seasons")
+    echo "Starting Seasons download..."
+    season_directory="$base_directory/$anime_name"
+    if [ ! -d "$season_directory" ]; then
+      echo "Creating directory $season_directory."
+      mkdir -p "$season_directory"
     fi
-
-    case $choice in
-        "Seasons")
-            echo "Starting Seasons download..."
-            season_directory="$base_directory/$anime_name"
-            if [ ! -d "$season_directory" ]; then
-                echo "Creating directory $season_directory."
-                mkdir -p "$season_directory"
-            fi
-            cd "$season_directory" || exit
-            last_episode=100
-            ani-cli "$anime_name" -d -e 1-"$last_episode"
-            ;;
-        "Episodes")
-            echo "Starting Episodes download..."
-            if [ ! -d "$base_directory" ]; then
-                echo "Creating directory $base_directory."
-                mkdir -p "$base_directory"
-            fi
-            cd "$base_directory" || exit
-            command="ani-cli -d \"$anime_name\""
-            PATH=$PATH bash -c "$command"
-            ;;
-        *)
-            echo "Invalid choice. Please select a valid option."
-            ;;
-    esac
+    cd "$season_directory" || exit
+    last_episode=100
+    ani-cli "$anime_name" -d -e 1-"$last_episode"
+    ;;
+  "Episodes")
+    echo "Starting Episodes download..."
+    if [ ! -d "$base_directory" ]; then
+      echo "Creating directory $base_directory."
+      mkdir -p "$base_directory"
+    fi
+    cd "$base_directory" || exit
+    command="ani-cli -d \"$anime_name\""
+    PATH=$PATH bash -c "$command"
+    ;;
+  *)
+    echo "Invalid choice. Please select a valid option."
+    ;;
+  esac
 }
 
 # Display the menu and get the user's choice
 while true; do
-    show_menu
-    download_content
-    break
+  show_menu
+  download_content
+  break
 done
