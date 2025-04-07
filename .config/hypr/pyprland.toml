@@ -40,6 +40,12 @@ unfocus = "hide"
 hysteresis = 0.1
 lazy = true
 
+[scratchpads.deshuffle]
+command = "kitty --class scratchpad-large deshuffle.sh"
+unfocus = "hide"
+hysteresis = 0.1
+lazy = true
+
 [scratchpads.explorer]
 command = "kitty --class scratchpad-larger explorer"
 unfocus = "hide"
