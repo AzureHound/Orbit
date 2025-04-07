@@ -105,7 +105,8 @@ hysteresis = 0.1
 lazy = true
 
 [scratchpads.tty]
-command = "kitty --class scratchpad-mini tty-clock -SscC1b"
+command = "kitty --class scratchpad-mini tty-clock -SscC1b -f '%a, %d %b'"
+# command = "kitty --class scratchpad-mini tty-clock -SscC1b"
 unfocus = "hide"
 hysteresis = 0.1
 lazy = true
