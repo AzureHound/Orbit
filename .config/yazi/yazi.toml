@@ -43,20 +43,17 @@ document = [
 image = [
   { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'qimgv "$@"', orphan = true, desc = "qimgv", for = "linux" },
-  # { run = 'krita "$@"', orphan = true, desc = "krita", for = "linux" },
   { run = 'satty --filename "$@"', orphan = true, desc = "satty", for = "linux" },
 ]
 
 video = [
   { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'mpv "$@"', orphan = true, desc = "mpv", for = "linux" },
-  # { run = 'vlc "$@"', orphan = true, desc = "vlc", for = "linux" },
 ]
 
 audio = [
   { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'mpv "$@"', orphan = true, desc = "mpv", for = "linux" },
-  # { run = 'vlc "$@"', orphan = true, desc = "vlc", for = "linux" },
 ]
 
 fallback = [
@@ -77,9 +74,6 @@ rules = [
 
   { mime = "application/zip", use = "archive" },
   { mime = "application/x-tar", use = "archive" },
-  # { mime = "application/gzip", use = "archive" },
-  # { mime = "application/x-bzip", use = "archive" },
-  # { mime = "application/x-bzip2", use = "archive" },
   { mime = "application/x-7z-compressed", use = "archive" },
   { mime = "application/x-rar", use = "archive" },
   { mime = "application/pdf", use = "document" },
