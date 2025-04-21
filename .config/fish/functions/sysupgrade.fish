@@ -17,7 +17,7 @@ function sysupgrade
     echo "󰮯 "
     echo
     set_color normal
-    command sudo -S pacman -Syu
+    sudo pacman -Syu
 
     set_color yellow
     echo
@@ -55,6 +55,13 @@ function sysupgrade
 
     set_color yellow
     echo
+    echo "Fisher Completions 🐠"
+    echo
+    set_color normal
+    fish_update_completions
+
+    set_color yellow
+    echo
     printf "Zinit "
     set_color green
     echo "󱐋 "
@@ -71,36 +78,53 @@ function sysupgrade
 
     set_color yellow
     echo
-    printf "PkgMan Cache "
+    printf "Yay pkgs ls "
+    set_color blue
+    echo "󰐱 "
+    echo
+    set_color normal
+    yay -Qq >~/.config/pacman/aur-packages.txt
+    set_color green
+    echo "Done  "
+    set_color normal
+
+    set_color yellow
+    echo
+    printf "Pacman pkgs ls "
+    set_color green
+    echo "󰮯 "
+    echo
+    set_color normal
+    pacman -Qq | grep -vFf ~/.config/pacman/aur-packages.txt | sort >~/.config/pacman/arch-packages.txt
+    set_color green
+    echo "Done  "
+    set_color normal
+
+    set_color yellow
+    echo
+    printf "Pkgs Man Cache "
     set_color red
     echo " "
     echo
     set_color normal
     yay -Scc
+    set_color green
+    echo "Done  "
+    set_color normal
 
     set_color yellow
     echo
     echo "DeleteOrphans 🧽"
     echo
     set_color normal
-    deleteOrphans 2>&1 | while read -l line
-        if not string match -q "error: argument '-' specified with empty stdin" -- $line
-            echo $line
-        end
-    end
-    set_color green
-    echo "Orphaned Dependencies Cleared  "
-    set_color normal
+    deleteOrphans
 
     set_color yellow
     echo
     echo "Homebrew 🍺"
     echo
     set_color normal
-    pushd ~/.config/brew >/dev/null
     brew bundle dump --force
-    brew leaves >leaves.txt
-    popd >/dev/null
     set_color green
     echo "Done  "
     set_color normal
@@ -112,7 +136,7 @@ function sysupgrade
 
     set_color cyan
     echo
-    echo "System Upgraded 👍"
+    echo "System Upgraded & Backed Up 👍"
     set_color red
     if test $minutes -eq 0
         echo "Took $seconds sec"
