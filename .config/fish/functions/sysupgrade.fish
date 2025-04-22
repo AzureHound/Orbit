@@ -9,7 +9,7 @@ function sysupgrade
     echo
     set_color normal
     yay -Syu
-    yay -Qq >~/.config/pacman/aur-packages.txt
+    yay -Qeq >~/.config/pacman/pkgs.txt
     yay -Scc
 
     set_color yellow
@@ -20,7 +20,6 @@ function sysupgrade
     echo
     set_color normal
     # sudo pacman -Syu
-    pacman -Qq | grep -vFf ~/.config/pacman/aur-packages.txt | sort >~/.config/pacman/arch-packages.txt
     deleteOrphans
 
     set_color yellow
