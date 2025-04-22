@@ -21,6 +21,9 @@ devify &
 # Idle daemon to screen lock
 hypridle &
 
+# Reload Plugins
+hyprpm reload -n
+
 # Clipboard
 # wl-paste --watch cliphist store &
 wl-paste --type text --watch cliphist store &
