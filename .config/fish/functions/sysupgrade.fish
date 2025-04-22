@@ -9,6 +9,8 @@ function sysupgrade
     echo
     set_color normal
     yay -Syu
+    yay -Qq >~/.config/pacman/aur-packages.txt
+    yay -Scc
 
     set_color yellow
     echo
@@ -17,7 +19,9 @@ function sysupgrade
     echo "󰮯 "
     echo
     set_color normal
-    sudo pacman -Syu
+    # sudo pacman -Syu
+    pacman -Qq | grep -vFf ~/.config/pacman/aur-packages.txt | sort >~/.config/pacman/arch-packages.txt
+    deleteOrphans
 
     set_color yellow
     echo
@@ -27,6 +31,7 @@ function sysupgrade
     brew update
     brew upgrade
     brew autoremove
+    brew bundle dump --force --file=~/.config/brew/Brewfile
 
     set_color yellow
     echo
@@ -36,6 +41,8 @@ function sysupgrade
     echo
     set_color normal
     flatpak update
+    flatpak uninstall --unused
+    flatpak list --columns=application >~/.config/flatpak/flatpaks.txt
 
     set_color yellow
     echo
@@ -52,12 +59,6 @@ function sysupgrade
     echo
     set_color normal
     fisher update
-
-    set_color yellow
-    echo
-    echo "Fisher Completions 🐠"
-    echo
-    set_color normal
     fish_update_completions
 
     set_color yellow
@@ -75,59 +76,6 @@ function sysupgrade
     echo
     set_color normal
     ya pack -u
-
-    set_color yellow
-    echo
-    printf "Yay pkgs ls "
-    set_color blue
-    echo "󰐱 "
-    echo
-    set_color normal
-    yay -Qq >~/.config/pacman/aur-packages.txt
-    set_color green
-    echo "Done  "
-    set_color normal
-
-    set_color yellow
-    echo
-    printf "Pacman pkgs ls "
-    set_color green
-    echo "󰮯 "
-    echo
-    set_color normal
-    pacman -Qq | grep -vFf ~/.config/pacman/aur-packages.txt | sort >~/.config/pacman/arch-packages.txt
-    set_color green
-    echo "Done  "
-    set_color normal
-
-    set_color yellow
-    echo
-    printf "Pkgs Man Cache "
-    set_color red
-    echo " "
-    echo
-    set_color normal
-    yay -Scc
-    set_color green
-    echo "Done  "
-    set_color normal
-
-    set_color yellow
-    echo
-    echo "DeleteOrphans 🧽"
-    echo
-    set_color normal
-    deleteOrphans
-
-    set_color yellow
-    echo
-    echo "Homebrew 🍺"
-    echo
-    set_color normal
-    brew bundle dump --force
-    set_color green
-    echo "Done  "
-    set_color normal
 
     set end_time (date +%s)
     set duration (math $end_time - $start_time)
