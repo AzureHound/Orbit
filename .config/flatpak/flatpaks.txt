@@ -2,11 +2,9 @@ cafe.avery.Delfin
 com.belmoussaoui.Obfuscate
 com.github.ADBeveridge.Raider
 com.github.tchx84.Flatseal
-com.hunterwittenborn.Celeste
 com.jeffser.Alpaca
-com.konstantintutsch.Lock
-de.haeckerfelix.Fragments
 io.github.flattool.Warehouse
+io.github.giantpinkrobots.varia
 io.gitlab.adhami3310.Impression
 io.gitlab.theevilskeleton.Upscaler
 org.freedesktop.Platform.GL.default
