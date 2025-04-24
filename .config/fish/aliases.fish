@@ -1,4 +1,8 @@
 # aliasis
+alias .='cd ..'
+alias ..='cd ../..'
+alias ...='cd ../../..'
+
 alias la='eza -a --icons'
 alias ll='eza -a -l --icons'
 alias cp='cp -i'
