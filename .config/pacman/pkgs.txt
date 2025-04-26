@@ -57,6 +57,7 @@ glow
 gnome-disk-utility
 gnome-firmware
 gnome-keyring
+gnome-themes-extra
 grim
 gst-plugin-pipewire
 gtk-engine-murrine
@@ -146,6 +147,7 @@ rofi-emoji
 rofi-games
 rofi-wayland
 rust
+sassc
 satty
 scrcpy
 serpl
