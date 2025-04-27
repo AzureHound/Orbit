@@ -1,4 +1,5 @@
 tap "dart-lang/dart"
+tap "josephburgess/formulae"
 tap "sass/sass"
 brew "gcc"
 brew "uv"
