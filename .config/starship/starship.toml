@@ -54,7 +54,7 @@ read_only = '󰌾 '
 
 [git_branch]
 style = 'fg:green_bold'
-symbol = '󰘬 '
+symbol = ' '
 format = '[$symbol$branch ]($style)'
 
 [git_status]
