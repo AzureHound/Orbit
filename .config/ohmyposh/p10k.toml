@@ -18,8 +18,8 @@ final_space = true
   newline = false
 
   [[blocks.segments]]
-    template = '󰣇 '
-    foreground = '#00B5E2'
+    template = ' '
+    foreground = '#D9D9D9'
     background = 'transparent'
     type = 'text'
     style = 'plain'
@@ -36,7 +36,7 @@ final_space = true
       style = 'full'
 
   [[blocks.segments]]
-    template = ' {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} ●{{ .StashCount }}{{ end }}'
+    template = ' {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} {{ .Working.String | replace "~" "" }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}{{ end }}{{ if .Staging.Changed }} {{ .Staging.String |replace "~" "*" }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}'
     foreground = '#0DFF82'
     background = 'transparent'
     type = 'git'
@@ -44,9 +44,10 @@ final_space = true
 
     [blocks.segments.properties]
       branch_icon = ' '
-      cache_duration = 'none'
+      branch_identical_icon = ""
       commit_icon = '@'
       fetch_status = true
+      cache_duration = 'none'
 
 [[blocks]]
   type = 'rprompt'
