@@ -3,6 +3,7 @@ android-file-transfer
 android-sdk-platform-tools
 android-tools
 ani-skip-git
+apple-fonts
 asciiquarium-transparent-git
 atuin
 auto-cpufreq
@@ -22,6 +23,7 @@ btrfs-progs
 carapace-bin
 cava
 cbonsai
+chafa
 chess-tui
 cliphist
 cmake
@@ -74,6 +76,8 @@ hyprshot
 imagemagick
 iptables-nft
 iwd
+jelly
+jftui
 jq
 keepassxc
 keyb
@@ -183,6 +187,7 @@ ttf-nerd-fonts-symbols-common
 ttf-nerd-fonts-symbols-mono
 tty-clock
 udiskie
+ueberzugpp-new-git
 ufw
 unimatrix-git
 unzip
@@ -204,7 +209,6 @@ xdg-utils
 xorg-server
 xorg-xinit
 yay
-yay-debug
 yazi
 yt-dlp
 zathura-cb
