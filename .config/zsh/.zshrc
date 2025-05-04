@@ -14,6 +14,8 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light catppuccin/zsh-syntax-highlighting
 zinit light djui/alias-tips
+# zinit ice depth=1
+# zinit light jeffreytse/zsh-vi-mode
 
 # snippets
 zinit snippet OMZP::sudo
@@ -74,7 +76,7 @@ zshaddhistory() {
 echo -ne "\e[5 q"
 
 # shell integrations
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.json)"
 eval "$(atuin init zsh)"
 eval "$(tv init zsh)"
 eval "$(zoxide init --cmd cd zsh)"

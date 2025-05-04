@@ -43,7 +43,7 @@ SUSE = ' '
 Redhat = '󱄛 '
 
 [directory]
-style = 'bold fg:dark_blue'
+style = 'fg:subtext0'
 format = '[$path ]($style)[$read_only]($read_only_style)'
 truncation_length = 8
 truncation_symbol = '…/'
@@ -58,7 +58,7 @@ symbol = ' '
 format = '[$symbol$branch ]($style)'
 
 [git_status]
-format = '([$conflicted$ahead_behind$diverged$staged$modified$stashed$renamed$deleted$untracked]($style) )'
+format = '([$conflicted$ahead_behind$diverged$staged$modified$stashed$renamed$untracked$deleted]($style) )'
 conflicted = '=${count}'
 ahead = '↑${count}'
 behind = '↓${count}'
