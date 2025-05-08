@@ -18,6 +18,7 @@
 .config/ripgrep-all
 .config/systemd
 .config/whoozle.github.io
+.config/wttr
 
 .config/gtk-4.0/servers
 .config/zsh/.zcompdump
