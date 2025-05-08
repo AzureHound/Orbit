@@ -134,7 +134,7 @@ hysteresis = 0.1
 lazy = true
 
 [scratchpads.weather]
-command = "kitty --class scratchpad-larger fish -c 'curl \"v2.wttr.in/Agartala?F\"; sleep 120'"
+command = "kitty --class scratchpad-mini fish -c 'gust; sleep 120'"
 lazy = true
 
 [wallpapers]
