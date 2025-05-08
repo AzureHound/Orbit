@@ -1,11 +1,13 @@
 # configs
 .config/BraveSoftware
 .config/borg
+.config/cava
 .config/dconf
 .config/fastanime
 .config/gh
 .config/github-copilot
 .config/go
+.config/gust
 .config/jelly
 .config/keepassxc
 .config/libreoffice
