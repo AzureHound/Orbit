@@ -1,2 +1,2 @@
-abbr -a c commits
+abbr -a c clear
 abbr -a d docker
