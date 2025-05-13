@@ -51,6 +51,7 @@ fish
 flatpak
 fzf
 gallery-dl
+gamescope
 git
 git-delta
 github-cli
@@ -71,6 +72,7 @@ hyprfreeze-git
 hypridle
 hyprland
 hyprlock
+hyprpaper
 hyprpicker
 hyprshot
 imagemagick
@@ -100,6 +102,7 @@ lsd
 luarocks
 ly
 man-db
+mangohud
 meson
 mpv-sponsorblock-minimal-git
 nano
@@ -161,6 +164,7 @@ speedtest-cli
 spicetify-cli
 spotify-launcher
 starship
+steam-native-runtime
 superfile
 swaync
 swayosd-git
