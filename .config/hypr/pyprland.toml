@@ -34,12 +34,6 @@ lazy = true
 command = "kitty --class scratchpad cava"
 lazy = true
 
-[scratchpads.dash]
-command = "kitty --class scratchpad-large gh dash"
-unfocus = "hide"
-hysteresis = 0.1
-lazy = true
-
 [scratchpads.deshuffle]
 command = "kitty --class scratchpad-large deshuffle.sh"
 unfocus = "hide"
@@ -92,6 +86,11 @@ lazy = true
 command = "kitty --class scratchpad-larger bash-pipes"
 lazy = true
 
+[scratchpads.quick-note]
+command = "kitty --class scratchpad-large quick-note"
+unfocus = "hide"
+lazy = true
+
 [scratchpads.superfile]
 command = "kitty --class scratchpad-larger fish -c spf"
 unfocus = "hide"
@@ -134,7 +133,7 @@ hysteresis = 0.1
 lazy = true
 
 [scratchpads.weather]
-command = "kitty --class scratchpad-mini fish -c 'gust; sleep 120'"
+command = "kitty --class scratchpad-mini fish -c 'gust; sleep 16'"
 lazy = true
 
 [wallpapers]
