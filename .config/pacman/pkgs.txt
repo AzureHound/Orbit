@@ -39,6 +39,7 @@ docker-compose
 dua-cli
 duf
 easyeffects
+eden
 efibootmgr
 eza
 fastanime
@@ -74,12 +75,12 @@ hyprland
 hyprlock
 hyprpaper
 hyprpicker
+hyprpolkitagent
 hyprshot
 imagemagick
 iptables-nft
 iwd
 jelly
-jftui
 jq
 keepassxc
 keyb
@@ -141,6 +142,7 @@ polkit-kde-agent
 portal-bin
 powertop
 pyprland
+python-pipx
 qemu-full
 qimgv
 qt5-wayland
