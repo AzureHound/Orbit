@@ -4,6 +4,7 @@
 .config/carapace
 .config/cava
 .config/dconf
+.config/eden
 .config/fastanime
 .config/gh
 .config/github-copilot
