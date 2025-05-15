@@ -41,6 +41,7 @@ duf
 easyeffects
 eden
 efibootmgr
+evdevhook2-git
 eza
 fastanime
 fastfetch
