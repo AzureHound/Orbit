@@ -1,6 +1,7 @@
 # configs
 .config/BraveSoftware
 .config/borg
+.config/carapace
 .config/cava
 .config/dconf
 .config/fastanime
