@@ -3,15 +3,14 @@ com.belmoussaoui.Obfuscate
 com.github.ADBeveridge.Raider
 com.github.tchx84.Flatseal
 com.jeffser.Alpaca
+de.haeckerfelix.Fragments
 io.github.flattool.Warehouse
-io.github.giantpinkrobots.varia
 io.gitlab.adhami3310.Impression
 io.gitlab.theevilskeleton.Upscaler
 org.freedesktop.Platform.GL.default
 org.freedesktop.Platform.GL.default
 org.freedesktop.Platform.GL.nvidia-570-144
 org.freedesktop.Platform.ffmpeg-full
-org.freedesktop.Platform.openh264
 org.gnome.Calculator
 org.gnome.Platform
 org.gnome.Platform
