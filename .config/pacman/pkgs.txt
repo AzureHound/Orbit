@@ -169,6 +169,7 @@ spotify-launcher
 starship
 steam-native-runtime
 superfile
+sushi
 swaync
 swayosd-git
 swww
@@ -204,6 +205,7 @@ virt-manager
 virt-viewer
 vivid
 vscodium-bin
+webcamize
 wf-recorder
 wget
 wireless_tools
@@ -215,6 +217,7 @@ xdg-desktop-portal-wlr
 xdg-utils
 xorg-server
 xorg-xinit
+yajl
 yay
 yazi
 yt-dlp
