@@ -47,6 +47,7 @@ fastanime
 fastfetch
 fd
 ffmpeg
+ffmpegthumbnailer
 figlet
 firefox
 fish
@@ -76,7 +77,6 @@ hyprland
 hyprlock
 hyprpaper
 hyprpicker
-hyprpolkitagent
 hyprshot
 imagemagick
 iptables-nft
@@ -138,7 +138,6 @@ pipewire-jack
 pipewire-pulse
 playerctl
 pokemon-colorscripts-git
-polkit-gnome
 polkit-kde-agent
 portal-bin
 powertop

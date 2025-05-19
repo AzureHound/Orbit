@@ -11,6 +11,7 @@ org.freedesktop.Platform.GL.default
 org.freedesktop.Platform.GL.default
 org.freedesktop.Platform.GL.nvidia-570-144
 org.freedesktop.Platform.ffmpeg-full
+org.freedesktop.Platform.openh264
 org.gnome.Calculator
 org.gnome.Platform
 org.gnome.Platform
