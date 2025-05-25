@@ -1,4 +1,4 @@
-# configs
+# Configs
 .config/BraveSoftware
 .config/borg
 .config/carapace
@@ -9,8 +9,10 @@
 .config/gh
 .config/github-copilot
 .config/go
+.config/go-attend
 .config/gust
 .config/jelly
+.config/jftui
 .config/keepassxc
 .config/libreoffice
 .config/mpd
@@ -25,7 +27,6 @@
 
 .config/gtk-4.0/servers
 .config/zsh/.zcompdump
-
 .config/electron-builder.json
 .config/QtProject.conf
 .config/pavucontrol.ini
@@ -45,21 +46,22 @@
 .config/yazi/plugins
 .config/yazi/package.toml
 
-# Others
+# Bin
 .local/bin/spotdl
+.local/bin/cyberdrop-dl
 
-# Spotify
-.config/spotify
+# Docker
+docker
 
 # OBS Studio
 .config/obs-studio/*
 !.config/obs-studio/themes
+
+# Spotify
+.config/spotify
 
 # VSCodium
 .config/VSCodium
 !.config/VSCodium/User/extensions.txt
 !.config/VSCodium/User/keybindings.json
 !.config/VSCodium/User/settings.json
-
-# Docker
-docker
