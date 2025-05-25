@@ -15,7 +15,7 @@ theme="$HOME/.config/rofi/scripts/wallpaper/style.rasi"
 rofi_cmd="rofi -dmenu -i -show-icons -theme-str $(build_theme 4 3 12) -theme ${theme}"
 
 choice=$(
-  ls --escape "$wallpapers_dir" |
+  ls --escape "$wallpapers_dir" | grep -v "README.md" | sort -V |
     while read A; do echo -en "$A\x00icon\x1f$wallpapers_dir/$A\n"; done |
     $rofi_cmd
 )
@@ -28,4 +28,4 @@ swww img "$wallpaper" \
   --transition-duration 2 \
   --transition-fps 75
 
-exit 1
+exit 0

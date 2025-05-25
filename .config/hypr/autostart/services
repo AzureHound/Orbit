@@ -5,7 +5,7 @@ udiskie &
 
 # Wallpaper Backend
 # swww-daemon --format xrgb &
-mpvpaper -p DP-1 -o "no-audio --loop" /home/eyes/Videos/Live\ Wallpapers/1.mp4 &
+mpvpaper -p DP-1 -o "no-audio --loop --gpu-api=vulkan --fps=30 --video-scale-max=2560:1440" /home/eyes/Videos/Live\ Wallpapers/4.mp4 &
 
 # Pyprland Daemon
 pypr --debug /tmp/pypr.log &

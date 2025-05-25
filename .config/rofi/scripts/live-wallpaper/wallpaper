@@ -1,0 +1,73 @@
+#!/bin/bash
+
+wallpapers_dir="$HOME/Videos/Live Wallpapers/"
+# Create a cache directory for thumbnails
+thumbnails_dir="$HOME/.cache/live-wallpapers/"
+
+# Create thumbnails directory if it doesn't exist
+mkdir -p "$thumbnails_dir"
+
+build_theme() {
+  rows=$1
+  cols=$2
+  icon_size=$3
+
+  echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
+}
+
+generate_thumbnails() {
+  # Generate thumbnails for videos that don't have them yet
+  for video in "$wallpapers_dir"/*; do
+    if [ -f "$video" ]; then
+      video_name=$(basename "$video")
+      thumbnail_path="$thumbnails_dir/${video_name}.jpg"
+
+      # Only generate thumbnail if it doesn't exist or video is newer
+      if [ ! -f "$thumbnail_path" ] || [ "$video" -nt "$thumbnail_path" ]; then
+        ffmpeg -y -i "$video" -vframes 1 -ss 00:00:05 "$thumbnail_path" &>/dev/null
+      fi
+    fi
+  done
+}
+
+# Generate thumbnails before showing the menu
+generate_thumbnails
+
+theme="$HOME/.config/rofi/scripts/live-wallpaper/style.rasi"
+
+rofi_cmd="rofi -dmenu -i -show-icons -theme-str $(build_theme 4 3 12) -theme ${theme}"
+
+choice=$(
+  # Use sort -V for natural sorting
+  ls --escape "$wallpapers_dir" | sort -V |
+    while read A; do
+      thumbnail_path="$thumbnails_dir/${A}.jpg"
+      echo -en "$A\x00icon\x1f$thumbnail_path\n"
+    done |
+    $rofi_cmd
+)
+
+# Exit if no choice was made
+if [ -z "$choice" ]; then
+  echo "No wallpaper selected. Exiting."
+  exit 1
+fi
+
+wallpaper="$wallpapers_dir/$choice"
+
+# Check if the selected wallpaper is already playing
+current_wallpaper=$(pgrep mpvpaper -a 2>/dev/null | grep -o "/home/.*\.mp4" | head -n 1)
+
+if [ "$wallpaper" = "$current_wallpaper" ]; then
+  echo "Selected wallpaper is already playing. No action needed."
+  exit 0
+else
+  # Only kill and restart if a different wallpaper was selected
+  # Kill any previous mpvpaper instances
+  pkill mpvpaper
+
+  # Run mpvpaper with the selected wallpaper and auto-pause enabled
+  mpvpaper -p DP-1 -o "no-audio --loop --gpu-api=vulkan --fps=30 --video-scale-max=2560:1440" "$wallpaper"
+fi
+
+exit 0
