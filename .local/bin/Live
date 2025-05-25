@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Directory containing wallpapers
+WALLPAPER_DIR="/home/eyes/Videos/Live Wallpapers"
+
+# Use fzf to select a wallpaper
+selected_wallpaper=$(find "$WALLPAPER_DIR" -type f | fzf --no-preview --prompt="󰥨 Search: ")
+
+# Check if a wallpaper was selected
+if [ -z "$selected_wallpaper" ]; then
+  echo "No wallpaper selected. Exiting."
+  exit 1
+fi
+
+# Kill any previous mpvpaper instances AFTER selection is made
+pkill mpvpaper
+
+# Run mpvpaper with the selected wallpaper
+mpvpaper -p DP-1 -o "no-audio --loop" "$selected_wallpaper" &

@@ -109,6 +109,7 @@ meson
 mpc
 mpd
 mpv-sponsorblock-minimal-git
+mpvpaper
 nano
 nautilus
 navi

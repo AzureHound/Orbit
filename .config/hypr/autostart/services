@@ -4,7 +4,8 @@
 udiskie &
 
 # Wallpaper Backend
-swww-daemon --format xrgb &
+# swww-daemon --format xrgb &
+mpvpaper -p DP-1 -o "no-audio --loop" /home/eyes/Videos/Live\ Wallpapers/1.mp4 &
 
 # Pyprland Daemon
 pypr --debug /tmp/pypr.log &
