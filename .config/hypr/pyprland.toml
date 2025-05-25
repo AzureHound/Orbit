@@ -30,7 +30,7 @@ command = "kitty --class scratchpad cava"
 lazy = true
 
 [scratchpads.deshuffle]
-command = "kitty --class scratchpad-large deshuffle.sh"
+command = "kitty --class scratchpad-large deshuffle"
 unfocus = "hide"
 hysteresis = 0.1
 lazy = true
