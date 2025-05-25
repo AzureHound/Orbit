@@ -65,6 +65,9 @@ export FZF_DEFAULT_OPTS="--height=100% --info=right --border=rounded --pointer='
 # MANPATH
 export MANPATH="/usr/share/man:/usr/local/man:/usr/local/share/man"
 
+# Bin
+export PATH="$HOME/.local/bin:$PATH"
+
 # NPM
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$PATH:$NPM_PACKAGES/bin"

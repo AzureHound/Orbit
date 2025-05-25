@@ -76,6 +76,13 @@ function sysupgrade
     set_color normal
     ya pack -u
 
+    set_color blue
+    echo
+    printf "Pipx  "
+    echo
+    set_color normal
+    pipx upgrade-all
+
     set end_time (date +%s)
     set duration (math $end_time - $start_time)
     set minutes (math --scale=0 "$duration / 60")
