@@ -13,6 +13,7 @@
 .config/jelly
 .config/keepassxc
 .config/libreoffice
+.config/mpd
 .config/nushell
 .config/obsidian
 .config/pika-backup
