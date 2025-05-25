@@ -106,6 +106,8 @@ ly
 man-db
 mangohud
 meson
+mpc
+mpd
 mpv-sponsorblock-minimal-git
 nano
 nautilus
@@ -152,6 +154,7 @@ qt6ct
 reflector
 ripgrep
 ripgrep-all
+rmpc
 rofi-emoji
 rofi-games
 rofi-wayland
