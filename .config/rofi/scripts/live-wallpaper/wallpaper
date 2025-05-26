@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wallpapers_dir="$HOME/Videos/Live Wallpapers/"
+wallpapers_dir="$HOME/Videos/Wallpapers/"
 # Create a cache directory for thumbnails
 thumbnails_dir="$HOME/.cache/live-wallpapers/"
 
@@ -67,7 +67,7 @@ else
   pkill mpvpaper
 
   # Run mpvpaper with the selected wallpaper and auto-pause enabled
-  mpvpaper -p DP-1 -o "no-audio --loop --gpu-api=vulkan --fps=30 --video-scale-max=2560:1440" "$wallpaper"
+  mpvpaper -p DP-1 -o "no-audio --loop --gpu-api=vulkan --vo=libmpv" "$wallpaper"
 fi
 
 exit 0

@@ -29,6 +29,6 @@ $window)
   $command -m window
   ;;
 $folder)
-  ~/.config/rofi/scripts/screenshot/screenshot_selection
+  $HOME/.config/rofi/scripts/screenshot/screenshot_selection
   ;;
 esac
