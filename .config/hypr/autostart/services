@@ -3,9 +3,9 @@
 # Automounter for removable media
 udiskie &
 
-# Wallpaper Backend
+# Wallpaper
 # swww-daemon --format xrgb &
-mpvpaper -p DP-1 -o "no-audio --loop --gpu-api=vulkan --fps=30 --video-scale-max=2560:1440" /home/eyes/Videos/Live\ Wallpapers/4.mp4 &
+$HOME/.config/hypr/scripts/live_wallpaper &
 
 # Pyprland Daemon
 pypr --debug /tmp/pypr.log &
@@ -31,7 +31,7 @@ wl-paste --type image --watch cliphist store &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Screen sharing and portals
-"$HOME"/.config/hypr/scripts/portal &
+$HOME/.config/hypr/scripts/portal &
 # xwaylandvideobridge & # Off when using Vesktop instead of Discord
 
 # Audio

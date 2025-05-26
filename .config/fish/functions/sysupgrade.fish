@@ -9,7 +9,7 @@ function sysupgrade
     echo
     set_color normal
     yay -Syu
-    yay -Qeq >~/.config/pacman/pkgs.txt
+    yay -Qeq >$HOME/.config/pacman/pkgs.txt
     yay -Scc
 
     set_color yellow
@@ -30,7 +30,7 @@ function sysupgrade
     brew update
     brew upgrade
     brew autoremove
-    brew bundle dump --force --file=~/.config/brew/Brewfile
+    brew bundle dump --force --file=$HOME/.config/brew/Brewfile
 
     set_color yellow
     echo
@@ -41,7 +41,7 @@ function sysupgrade
     set_color normal
     flatpak update
     flatpak uninstall --unused
-    flatpak list --columns=application >~/.config/flatpak/flatpaks.txt
+    flatpak list --columns=application >$HOME/.config/flatpak/flatpaks.txt
 
     set_color yellow
     echo

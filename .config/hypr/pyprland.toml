@@ -93,7 +93,7 @@ hysteresis = 0.1
 lazy = true
 
 [scratchpads.tt]
-command = "kitty --class scratchpad-large tt -theme ~/.tt/Catppuccin-Macchiato"
+command = "kitty --class scratchpad-large tt -theme $HOME/.tt/Catppuccin-Macchiato"
 unfocus = "hide"
 hysteresis = 0.1
 lazy = true
@@ -132,7 +132,7 @@ command = "kitty --class scratchpad-mini fish -c 'gust; sleep 16'"
 lazy = true
 
 [wallpapers]
-path = "~/Developer/repos/Wallpapers/"
+path = "$HOME/Developer/repos/Wallpapers/"
 interval = 10 # minutes
 command = "swww img --transition-bezier 0.5,1.19,.8,.4 --transition-type wipe --transition-duration 2 --transition-fps 30 \"[file]\""
 clear_command = "swww clear"
