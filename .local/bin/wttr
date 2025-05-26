@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 CONFIG_DIR=~/.config/wttr
 CONFIG_FILE=$CONFIG_DIR/config

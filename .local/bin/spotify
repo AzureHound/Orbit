@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Path to spotdl executable
 SPOTDL_PATH="/home/eyes/.local/bin/spotdl"
