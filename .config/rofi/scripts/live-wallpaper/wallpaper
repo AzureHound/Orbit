@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 wallpapers_dir="$HOME/Videos/Wallpapers/"
 # Create a cache directory for thumbnails

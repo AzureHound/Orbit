@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Constants
 gfetch="gfetch -d churn contributors --no-color-palette --no-title"

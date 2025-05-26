@@ -9,7 +9,7 @@ io.gitlab.adhami3310.Impression
 io.gitlab.theevilskeleton.Upscaler
 org.freedesktop.Platform.GL.default
 org.freedesktop.Platform.GL.default
-org.freedesktop.Platform.GL.nvidia-570-144
+org.freedesktop.Platform.GL.nvidia-570-153-02
 org.freedesktop.Platform.ffmpeg-full
 org.freedesktop.Platform.openh264
 org.gnome.Calculator

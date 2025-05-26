@@ -1,7 +1,7 @@
 # █░█░█ ▄▀█ █░░ █░░ █▀█ ▄▀█ █▀█ █▀▀ █▀█
 # ▀▄▀▄▀ █▀█ █▄▄ █▄▄ █▀▀ █▀█ █▀▀ ██▄ █▀▄
 
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 random=$(fd --base-directory "$HOME/Developer/repos/Wallpapers/" --type f . | shuf -n 1)
 
