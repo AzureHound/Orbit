@@ -24,8 +24,7 @@ fi
 # Select a random video file
 RANDOM_VIDEO="${VIDEO_FILES[RANDOM % ${#VIDEO_FILES[@]}]}"
 
-# Set the video as wallpaper
+# Set wallpaper
 mpvpaper -p "$DISPLAY" -o "$MPV_OPTIONS" "$RANDOM_VIDEO"
 
-# Exit with success
 exit 0
