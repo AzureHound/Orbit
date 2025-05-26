@@ -117,10 +117,6 @@
             ),
         ),
         (
-            name: "Directories",
-            pane: Pane(Directories),
-        ),
-        (
             name: "Playlists",
             pane: Pane(Playlists),
         ),
