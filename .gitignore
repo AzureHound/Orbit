@@ -49,6 +49,7 @@
 # Bin
 .local/bin/spotdl
 .local/bin/cyberdrop-dl
+.local/bin/googleimagesdownload
 
 # Docker
 docker

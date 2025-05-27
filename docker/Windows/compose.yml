@@ -20,7 +20,7 @@ services:
     volumes:
       - ./windows:/storage
       - ./share:/data
-    restart: always
+    restart: unless-stopped
     stop_grace_period: 2m
     networks:
       - local
