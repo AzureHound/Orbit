@@ -1,30 +1,32 @@
 #!/usr/bin/env bash
 
-# Configuration
 DISPLAY="DP-1"
 WALLPAPER_DIR="$HOME/Videos/Wallpapers"
-MPV_OPTIONS="no-audio --loop --gpu-api=vulkan --vo=libmpv"
+SOCKET_PATH="/tmp/mpv-socket"
+MPV_OPTIONS="input-ipc-server=$SOCKET_PATH no-audio loop gpu-api=vulkan vo=libmpv"
 
-# Check if directory exists
-if [ ! -d "$WALLPAPER_DIR" ]; then
-  exit 1
-fi
+change_wallpaper() {
+  if [ ! -d "$WALLPAPER_DIR" ]; then
+    return 1
+  fi
 
-# Get a list of video files (common video formats)
-VIDEO_FILES=()
-while IFS= read -r file; do
-  VIDEO_FILES+=("$file")
-done < <(find "$WALLPAPER_DIR" -type f \( -name "*.mp4" -o -name "*.mkv" -o -name "*.webm" -o -name "*.avi" -o -name "*.mov" \))
+  VIDEO_FILES=()
+  while IFS= read -r file; do
+    VIDEO_FILES+=("$file")
+  done < <(find "$WALLPAPER_DIR" -type f \( -name "*.mp4" -o -name "*.mkv" -o -name "*.webm" -o -name "*.avi" -o -name "*.mov" \))
 
-# Check if any video files were found
-if [ ${#VIDEO_FILES[@]} -eq 0 ]; then
-  exit 1
-fi
+  if [ ${#VIDEO_FILES[@]} -eq 0 ]; then
+    return 1
+  fi
 
-# Select a random video file
-RANDOM_VIDEO="${VIDEO_FILES[RANDOM % ${#VIDEO_FILES[@]}]}"
+  RANDOM_VIDEO="${VIDEO_FILES[RANDOM % ${#VIDEO_FILES[@]}]}"
 
-# Set wallpaper
-mpvpaper -p "$DISPLAY" -o "$MPV_OPTIONS" "$RANDOM_VIDEO"
+  mpvpaper -f -p "$DISPLAY" -o "$MPV_OPTIONS" "$RANDOM_VIDEO"
+}
 
-exit 0
+change_wallpaper
+
+while true; do
+  sleep 3600 # seconds
+  change_wallpaper
+done
