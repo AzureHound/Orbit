@@ -3,9 +3,12 @@
 # Automounter for removable media
 udiskie &
 
-# Wallpaper
-# swww-daemon --format xrgb &
-$HOME/.config/hypr/scripts/live_wallpaper &
+# Wallpaper Backend
+swww-daemon --format xrgb &
+
+# Live Wallpaper
+# mpvpaper -f -p &
+# $HOME/.config/hypr/scripts/live_wallpaper &
 
 # Pyprland Daemon
 pypr --debug /tmp/pypr.log &
@@ -23,7 +26,6 @@ devify &
 hypridle &
 
 # Clipboard
-# wl-paste --watch cliphist store &
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 

@@ -170,7 +170,7 @@ speedtest-cli
 spicetify-cli
 spotify-launcher
 starship
-steam-native-runtime
+steam
 superfile
 sushi
 swaync
