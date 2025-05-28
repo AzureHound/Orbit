@@ -21,12 +21,12 @@ change_wallpaper() {
 
   RANDOM_VIDEO="${VIDEO_FILES[RANDOM % ${#VIDEO_FILES[@]}]}"
 
-  mpvpaper -f -p "$DISPLAY" -o "$MPV_OPTIONS" "$RANDOM_VIDEO"
+  mpvpaper "$DISPLAY" -o "$MPV_OPTIONS" "$RANDOM_VIDEO"
 }
 
 change_wallpaper
 
 while true; do
-  sleep 3600 # seconds
+  sleep 1800 # seconds
   change_wallpaper
 done
