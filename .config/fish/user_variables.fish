@@ -76,7 +76,7 @@ set -xg FZF_DEFAULT_OPTS "--height=100% --info=right --border rounded --pointer=
 --bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)' \
 --multi --prompt '󰥨 Search: '"
 
-# yazi
+# Yazi
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
@@ -91,6 +91,8 @@ set -xg GPG_TTY (tty)
 
 # Man
 set -x MANPATH /usr/share/man:/usr/local/man:/usr/local/share/man
+set -x MANPAGER "vim -M +MANPAGER -"
+# set -x MANPAGER "nvim +Man!"
 
 # Npm
 set NPM_PACKAGES "$HOME/.npm-packages"

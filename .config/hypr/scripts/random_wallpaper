@@ -3,14 +3,19 @@
 
 #!/usr/bin/env bash
 
-random=$(fd --base-directory "$HOME/Developer/repos/Wallpapers/" --type f . | shuf -n 1)
+WALLPAPER_DIR="$HOME/Developer/repos/Wallpapers"
+CURRENT_WALL=$(hyprctl hyprpaper listloaded)
 
-wallpaper="$HOME/Developer/repos/Wallpapers/$random"
+random=$(fd --base-directory "$WALLPAPER_DIR" --type f . | shuf -n 1)
 
-swww img "$wallpaper" \
-	--transition-bezier 0.5,1.19,.8,.4 \
-	--transition-type wipe \
-	--transition-duration 2 \
-	--transition-fps 30
+WALLPAPER="$WALLPAPER_DIR/$random"
 
-# notify-send "Wallpaper Changed" -i "$wallpaper" --app-name=Wallpaper
+if pgrep -x "hyprpaper" >/dev/null; then
+  hyprctl hyprpaper reload ,"$WALLPAPER"
+elif pgrep -x "swww" >/dev/null; then
+  swww img "$WALLPAPER" \
+    --transition-bezier 0.5,1.19,.8,.4 \
+    --transition-type wipe \
+    --transition-duration 2 \
+    --transition-fps 30
+fi

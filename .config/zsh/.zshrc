@@ -1,29 +1,36 @@
-# zinit
+# Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-# themes
-source ~/.local/share/zinit/plugins/catppuccin---zsh-syntax-highlighting/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
+# Themes
+source $XDG_CONFIG_HOME/zsh/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 
-# plugins
-zinit light zsh-users/zsh-syntax-highlighting
+# Plugins
+zinit light Aloxaf/fzf-tab
+zinit light loiccoyle/zsh-github-copilot
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-zinit light catppuccin/zsh-syntax-highlighting
-# zinit light djui/alias-tips
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 # zinit ice depth=1
+# zinit light djui/alias-tips
 # zinit light jeffreytse/zsh-vi-mode
 
-# snippets
+# Snippets
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::direnv
+zinit snippet OMZP::man
+zinit snippet OMZP::node
+zinit snippet OMZP::python
+zinit snippet OMZP::uv
 
-# load completions
-autoload -Uz compinit
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump
+# Load completions
+[[ -d "$XDG_CACHE_HOME/zsh" ]] || mkdir -p "$XDG_CACHE_HOME/zsh"
+autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # Completion styling
@@ -84,9 +91,10 @@ function nvim() {
   echo -ne '\e[5 q'
 }
 
-# shell integrations
+# Init
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.json)"
 eval "$(atuin init zsh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(tv init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -96,13 +104,19 @@ source <(fzf --zsh)
 # Color Scripts
 pokemon-colorscripts --no-title -r 1,3,6
 
-# keybindings
+# Keybindings
 bindkey -e
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+bindkey '^[|' zsh_gh_copilot_explain
+bindkey '^[\' zsh_gh_copilot_suggest
 bindkey '^[w' kill-region
 
-# yazi
+# Man
+export MANPAGER="vim -M +MANPAGER -"
+# export MANPAGER='nvim +Man!'
+
+# Yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"

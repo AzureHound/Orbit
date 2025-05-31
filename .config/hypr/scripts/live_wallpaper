@@ -3,12 +3,12 @@
 DISPLAY="DP-1"
 WALLPAPER_DIR="$HOME/Videos/Wallpapers"
 SOCKET_PATH="/tmp/mpv-socket"
-MPV_OPTIONS="input-ipc-server=$SOCKET_PATH no-audio loop gpu-api=vulkan vo=libmpv"
+MPV_OPTIONS="input-ipc-server=$SOCKET_PATH no-audio loop gpu-api=vulkan vo=libmpv hwdec=nvdec vd-lavc-threads=$(nproc)"
 
 change_wallpaper() {
   if [ ! -d "$WALLPAPER_DIR" ]; then
     return 1
-  fi
+  }
 
   VIDEO_FILES=()
   while IFS= read -r file; do
@@ -17,7 +17,7 @@ change_wallpaper() {
 
   if [ ${#VIDEO_FILES[@]} -eq 0 ]; then
     return 1
-  fi
+  }
 
   RANDOM_VIDEO="${VIDEO_FILES[RANDOM % ${#VIDEO_FILES[@]}]}"
 

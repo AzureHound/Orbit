@@ -76,7 +76,7 @@ else
 
   pkill mpvpaper 2>/dev/null || true
 
-  mpvpaper "$DISPLAY" -o "input-ipc-server=$SOCKET_PATH no-audio loop gpu-api=vulkan vo=libmpv" "$WALLPAPER"
+  mpvpaper "$DISPLAY" -o "input-ipc-server=$SOCKET_PATH no-audio loop gpu-api=vulkan vo=libmpv hwdec=nvdec vd-lavc-threads=$(nproc)" "$WALLPAPER"
 fi
 
 exit 0

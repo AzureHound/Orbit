@@ -7,6 +7,15 @@ source $BASH_HOME/.bash_aliases
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# History
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check & update window size values after each command.
+shopt -s checkwinsize
+
 # Prompt
 PS1='\[\e[0;36m\]\u\[\e[0;37m\]@\[\e[0;34m\]\h\[\e[0;33m\] \w\[\e[0m\]$(if git rev-parse --is-inside-work-tree &>/dev/null; then echo " \[\e[0;32m\] $(git branch 2>/dev/null | grep "\*" | sed "s/* //")"; fi) \[\e[0m\] '
 
@@ -21,11 +30,11 @@ export EDITOR=nvim
 export VISUAL="$EDITOR"
 export SUDO_EDITOR="vim"
 
-# vivid
-export LS_COLORS="$(vivid generate catppuccin-macchiato)"
-
-# init
+# Init
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(atuin init bash)"
 eval "$(fzf --bash)"
+eval "$(zoxide init --cmd cd bash)"
 
 # FZF
 export FZF_DEFAULT_COMMAND="fd --hidden --no-ignore"
@@ -41,7 +50,25 @@ export FZF_DEFAULT_OPTS="--height=100% --info=right --border=rounded --pointer='
 --bind='ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)' \
 --multi --prompt='󰥨 Search: '"
 
-# yazi
+# GCC
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Man
+export MANPAGER="vim -M +MANPAGER -"
+# export MANPAGER='nvim +Man!'
+
+# NPM
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
+# UV
+eval "$(uv generate-shell-completion bash)"
+
+# Vivid
+export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+
+# Yazi
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
   yazi "$@" --cwd-file="$tmp"
@@ -50,11 +77,3 @@ function y() {
   fi
   rm -f -- "$tmp"
 }
-
-# NPM
-NPM_PACKAGES="${HOME}/.npm-packages"
-export PATH="$PATH:$NPM_PACKAGES/bin"
-export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
-
-# uv
-eval "$(uv generate-shell-completion bash)"

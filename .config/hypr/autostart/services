@@ -1,12 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Automounter for removable media
 udiskie &
 
 # Wallpaper Backend
-swww-daemon --format xrgb &
-
-# Live Wallpaper
+hyprpaper &
+# swww-daemon --format xrgb &
 # mpvpaper -f -p &
 # $HOME/.config/hypr/scripts/live_wallpaper &
 
@@ -19,8 +18,11 @@ swaync &
 # OSD Window
 swayosd-server &
 
+# Light Filter
+hyprsunset &
+
 # Notify about devices connecting and disconnecting
-devify &
+# devify &
 
 # Idle daemon to screen lock
 hypridle &
@@ -30,7 +32,8 @@ wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 
 # Polkit authentication
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+systemctl --user start hyprpolkitagent &
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Screen sharing and portals
 $HOME/.config/hypr/scripts/portal &
@@ -39,8 +42,17 @@ $HOME/.config/hypr/scripts/portal &
 # Audio
 easyeffects --gapplication-service &
 
+# Keyboard
+kanata -c ~/.config/kanata/config.kbd &
+
 # RGB
 openrgb --startminimized -p "Profile 1" &
+
+# Random Wallpaper
+sleep 0.1 && $HOME/.config/hypr/scripts/random_wallpaper &
+
+# Light Filter Automation
+sleep 0.1 && $HOME/.config/hypr/scripts/sunset &
 
 # Sync
 syncthing -no-browser &

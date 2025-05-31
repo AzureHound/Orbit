@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+# Lightweight hyprsunset daemon - minimal resource usage
+# Configuration values
+DAY_TEMP=6500
+NIGHT_TEMP=3500
+SUNRISE="07:00"
+SUNSET="20:00"
+TRANSITION_DURATION=30 # minutes for sunrise/sunset transition
+CHECK_INTERVAL=2400    # seconds between checks (40 minutes)
+
+# Convert time to minutes
+time_to_minutes() {
+  h=${1%:*}
+  m=${1#*:}
+  echo $((h * 60 + m))
+}
+
+# Calculate temperature based on time with minimal computation
+update_temperature() {
+  # Get current time
+  h=$(date +%H)
+  m=$(date +%M)
+  current=$((h * 60 + m))
+
+  # Calculate transition points
+  sunrise_min=$(time_to_minutes "$SUNRISE")
+  sunset_min=$(time_to_minutes "$SUNSET")
+  half_trans=$((TRANSITION_DURATION / 2))
+  sunrise_start=$((sunrise_min - half_trans))
+  sunrise_end=$((sunrise_min + half_trans))
+  sunset_start=$((sunset_min - half_trans))
+  sunset_end=$((sunset_min + half_trans))
+
+  # Handle day wrap-around
+  [ $sunrise_start -lt 0 ] && sunrise_start=$((sunrise_start + 1440))
+
+  # Set temperature based on time period
+  if [ $current -lt $sunrise_start ] || [ $current -gt $sunset_end ]; then
+    # Night time
+    hyprctl hyprsunset temperature $NIGHT_TEMP
+  elif [ $current -gt $sunrise_end ] && [ $current -lt $sunset_start ]; then
+    # Day time
+    hyprctl hyprsunset temperature $DAY_TEMP
+  elif [ $current -ge $sunrise_start ] && [ $current -le $sunrise_end ]; then
+    # Sunrise transition
+    progress=$(((current - sunrise_start) * 100 / (sunrise_end - sunrise_start)))
+    temp=$((NIGHT_TEMP + (DAY_TEMP - NIGHT_TEMP) * progress / 100))
+    hyprctl hyprsunset temperature $temp
+  elif [ $current -ge $sunset_start ] && [ $current -le $sunset_end ]; then
+    # Sunset transition
+    progress=$(((current - sunset_start) * 100 / (sunset_end - sunset_start)))
+    temp=$((DAY_TEMP + (NIGHT_TEMP - DAY_TEMP) * progress / 100))
+    hyprctl hyprsunset temperature $temp
+  fi
+}
+
+# Initialize
+echo "Starting lightweight hyprsunset daemon"
+echo "Day: $DAY_TEMP K, Night: $NIGHT_TEMP K, Sunrise: $SUNRISE, Sunset: $SUNSET"
+
+# Main loop
+while true; do
+  update_temperature
+  sleep $CHECK_INTERVAL
+done
