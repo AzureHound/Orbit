@@ -81,6 +81,7 @@ hyprlock
 hyprls-git
 hyprpaper
 hyprpicker
+hyprpolkitagent
 hyprshot
 hyprsunset
 imagemagick
@@ -124,6 +125,7 @@ nano
 nautilus
 nautilus-image-converter
 navi
+neovide
 neovim
 nodejs
 noto-fonts-cjk
@@ -155,6 +157,7 @@ pokemon-colorscripts-git
 polkit-kde-agent
 portal-bin
 powertop
+presenterm
 pyprland
 python-pipx
 qemu-full
