@@ -42,10 +42,13 @@ echo -e "\n${YELLOW}Zinit ${GREEN}󱐋 ${RESET}\n"
 zsh -i -c 'zinit self-update && zinit update'
 
 echo -e "\n${YELLOW}Yazi 📁${RESET}\n"
-ya pack -u
+ya pkg update
 
-echo -e "\n${BLUE}Pipx  ${RESET}\n"
+echo -e "\n${BLUE}Pipx  ${RESET}\n"
 pipx upgrade-all
+
+echo -e "\n${GREEN}gh  ${RESET}\n"
+gh extension upgrade --all
 
 end_time=$(date +%s)
 duration=$((end_time - start_time))

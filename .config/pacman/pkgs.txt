@@ -88,6 +88,7 @@ imagemagick
 iptables-nft
 iwd
 jelly
+jftui
 jq
 kanata
 keepassxc
@@ -244,6 +245,7 @@ yt-dlp
 zathura-cb
 zathura-pdf-mupdf
 zed
+zellij
 zen-browser-bin
 zoxide
 zram-generator

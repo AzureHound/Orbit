@@ -19,9 +19,6 @@ shopt -s checkwinsize
 # Prompt
 PS1='\[\e[0;36m\]\u\[\e[0;37m\]@\[\e[0;34m\]\h\[\e[0;33m\] \w\[\e[0m\]$(if git rev-parse --is-inside-work-tree &>/dev/null; then echo " \[\e[0;32m\] $(git branch 2>/dev/null | grep "\*" | sed "s/* //")"; fi) \[\e[0m\] '
 
-# Starship
-# eval "$(starship init bash)"
-
 # I-beam cursor
 echo -ne "\e[5 q"
 
@@ -31,10 +28,11 @@ export VISUAL="$EDITOR"
 export SUDO_EDITOR="vim"
 
 # Init
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(atuin init bash)"
 eval "$(fzf --bash)"
+# eval "$(starship init bash)"
 eval "$(zoxide init --cmd cd bash)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # FZF
 export FZF_DEFAULT_COMMAND="fd --hidden --no-ignore"

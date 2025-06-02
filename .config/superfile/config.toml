@@ -20,6 +20,9 @@ default_open_file_preview = true
 # Whether to show image preview.
 show_image_preview = true
 # 
+# Whether to show additional footer info for file panel.
+show_panel_footer_info = true
+# 
 # The path of the first file panel when superfile is opened.
 default_directory = '.'
 # 
@@ -34,6 +37,9 @@ sort_order_reversed = false
 # 
 # Case sensitive sort by name (captal "B" comes before "a" if true).
 case_sensitive_sort = false
+# 
+# Whether to close the shell on successful command execution.
+shell_close_on_success = false
 # 
 # Whether to enable debug mode.
 debug = false
@@ -50,7 +56,7 @@ transparent_background = true
 file_preview_width = 0
 # 
 # Whether to use the builtin syntax highlighting with chroma or use bat. Values: "" for builtin chroma, "bat" for bat
-code_previewer = 'bat'
+code_previewer = ''
 # 
 # The length of the sidebar. If you don't want to display the sidebar, you can input 0 directly. If you want to display the value, please place it in the range of 3-20.
 sidebar_width = 20
