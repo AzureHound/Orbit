@@ -52,15 +52,15 @@ fish_add_path $XDG_DATA_HOME/pnpm
 set -Ux CARAPACE_BRIDGES 'zsh,fish,bash'
 carapace _carapace | source
 
-# Fish
-fish_config theme choose "Catppuccin Macchiato" # Catppuccin Macchiato, Dracula Official
-set -g theme_nerd_fonts yes
-set sponge_allow_previously_successful false #sponge fish plugin
-
 # Editor
 set -xg EDITOR nvim
 set -xg VISUAL $EDITOR
 set -xg SUDO_EDITOR vim
+
+# Fish
+fish_config theme choose "Catppuccin Macchiato" # Catppuccin Macchiato, Dracula Official
+set -g theme_nerd_fonts yes
+set sponge_allow_previously_successful false #sponge fish plugin
 
 # FZF
 set -xg FZF_DEFAULT_COMMAND "fd --hidden --no-ignore"
@@ -76,16 +76,6 @@ set -xg FZF_DEFAULT_OPTS "--height=100% --info=right --border rounded --pointer=
 --bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)' \
 --multi --prompt '󰥨 Search: '"
 
-# Yazi
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-    end
-    rm -f -- "$tmp"
-end
-
 # GPG/LANG
 set -xg GPG_TTY (tty)
 
@@ -99,8 +89,20 @@ set NPM_PACKAGES "$HOME/.npm-packages"
 set PATH $PATH $NPM_PACKAGES/bin
 set MANPATH $NPM_PACKAGES/share/man $MANPATH
 
-# Other
+# Starship
+set -xg STARSHIP_LOG error
+
+# Vivid
 if type -q vivid
     set -xg LS_COLORS (vivid generate catppuccin-macchiato)
 end
-set -xg STARSHIP_LOG error
+
+# Yazi
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end

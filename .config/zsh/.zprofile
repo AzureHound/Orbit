@@ -43,6 +43,9 @@ export EDITOR="nvim"
 export VISUAL="$EDITOR"
 export SUDO_EDITOR="vim"
 
+# Firefox
+export BROWSER="firefox"
+
 # FZF
 export FZF_DEFAULT_COMMAND="fd --hidden --no-ignore"
 export fzf_fd_opts="--hidden --color=always"
@@ -90,6 +93,5 @@ eval "$(pyenv init -)"
 # UV
 eval "$(uv generate-shell-completion zsh)"
 
-# Others
-export BROWSER="firefox"
+# Vivid
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"

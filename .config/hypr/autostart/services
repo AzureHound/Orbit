@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Automounter for removable media
+# Removable Media Automounter
 udiskie &
 
 # Wallpaper Backend
@@ -18,24 +18,24 @@ swaync &
 # OSD Window
 swayosd-server &
 
-# Light Filter
+# Filter
 hyprsunset &
 
 # Notify about devices connecting and disconnecting
 # devify &
 
-# Idle daemon to screen lock
+# Screen Lock Idle Daemon
 hypridle &
 
 # Clipboard
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 
-# Polkit authentication
+# Polkit Authentication
 systemctl --user start hyprpolkitagent &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Screen sharing and portals
+# Screen sharing & Portals
 $HOME/.config/hypr/scripts/portal &
 # xwaylandvideobridge & # Off when using Vesktop instead of Discord
 
@@ -43,7 +43,7 @@ $HOME/.config/hypr/scripts/portal &
 easyeffects --gapplication-service &
 
 # Keyboard
-kanata -c ~/.config/kanata/config.kbd &
+#kanata -c ~/.config/kanata/config.kbd &
 
 # RGB
 openrgb --startminimized -p "Profile 1" &
@@ -51,7 +51,7 @@ openrgb --startminimized -p "Profile 1" &
 # Random Wallpaper
 sleep 0.4 && $HOME/.config/hypr/scripts/random_wallpaper &
 
-# Light Filter Automation
+# Filter Automation
 sleep 0.4 && $HOME/.config/hypr/scripts/sunset &
 
 # Sync
