@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Apps
-thunderbird &
-obsidian &
+# thunderbird &
+# obsidian &
 
 # Terminal Apps
 # kitty --class btop btop &

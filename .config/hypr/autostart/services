@@ -6,6 +6,8 @@ udiskie &
 # Wallpaper Backend
 hyprpaper &
 # swww-daemon --format xrgb &
+
+## Live Wallpaper
 # mpvpaper -f -p &
 # $HOME/.config/hypr/scripts/live_wallpaper &
 
@@ -41,9 +43,6 @@ $HOME/.config/hypr/scripts/portal &
 
 # Audio
 easyeffects --gapplication-service &
-
-# Keyboard
-#kanata -c ~/.config/kanata/config.kbd &
 
 # RGB
 openrgb --startminimized -p "Profile 1" &
