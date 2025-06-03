@@ -58,7 +58,7 @@ CHOICE=$(
 )
 
 if [ -z "$CHOICE" ]; then
-  exit 1
+  exit 0
 fi
 
 WALLPAPER="$WALLPAPER_DIR/$CHOICE"
