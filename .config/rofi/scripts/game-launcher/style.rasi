@@ -13,6 +13,7 @@ window {
   enabled:                    true;
   fullscreen:                 false;
   width:                      90%;
+  height:                     43%;
   transparency:               "real";
   cursor:                     "default";
   spacing:                    0px;
@@ -81,7 +82,7 @@ entry {
 // Lists
 listview {
   enabled:                    true;
-  columns:                    10;
+  columns:                    7;
   lines:                      1;
   spacing:                    30px;
   padding:                    20px 40px 40px 40px;

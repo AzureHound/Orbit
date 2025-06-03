@@ -1,40 +1,100 @@
 #!/usr/bin/env bash
-# Script taken out from here: https://github.com/prasanthrangan/hyprdots/blob/main/Configs/.config/hypr/scripts/gamelauncher.sh
 
-STEAM_LIB="$XDG_DATA_HOME/Steam/config/libraryfolders.vdf"
-STEAM_THUMB="$XDG_DATA_HOME/Steam/appcache/librarycache"
+# Steam paths
+XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+STEAM_DIR="$XDG_DATA_HOME/Steam"
+STEAM_LIB="$STEAM_DIR/config/libraryfolders.vdf"
+STEAM_THUMB="$STEAM_DIR/appcache/librarycache"
 
-if [ ! -f $STEAM_LIB ] || [ ! -d $STEAM_THUMB ]; then
-  notify-send "Steam Library Not Found!"
-fi
+# Try alt paths if needed
+if [ ! -f "$STEAM_LIB" ]; then
+  for alt_path in "$HOME/.steam/steam" "$HOME/.steam/root"; do
+    if [ -f "$alt_path/config/libraryfolders.vdf" ]; then
+      STEAM_DIR="$alt_path"
+      STEAM_LIB="$STEAM_DIR/config/libraryfolders.vdf"
+      STEAM_THUMB="$STEAM_DIR/appcache/librarycache"
+      break
+    fi
+  done
 
-# Check steam mount paths
-STEAM_PATHS=$(grep '"path"' "$STEAM_LIB" | awk -F '"' '{print $4}')
-MANIFEST_LIST=$(fd -t f -e acf appmanifest_ $STEAM_PATHS/steamapps/ 2>/dev/null)
-
-# Read intalled games
-GAME_LIST=$(echo "$MANIFEST_LIST" | while read acf; do
-  appid=$(grep '"appid"' $acf | cut -d '"' -f 4)
-  if [ -f ${STEAM_THUMB}/${appid}_library_600x900.jpg ]; then
-    game=$(grep '"name"' $acf | cut -d '"' -f 4)
-    echo "$game|$appid"
-  else
-    continue
+  if [ ! -f "$STEAM_LIB" ]; then
+    notify-send "Steam Library Not Found!" "Please ensure Steam is installed correctly."
+    exit 1
   fi
-done | sort)
-
-echo "$GAME_LIST"
-
-# Launch rofi menu
-ROFI_SEL=$(echo "$GAME_LIST" | while read acf; do
-  appid=$(echo $acf | cut -d '|' -f 2)
-  game=$(echo $acf | cut -d '|' -f 1)
-  echo -en "$game\x00icon\x1f${STEAM_THUMB}/${appid}_library_600x900.jpg\n"
-done | rofi -dmenu)
-
-# Launch game
-if [ ! -z "$ROFI_SEL" ]; then
-  LAUNCHID=$(echo "$GAME_LIST" | grep "$ROFI_SEL" | cut -d '|' -f 2)
-  steam -applaunch "${LAUNCHID}" &
-  notify-send "Launching ${ROFI_SEL}..." -i ${STEAM_THUMB}/${LAUNCHID}_library_600x900.jpg
 fi
+
+# Get library paths
+declare -A lib_paths
+lib_paths["$STEAM_DIR"]=1
+
+while IFS= read -r line; do
+  [[ "$line" =~ \"path\"[[:space:]]+\"(.+)\" ]] && lib_paths["${BASH_REMATCH[1]}"]=1
+done <"$STEAM_LIB"
+
+# Find manifest files
+MANIFEST_LIST=()
+for path in "${!lib_paths[@]}"; do
+  [ -d "$path/steamapps" ] &&
+    while IFS= read -r file; do
+      MANIFEST_LIST+=("$file")
+    done < <(find "$path/steamapps/" -type f -name "appmanifest_*.acf" 2>/dev/null)
+done
+
+# Temp file for Rofi
+TMP_FILE=$(mktemp)
+
+# Process games
+for acf in "${MANIFEST_LIST[@]}"; do
+  appid=$(grep '"appid"' "$acf" 2>/dev/null | head -1 | cut -d '"' -f 4)
+  game=$(grep '"name"' "$acf" 2>/dev/null | head -1 | cut -d '"' -f 4)
+
+  # Skip system apps
+  [[ "$game" == *"Proton"* || "$game" == *"Runtime"* || "$game" == *"Redistributable"* ]] && continue
+
+  # Find thumbnails
+  icon_path=""
+  for format in "library_600x900.jpg" "header.jpg" "library_hero.jpg" "capsule_616x353.jpg" "logo.png"; do
+    [ -f "${STEAM_THUMB}/${appid}_${format}" ] && icon_path="${STEAM_THUMB}/${appid}_${format}" && break
+  done
+
+  # Download missing thumbnails
+  if [ -z "$icon_path" ] && [ -n "$appid" ] && command -v curl &>/dev/null; then
+    download_path="${STEAM_THUMB}/${appid}_library_600x900.jpg"
+    curl -s "https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/library_600x900.jpg" -o "$download_path" 2>/dev/null
+    [ -f "$download_path" ] && [ -s "$download_path" ] && icon_path="$download_path"
+  fi
+
+  # Add to list - store ID directly with game name
+  if [ -n "$appid" ] && [ -n "$game" ]; then
+    # Store ID with name using simple separator
+    game_entry="$game | $appid"
+    if [ -n "$icon_path" ]; then
+      echo -e "$game_entry\0icon\x1f${icon_path}" >>"$TMP_FILE"
+    else
+      echo -e "$game_entry" >>"$TMP_FILE"
+    fi
+  fi
+done
+
+# Exit if no games
+[ ! -s "$TMP_FILE" ] && notify-send "No Steam games found" && rm -f "$TMP_FILE" && exit 1
+
+# Sort games
+sort "$TMP_FILE" -o "$TMP_FILE"
+
+# Show game selector
+GAME_SEL=$(cat "$TMP_FILE" | rofi -dmenu -i \
+  -theme "$HOME/.config/rofi/scripts/game-launcher/style.rasi" \
+  -p "Game Launcher")
+
+# Exit if no selection
+[ -z "$GAME_SEL" ] && rm -f "$TMP_FILE" && exit 0
+
+# Launch selected game
+APP_ID=$(echo "$GAME_SEL" | grep -o '| [0-9]*' | grep -o '[0-9]*')
+if [ -n "$APP_ID" ]; then
+  steam "steam://rungameid/$APP_ID" &
+fi
+
+# Cleanup
+rm -f "$TMP_FILE"
