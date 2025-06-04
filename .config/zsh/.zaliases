@@ -13,6 +13,7 @@ alias df='df -h'
 alias mkdir='mkdir -p'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
+alias lg='lazygit'
 alias glogs='git log --oneline --graph --all'
 # alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
 alias c='clear'
@@ -27,5 +28,5 @@ alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"
 alias powertop='sudo powertop'
 alias preview='kitten icat'
 alias v='nvim'
-alias words='tt -theme ~/.tt/Catppuccin-Macchiato'
+alias words="tt -theme '$HOME/.tt/Catppuccin-Macchiato'"
 alias zed='zeditor'

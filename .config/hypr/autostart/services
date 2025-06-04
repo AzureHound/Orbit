@@ -10,6 +10,9 @@ udiskie &
 hyprpaper &
 # swww-daemon --format xrgb &
 
+# Random Wallpaper
+sleep 0.4 && $HOME/.config/hypr/scripts/random_wallpaper &
+
 ## Live Wallpaper
 # mpvpaper -f -p &
 # $HOME/.config/hypr/scripts/live_wallpaper &
@@ -25,6 +28,9 @@ swayosd-server &
 
 # Filter
 hyprsunset &
+
+# Filter Automation
+sleep 0.4 && $HOME/.config/hypr/scripts/sunset &
 
 # Notify connecting & disconnecting devices
 # devify &
@@ -49,12 +55,6 @@ easyeffects --gapplication-service &
 
 # RGB
 openrgb --startminimized -p "Profile 1" &
-
-# Random Wallpaper
-sleep 0.4 && $HOME/.config/hypr/scripts/random_wallpaper &
-
-# Filter Automation
-sleep 0.4 && $HOME/.config/hypr/scripts/sunset &
 
 # Sync
 syncthing -no-browser &
