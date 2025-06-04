@@ -62,6 +62,9 @@ docker
 # Spotify
 .config/spotify
 
+# TT
+.tt/.errors
+
 # VSCodium
 .config/VSCodium
 !.config/VSCodium/User/extensions.txt
