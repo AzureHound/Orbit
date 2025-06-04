@@ -42,6 +42,7 @@ done
 
 # Temp file for Rofi
 TMP_FILE=$(mktemp)
+ID_FILE=$(mktemp)
 
 # Process games
 for acf in "${MANIFEST_LIST[@]}"; do
@@ -64,23 +65,23 @@ for acf in "${MANIFEST_LIST[@]}"; do
     [ -f "$download_path" ] && [ -s "$download_path" ] && icon_path="$download_path"
   fi
 
-  # Add to list - store ID directly with game name
+  # Add to list - store only game name for display
   if [ -n "$appid" ] && [ -n "$game" ]; then
-    # Store ID with name using simple separator
-    game_entry="$game | $appid"
     if [ -n "$icon_path" ]; then
-      echo -e "$game_entry\0icon\x1f${icon_path}" >>"$TMP_FILE"
+      echo -e "$game\0icon\x1f${icon_path}" >>"$TMP_FILE"
     else
-      echo -e "$game_entry" >>"$TMP_FILE"
+      echo -e "$game" >>"$TMP_FILE"
     fi
+    # Store ID in separate file at same line position
+    echo "$appid" >>"$ID_FILE"
   fi
 done
 
 # Exit if no games
-[ ! -s "$TMP_FILE" ] && notify-send "No Steam games found" && rm -f "$TMP_FILE" && exit 1
+[ ! -s "$TMP_FILE" ] && notify-send "No Steam games found" && rm -f "$TMP_FILE" "$ID_FILE" && exit 1
 
-# Sort games
-sort "$TMP_FILE" -o "$TMP_FILE"
+# Sort games and keep IDs in sync
+paste "$TMP_FILE" "$ID_FILE" | sort -k1,1 | awk -F'\t' '{print $1 > "'$TMP_FILE'"; print $2 > "'$ID_FILE'"}'
 
 # Show game selector
 GAME_SEL=$(cat "$TMP_FILE" | rofi -dmenu -i \
@@ -88,13 +89,17 @@ GAME_SEL=$(cat "$TMP_FILE" | rofi -dmenu -i \
   -p "Game Launcher")
 
 # Exit if no selection
-[ -z "$GAME_SEL" ] && rm -f "$TMP_FILE" && exit 0
+[ -z "$GAME_SEL" ] && rm -f "$TMP_FILE" "$ID_FILE" && exit 0
 
-# Launch selected game
-APP_ID=$(echo "$GAME_SEL" | grep -o '| [0-9]*' | grep -o '[0-9]*')
+# Find the selected line number
+LINE_NUM=$(grep -n "^$GAME_SEL" "$TMP_FILE" | cut -d: -f1)
+
+# Get app ID from the same line in the ID file
+APP_ID=$(sed -n "${LINE_NUM}p" "$ID_FILE")
+
 if [ -n "$APP_ID" ]; then
   steam "steam://rungameid/$APP_ID" &
 fi
 
 # Cleanup
-rm -f "$TMP_FILE"
+rm -f "$TMP_FILE" "$ID_FILE"
