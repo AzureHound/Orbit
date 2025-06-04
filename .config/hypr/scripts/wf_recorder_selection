@@ -26,7 +26,7 @@ fi
 
 # Countdown notifications
 for i in {3..1}; do
-  notify-send -i "$HOME/.icons/scalable/devices/computer.svg" -h string:wf-recorder:record -t 1000 "Recording in:" \
+  notify-send -i "/usr/share/icons/Adwaita/scalable/devices/computer.svg" -h string:wf-recorder:record -t 1000 "Recording in:" \
     "<span color='#90a4f4' font='26px'><i><b>$i</b></i></span>"
   sleep 1
 done
@@ -55,7 +55,7 @@ send_notification() {
   local message="Recording Captured"$'\n'"$(echo "Video saved in $outputFile" | fold -s -w 70)"
 
   # Show notification with clickable actions
-  action=$(notify-send -i "$HOME/.icons/scalable/mimetypes/video-x-generic.svg" -u normal -a "Screen Recorder" "$message" \
+  action=$(notify-send -i "/usr/share/icons/Adwaita/scalable/mimetypes/video-x-generic.svg" -u normal -a "Screen Recorder" "$message" \
     --action="view=View File" \
     --action="folder=Open on Folder" \
     -t 5000)
