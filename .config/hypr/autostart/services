@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+# █▀ █▀▀ █▀█ █ █ █ █▀▀ █▀▀ █▀
+# ▄█ ██▄ █▀▄ ▀▄▀ █ █▄▄ ██▄ ▄█
+
 # Removable Media Automounter
 udiskie &
 
-# Wallpaper Backend
+# Wallpaper
 hyprpaper &
 # swww-daemon --format xrgb &
 
@@ -23,7 +26,7 @@ swayosd-server &
 # Filter
 hyprsunset &
 
-# Notify about devices connecting and disconnecting
+# Notify connecting & disconnecting devices
 # devify &
 
 # Screen Lock Idle Daemon

@@ -1,3 +1,6 @@
+# █▀█ █▄█ █▀█ █▀█ █   ▄▀█ █▄ █ █▀▄
+# █▀▀  █  █▀▀ █▀▄ █▄▄ █▀█ █ ▀█ █▄▀
+
 [pyprland]
 plugins = ["scratchpads", "magnify"]
 
@@ -106,7 +109,6 @@ lazy = true
 
 [scratchpads.tty]
 command = "kitty --class scratchpad-mini tty-clock -SscC1b -f '%a, %d %b'"
-# command = "kitty --class scratchpad-mini tty-clock -SscC1b"
 unfocus = "hide"
 hysteresis = 0.1
 lazy = true
@@ -133,7 +135,7 @@ lazy = true
 
 [wallpapers]
 path = "$HOME/Developer/repos/Wallpapers/"
-interval = 10 # minutes
+interval = 10 # Minutes
 command = "swww img --transition-bezier 0.5,1.19,.8,.4 --transition-type wipe --transition-duration 2 --transition-fps 30 \"[file]\""
 clear_command = "swww clear"
 extensions = ["jpg", "png", "gif", "jpeg", "webp"]
