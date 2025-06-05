@@ -1,56 +1,76 @@
 #!/usr/bin/env bash
 
-# Colors
-YELLOW="\e[33m"
-BLUE="\e[34m"
-GREEN="\e[32m"
-CYAN="\e[36m"
-BRCYAN="\e[96m"
-RED="\e[31m"
+# Catppuccin Macchiato
+ROSEWATER="\e[38;2;244;219;214m" # #f4dbd6
+FLAMINGO="\e[38;2;240;198;198m"  # #f0c6c6
+PINK="\e[38;2;245;189;230m"      # #f5bde6
+MAUVE="\e[38;2;198;160;246m"     # #c6a0f6
+RED="\e[38;2;237;135;150m"       # #ed8796
+MAROON="\e[38;2;238;153;160m"    # #ee99a0
+PEACH="\e[38;2;245;169;127m"     # #f5a97f
+YELLOW="\e[38;2;238;212;159m"    # #eed49f
+GREEN="\e[38;2;166;218;149m"     # #a6da95
+TEAL="\e[38;2;139;213;202m"      # #8bd5ca
+SKY="\e[38;2;145;215;227m"       # #91d7e3
+SAPPHIRE="\e[38;2;125;196;228m"  # #7dc4e4
+BLUE="\e[38;2;138;173;244m"      # #8aadf4
+LAVENDER="\e[38;2;183;189;248m"  # #b7bdf8
+TEXT="\e[38;2;202;211;245m"      # #cad3f5
+SUBTEXT1="\e[38;2;184;192;224m"  # #b8c0e0
+SUBTEXT0="\e[38;2;165;173;203m"  # #a5adcb
+OVERLAY2="\e[38;2;147;154;183m"  # #939ab7
+OVERLAY1="\e[38;2;128;135;162m"  # #8087a2
+OVERLAY0="\e[38;2;110;115;141m"  # #6e738d
+SURFACE2="\e[38;2;91;96;120m"    # #5b6078
+SURFACE1="\e[38;2;73;77;100m"    # #494d64
+SURFACE0="\e[38;2;54;58;79m"     # #363a4f
+BASE="\e[38;2;36;39;58m"         # #24273a
+MANTLE="\e[38;2;30;32;48m"       # #1e2030
+CRUST="\e[38;2;24;25;38m"        # #181926
 RESET="\e[0m"
 
 start_time=$(date +%s)
 
-echo -e "\n${YELLOW}Yay ${BLUE}󰐱 ${RESET}\n"
+echo -e "\n${OVERLAY2}Yay ${BLUE}󰐱 ${RESET}\n"
 yay -Syu
 yay -Qeq >$HOME/.config/pacman/pkgs.txt
-yay -Scc
+yay -Sc
 
-echo -e "\n${YELLOW}Pacman ${GREEN}󰮯 ${RESET}\n"
+echo -e "\n${OVERLAY2}Pacman ${SKY}󰮯 ${RESET}\n"
 # sudo pacman -Syu
 deleteOrphans
 
-echo -e "\n${YELLOW}Homebrew 🍺${RESET}\n"
+echo -e "\n${OVERLAY2}Homebrew ${YELLOW} ${RESET}\n"
 brew update
 brew upgrade
 brew autoremove
 brew bundle dump --force --file=$HOME/.config/brew/Brewfile
 
-echo -e "\n${YELLOW}Flatpak 󰏖 ${BRCYAN} ${RESET}\n"
+echo -e "\n${OVERLAY2}Flatpak ${LAVENDER}󰏖 ${RESET}\n"
 flatpak update
 flatpak uninstall --unused
 flatpak list --columns=application >$HOME/.config/flatpak/flatpaks.txt
 
-echo -e "\n${YELLOW}Hyprland  ${BLUE} ${RESET}\n"
+echo -e "\n${OVERLAY2}Hyprland ${BLUE} ${RESET}\n"
 hyprpm update
 
-echo -e "\n${YELLOW}Fisher 🐠${RESET}\n"
+echo -e "\n${OVERLAY2}Fisher ${SAPPHIRE}󰈺 ${RESET}\n"
 fish -c "fisher update"
 fish -c "fish_update_completions"
 
-echo -e "\n${YELLOW}Zinit ${GREEN}󱐋 ${RESET}\n"
+echo -e "\n${OVERLAY2}Zinit ${GREEN}󱐋 ${RESET}\n"
 zsh -i -c 'zinit self-update && zinit update'
 
-echo -e "\n${YELLOW}Yazi 📁${RESET}\n"
+echo -e "\n${OVERLAY2}Yazi ${YELLOW} ${RESET}\n"
 ya pkg upgrade
 
-echo -e "\n${BLUE}Pipx  ${RESET}\n"
+echo -e "\n${OVERLAY2}Pipx ${GREEN} ${RESET}\n"
 pipx upgrade-all
 
-echo -e "\n${GREEN}gh  ${RESET}\n"
+echo -e "\n${OVERLAY2}gh ${SUBTEXT1} ${RESET}\n"
 gh extension upgrade --all
 
-echo -e "\n${GREEN}Spicetify  ${RESET}\n"
+echo -e "\n${OVERLAY2}Spicetify ${GREEN} ${RESET}\n"
 spicetify update
 
 end_time=$(date +%s)
@@ -58,7 +78,7 @@ duration=$((end_time - start_time))
 minutes=$((duration / 60))
 seconds=$((duration % 60))
 
-echo -e "\n${CYAN}System Upgraded & Backed Up 👍${RESET}"
+echo -e "\n${OVERLAY2}System Upgraded & Backed Up 👍${RESET}"
 if [ $minutes -eq 0 ]; then
   echo -e "${RED}Took $seconds sec${RESET}"
 else
