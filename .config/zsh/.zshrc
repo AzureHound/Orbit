@@ -40,6 +40,7 @@ bindkey '^[\' zsh_gh_copilot_suggest
 bindkey '^[[B' history-search-forward
 bindkey '^[[A' history-search-backward
 bindkey '^[w' kill-region
+bindkey '^Z' undo
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
