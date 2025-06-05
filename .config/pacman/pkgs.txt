@@ -19,6 +19,7 @@ bluetui
 bluez
 bluez-utils
 bottles
+brave-bin
 bridge-utils
 btop
 btrfs-progs
