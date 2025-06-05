@@ -35,8 +35,10 @@ echo -e "\n${OVERLAY2}Yay ${BLUE}󰐱 ${RESET}\n"
 yay -Syu
 yay -Sc
 
-# echo -e "\n${OVERLAY2}Pacman ${SKY}󰮯 ${RESET}\n"
+echo -e "\n${OVERLAY2}Pacman ${SKY}󰮯 ${RESET}\n"
 # sudo pacman -Syu
+deleteOrphans
+pacman -Qme | awk '{ print $1 }' >/home/eyes/.config/yay/pkgs.txt && pacman -Qne | awk '{ print $1 }' >/home/eyes/.config/pacman/pkgs.txt
 
 echo -e "\n${OVERLAY2}Homebrew ${YELLOW} ${RESET}\n"
 brew update
