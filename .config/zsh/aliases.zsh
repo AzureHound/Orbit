@@ -29,5 +29,5 @@ alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"
 alias powertop='sudo powertop'
 alias preview='kitten icat'
 alias v='nvim'
-alias words="tt -theme '$HOME/.config/tt/Catppuccin-Macchiato'"
+alias tt="tt -theme '$HOME/.config/tt/Catppuccin-Macchiato'"
 alias zed='zeditor'
