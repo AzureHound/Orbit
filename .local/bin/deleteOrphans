@@ -1,2 +1,13 @@
 #!/usr/bin/env bash
-pacman -Qtdq >/dev/null && sudo pacman -Qtdq | sudo pacman -Rns -
+
+# Store the list of orphaned packages
+ORPHANS=$(pacman -Qtdq)
+
+# Check if there are any orphaned packages
+if [[ -n "$ORPHANS" ]]; then
+  echo "=> Orphaned packages found:"
+  # Display detailed information about each package
+  pacman -Qi $(echo $ORPHANS)
+else
+  echo "=> No orphans found."
+fi
