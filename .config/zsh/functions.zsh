@@ -1,11 +1,12 @@
 #!/usr/bin/env zsh
 
-# Exiting vim/neovim cursor
+# Exiting vim cursor
 function vim() {
   command vim "$@"
   echo -ne '\e[5 q'
 }
 
+# Exiting neovim cursor
 function nvim() {
   command nvim "$@"
   echo -ne '\e[5 q'

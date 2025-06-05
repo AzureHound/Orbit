@@ -38,6 +38,3 @@ zstyle ':fzf-tab:*' fzf-flags  '--pointer='\
                           '--color=selected-bg:#494d64'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -a -1 --show-symlinks --git-ignore --icons --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -a -1 --show-symlinks --git-ignore --icons --color=always $realpath'
-
-# Zinit Load
-# (( ${+_comps} )) && _comps[zinit]=_zinit
