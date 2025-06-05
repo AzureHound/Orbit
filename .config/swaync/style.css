@@ -1,12 +1,12 @@
-@define-color cc-bg rgba(0, 0, 0, 1);
-@define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg #24273a;
-@define-color noti-bg-darker #363a4f;
-@define-color noti-bg-hover rgb(27, 27, 43);
-@define-color noti-bg-focus rgba(27, 27, 27, 0.6);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-@define-color text-color #cad3f5;
+/* @define-color cc-bg rgba(0, 0, 0, 1); */
+/* @define-color noti-border-color rgba(255, 255, 255, 0.15); */
+/* @define-color noti-bg #24273a; */
+/* @define-color noti-bg-darker #363a4f; */
+/* @define-color noti-bg-hover rgb(27, 27, 43); */
+/* @define-color noti-bg-focus rgba(27, 27, 27, 0.6); */
+/* @define-color noti-close-bg rgba(255, 255, 255, 0.1); */
+/* @define-color noti-close-bg-hover rgba(255, 255, 255, 0.15); */
+/* @define-color text-color #cad3f5; */
 
 * {
   all: unset;
@@ -15,11 +15,30 @@
   transition: 200ms;
 }
 
+.widget-dnd {
+  margin: 5px;
+  font-size: 1.1rem;
+}
+
+.widget-dnd > switch {
+  font-size: initial;
+  border-radius: 5px;
+  background: #363a4f;
+}
+
+.widget-dnd > switch:checked {
+  background: #363a4f;
+}
+
+.widget-dnd > switch slider {
+  background: #1e1d2e;
+  border-radius: 5px;
+}
+
 .widget-mpris {
   background: linear-gradient(to right, #363a4f, rgba(183, 189, 248, 0.3));
-
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 .widget-mpris-player {
@@ -28,12 +47,26 @@
 }
 
 .widget-mpris-title {
-  font-weight: 700;
-  font-size: 1.25rem;
+  font-weight: 600;
+  font-size: 0.98rem;
 }
 
 .widget-mpris-subtitle {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
+}
+
+.widget-mpris {
+  padding: 5px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.widget-mpris > box {
+  padding: 0px;
+  margin: 1px 1px -14px 1px;
+  padding: 0px;
+  border-radius: 6px;
+  background: alpha(#181825, 0.2);
 }
 
 .widget-buttons-grid {
@@ -159,7 +192,7 @@
   > *
   .notification-action:active {
   box-shadow: inset 0 0 0 1px #494d64;
-  background-color: #7dc4e4;
+  background-color: #eed49f;
   color: #cad3f5;
 }
 
@@ -203,6 +236,7 @@
 }
 
 .control-center .widget-title {
+  margin: 8px;
   color: #cad3f5;
   font-size: 1.3em;
 }
@@ -223,7 +257,7 @@
 
 .control-center .widget-title button:active {
   box-shadow: inset 0 0 0 1px #494d64;
-  background-color: #7dc4e4;
+  background-color: #eed49f;
   color: #24273a;
 }
 
@@ -325,7 +359,7 @@
   > *
   .notification-action:active {
   box-shadow: inset 0 0 0 1px #494d64;
-  background-color: #7dc4e4;
+  background-color: #eed49f;
   color: #cad3f5;
 }
 
@@ -358,7 +392,7 @@
 
 .control-center .notification-row .notification-background:active {
   box-shadow: inset 0 0 0 1px #494d64;
-  background-color: #7dc4e4;
+  background-color: #eed49f;
   color: #cad3f5;
 }
 
@@ -368,10 +402,8 @@
   .notification-default-action
   .notification-content
   .image {
-  /* Notification Primary Image */
   -gtk-icon-effect: none;
-  border-radius: 10px;
-  /* Size in px */
+  border-radius: 6px;
   margin: 4px;
   margin-right: 20px;
 }
