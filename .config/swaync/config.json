@@ -21,14 +21,14 @@
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
   "transition-time": 200,
-  "hide-on-clear": false,
+  "hide-on-clear": true,
   "hide-on-action": true,
-  "widgets": ["title", "dnd", "notifications", "mpris"],
+  "widgets": ["title", "buttons-grid", "dnd", "notifications", "mpris"],
   "widget-config": {
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear"
+      "button-text": " 󰎟 "
     },
     "dnd": {
       "text": "Do Not Disturb"
@@ -41,6 +41,46 @@
       "image-size": 96,
       "image-radius": 6,
       "blur": false
+    },
+    "_volume": {
+      "label": "󰕾",
+      "show-per-app": true
+    },
+    "_buttons-grid": {
+      "actions": [
+        {
+          "label": "󰐥",
+          "command": ""
+        },
+        {
+          "label": "󰜉",
+          "command": ""
+        },
+        {
+          "label": "󰌾",
+          "command": "hyprlock"
+        },
+        {
+          "label": "󰍃",
+          "command": ""
+        },
+        {
+          "label": "󰏥",
+          "command": ""
+        },
+        {
+          "label": "󰛳",
+          "command": ""
+        },
+        {
+          "label": "󰂯",
+          "command": ""
+        },
+        {
+          "label": "",
+          "command": ""
+        }
+      ]
     }
   }
 }
