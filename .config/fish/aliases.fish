@@ -26,5 +26,5 @@ alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"
 alias powertop='sudo powertop'
 alias private='fish -P'
 alias preview='kitten icat'
-alias words="tt -theme '$HOME/.tt/Catppuccin-Macchiato'"
+alias words="tt -theme '$HOME/.config/tt/Catppuccin-Macchiato'"
 alias zed='zeditor'
