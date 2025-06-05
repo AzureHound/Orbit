@@ -39,6 +39,8 @@ dkms
 dnsmasq
 docker
 docker-compose
+dooit
+dooit-extras
 dua-cli
 duf
 easyeffects
@@ -90,7 +92,6 @@ iwd
 jelly
 jftui
 jq
-kanata
 keepassxc
 keyb
 kitty
@@ -159,6 +160,7 @@ polkit-kde-agent
 portal-bin
 powertop
 presenterm
+proton-ge-custom-bin
 pyprland
 python-pipx
 qemu-full
