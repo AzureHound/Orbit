@@ -33,12 +33,10 @@ start_time=$(date +%s)
 
 echo -e "\n${OVERLAY2}Yay ${BLUE}󰐱 ${RESET}\n"
 yay -Syu
-yay -Qeq >$HOME/.config/pacman/pkgs.txt
 yay -Sc
 
-echo -e "\n${OVERLAY2}Pacman ${SKY}󰮯 ${RESET}\n"
+# echo -e "\n${OVERLAY2}Pacman ${SKY}󰮯 ${RESET}\n"
 # sudo pacman -Syu
-deleteOrphans
 
 echo -e "\n${OVERLAY2}Homebrew ${YELLOW} ${RESET}\n"
 brew update
