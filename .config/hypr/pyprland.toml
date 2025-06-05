@@ -96,7 +96,7 @@ hysteresis = 0.1
 lazy = true
 
 [scratchpads.tt]
-command = "kitty --class scratchpad-large tt -theme $HOME/.tt/Catppuccin-Macchiato"
+command = "kitty --class scratchpad-large tt -theme $HOME/.config/tt/Catppuccin-Macchiato"
 unfocus = "hide"
 hysteresis = 0.1
 lazy = true
