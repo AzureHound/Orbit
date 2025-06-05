@@ -52,15 +52,31 @@ for acf in "${MANIFEST_LIST[@]}"; do
   # Skip system apps
   [[ "$game" == *"Proton"* || "$game" == *"Runtime"* || "$game" == *"Redistributable"* ]] && continue
 
-  # Find thumbnails
+  # Find thumbnails - first check hierarchical structure
   icon_path=""
-  for format in "library_600x900.jpg" "header.jpg" "library_hero.jpg" "capsule_616x353.jpg" "logo.png"; do
-    [ -f "${STEAM_THUMB}/${appid}_${format}" ] && icon_path="${STEAM_THUMB}/${appid}_${format}" && break
-  done
+  game_thumb_dir="${STEAM_THUMB}/${appid}"
+
+  # Check hierarchical structure first (newer Steam versions)
+  if [ -d "$game_thumb_dir" ]; then
+    for format in "library_600x900.jpg" "header.jpg" "library_hero.jpg" "capsule_616x353.jpg" "logo.png"; do
+      [ -f "${game_thumb_dir}/${format}" ] && icon_path="${game_thumb_dir}/${format}" && break
+    done
+  fi
+
+  # Fallback to flat structure if needed (older Steam versions)
+  if [ -z "$icon_path" ]; then
+    for format in "library_600x900.jpg" "header.jpg" "library_hero.jpg" "capsule_616x353.jpg" "logo.png"; do
+      [ -f "${STEAM_THUMB}/${appid}_${format}" ] && icon_path="${STEAM_THUMB}/${appid}_${format}" && break
+    done
+  fi
 
   # Download missing thumbnails
   if [ -z "$icon_path" ] && [ -n "$appid" ] && command -v curl &>/dev/null; then
-    download_path="${STEAM_THUMB}/${appid}_library_600x900.jpg"
+    # Create directory for hierarchical structure if it doesn't exist
+    mkdir -p "${game_thumb_dir}" 2>/dev/null
+
+    # Download to the hierarchical location
+    download_path="${game_thumb_dir}/library_600x900.jpg"
     curl -s "https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/library_600x900.jpg" -o "$download_path" 2>/dev/null
     [ -f "$download_path" ] && [ -s "$download_path" ] && icon_path="$download_path"
   fi
