@@ -1,0 +1,41 @@
+window {
+  padding: 0;
+  border-radius: 10px;
+  border: solid 1px #b7bdf8;
+  background: alpha(#b7bdf8, 0.75);
+}
+
+container {
+  margin: 10px;
+}
+
+image,
+label {
+  color: #eed49f;
+}
+
+progressbar:disabled,
+image:disabled {
+  opacity: 0;
+}
+
+progressbar {
+  min-height: 5px;
+  /* border-radius: 999px; */
+  /* background: transparent; */
+  border: none;
+}
+
+trough {
+  min-height: inherit;
+  /* border-radius: inherit; */
+  /* border: none; */
+  background: alpha(#b7bdf8, 0.5);
+}
+
+progress {
+  min-height: inherit;
+  /* border-radius: inherit; */
+  /* border: none; */
+  background: #b7bdf8;
+}
