@@ -20,6 +20,9 @@ sleep 0.4 && $HOME/.config/hypr/scripts/random_wallpaper &
 # Pyprland Daemon
 pypr --debug /tmp/pypr.log &
 
+# Bar
+# waybar &
+
 # Notification Daemon
 swaync &
 
