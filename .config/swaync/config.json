@@ -49,11 +49,11 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": "󰐥",
+          "label": "",
           "command": ""
         },
         {
-          "label": "󰜉",
+          "label": "",
           "command": ""
         },
         {
@@ -61,15 +61,15 @@
           "command": "hyprlock"
         },
         {
-          "label": "󰍃",
+          "label": "",
           "command": ""
         },
         {
-          "label": "󰏥",
+          "label": "",
           "command": ""
         },
         {
-          "label": "󰛳",
+          "label": "󰈀",
           "command": ""
         },
         {
