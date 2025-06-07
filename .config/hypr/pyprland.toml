@@ -12,7 +12,7 @@ lazy = true
 command = "kitty --class scratchpad-larger asciiquarium -t"
 lazy = true
 
-[scratchpads.bluetui]
+[scratchpads.bluetooth]
 command = "kitty --class scratchpad bluetui"
 unfocus = "hide"
 hysteresis = 0.1
