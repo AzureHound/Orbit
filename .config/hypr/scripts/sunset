@@ -1,57 +1,98 @@
 #!/usr/bin/env bash
 
-# Hypr sunset daemon - adjusts screen temperature throughout the day
-# Temperature settings in Kelvin (lower=warmer/orange, higher=cooler/blue)
-TEMP_00_00=2700
-TEMP_00_30=2700
-TEMP_01_00=2700
-TEMP_01_30=2800
-TEMP_02_00=2800
-TEMP_02_30=2800
-TEMP_03_00=2900
-TEMP_03_30=3000
-TEMP_04_00=3200
-TEMP_04_30=3400
-TEMP_05_00=3600
-TEMP_05_30=4000
-TEMP_06_00=4200
-TEMP_06_30=4600
-TEMP_07_00=5000
-TEMP_07_30=5400
-TEMP_08_00=5700
-TEMP_08_30=6000
-TEMP_09_00=6300
-TEMP_09_30=6500
-TEMP_10_00=6500
-TEMP_10_30=6400
-TEMP_11_00=6500
-TEMP_11_30=6600
-TEMP_12_00=6600
-TEMP_12_30=6500
-TEMP_13_00=6400
-TEMP_13_30=6300
-TEMP_14_00=6200
-TEMP_14_30=6100
-TEMP_15_00=6000
-TEMP_15_30=5800
-TEMP_16_00=5600
-TEMP_16_30=5300
-TEMP_17_00=4900
-TEMP_17_30=4500
-TEMP_18_00=4200
-TEMP_18_30=3900
-TEMP_19_00=3600
-TEMP_19_30=3400
-TEMP_20_00=3200
-TEMP_20_30=3000
-TEMP_21_00=2900
-TEMP_21_30=2800
-TEMP_22_00=2800
-TEMP_22_30=2700
-TEMP_23_00=2700
-TEMP_23_30=2700
+# Hypr sunset daemon - adjusts screen temperature every 20 minutes
+# Temperature in Kelvin (lower=warmer/orange, higher=cooler/blue)
 
-# Reset temperature on exit
+# Early morning
+TEMP_00_00=2700
+TEMP_00_20=2700
+TEMP_00_40=2700
+TEMP_01_00=2700
+TEMP_01_20=2700
+TEMP_01_40=2700
+TEMP_02_00=2750
+TEMP_02_20=2750
+TEMP_02_40=2800
+TEMP_03_00=2800
+TEMP_03_20=2850
+TEMP_03_40=2900
+
+# Sunrise period
+TEMP_04_00=3000
+TEMP_04_20=3200
+TEMP_04_40=3400
+TEMP_05_00=3700
+TEMP_05_20=4000
+TEMP_05_40=4400
+TEMP_06_00=4800
+TEMP_06_20=5200
+TEMP_06_40=5500
+
+# Morning
+TEMP_07_00=5800
+TEMP_07_20=6000
+TEMP_07_40=6200
+TEMP_08_00=6300
+TEMP_08_20=6400
+TEMP_08_40=6500
+
+# Daytime
+TEMP_09_00=6600
+TEMP_09_20=6650
+TEMP_09_40=6700
+TEMP_10_00=6750
+TEMP_10_20=6800
+TEMP_10_40=6800
+TEMP_11_00=6800
+TEMP_11_20=6800
+TEMP_11_40=6800
+TEMP_12_00=6800
+TEMP_12_20=6800
+TEMP_12_40=6800
+TEMP_13_00=6800
+TEMP_13_20=6750
+TEMP_13_40=6700
+
+# Afternoon
+TEMP_14_00=6650
+TEMP_14_20=6600
+TEMP_14_40=6500
+TEMP_15_00=6400
+TEMP_15_20=6300
+TEMP_15_40=6100
+TEMP_16_00=5900
+TEMP_16_20=5700
+TEMP_16_40=5500
+
+# Evening
+TEMP_17_00=5200
+TEMP_17_20=4900
+TEMP_17_40=4600
+TEMP_18_00=4300
+TEMP_18_20=4000
+TEMP_18_40=3800
+TEMP_19_00=3600
+TEMP_19_20=3400
+TEMP_19_40=3200
+
+# Night
+TEMP_20_00=3100
+TEMP_20_20=3000
+TEMP_20_40=2900
+TEMP_21_00=2850
+TEMP_21_20=2800
+TEMP_21_40=2750
+TEMP_22_00=2700
+TEMP_22_20=2700
+TEMP_22_40=2700
+TEMP_23_00=2700
+TEMP_23_20=2700
+TEMP_23_40=2700
+
+# Cache for efficiency
+LAST_TEMP=""
+
+# Reset on exit
 cleanup() {
   hyprctl hyprsunset temperature 6500 2>/dev/null
   exit 0
@@ -59,33 +100,45 @@ cleanup() {
 
 trap cleanup SIGINT SIGTERM
 
-# Calculate seconds until next 30-min interval
+# Calculate wait time until next 20-min interval
 calculate_next_check() {
   current_minute=$(date +%M)
   current_second=$(date +%S)
 
-  if [ $current_minute -lt 30 ]; then
-    echo $(((30 - current_minute) * 60 - current_second))
+  if [ $current_minute -lt 20 ]; then
+    target=20
+  elif [ $current_minute -lt 40 ]; then
+    target=40
   else
-    echo $(((60 - current_minute) * 60 - current_second))
+    target=60
   fi
+
+  wait_seconds=$(((target - current_minute) * 60 - current_second))
+  echo $wait_seconds
 }
 
-# Set temperature based on time
+# Update temperature based on time
 update_temperature() {
   current_hour=$(date +%H)
   current_minute=$(date +%M)
-  hour_key="$current_hour"
-  minute_key=$([ $current_minute -lt 30 ] && echo "00" || echo "30")
 
-  var_name="TEMP_${hour_key}_${minute_key}"
-  temp_value=${!var_name:-6500} # Default to 6500K if not defined
+  if [ $current_minute -lt 20 ]; then
+    minute_key="00"
+  elif [ $current_minute -lt 40 ]; then
+    minute_key="20"
+  else
+    minute_key="40"
+  fi
 
-  hyprctl hyprsunset temperature $temp_value 2>/dev/null || exit 1
+  var_name="TEMP_${current_hour}_${minute_key}"
+  temp_value=${!var_name:-6500}
+
+  # Only update if temperature changed
+  if [ "$LAST_TEMP" != "$temp_value" ]; then
+    hyprctl hyprsunset temperature $temp_value 2>/dev/null
+    LAST_TEMP=$temp_value
+  fi
 }
-
-# Check for required command
-command -v hyprctl >/dev/null 2>&1 || exit 1
 
 # Main loop
 while true; do
