@@ -53,6 +53,8 @@ flatpak list --columns=application >$HOME/.config/flatpak/flatpaks.txt
 
 echo -e "\n${OVERLAY2}Hyprland ${BLUE} ${RESET}\n"
 hyprpm update
+pypr reload
+hyprctl reload
 
 echo -e "\n${OVERLAY2}Fisher ${SAPPHIRE}󰈺 ${RESET}\n"
 fish -c "fisher update"
@@ -72,6 +74,11 @@ gh extension upgrade --all
 
 echo -e "\n${OVERLAY2}Spicetify ${GREEN} ${RESET}\n"
 spicetify update
+
+echo -e "\n${OVERLAY2}Submodules ${TEAL} ${RESET}\n"
+cd ~/Developer/repos/Orbit
+and git submodule update --init --recursive
+cd ~
 
 end_time=$(date +%s)
 duration=$((end_time - start_time))
