@@ -1,4 +1,4 @@
-source ${ZDOTDIR}/environment.zsh
+source ${ZDOTDIR}/env.zsh
 source ${ZDOTDIR}/zinit.zsh
 source ${ZDOTDIR}/compinit.zsh
 source ${ZDOTDIR}/history.zsh
