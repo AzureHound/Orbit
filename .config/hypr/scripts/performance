@@ -2,7 +2,18 @@
 
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
 
-# Hyprland performance
+# Waybar
+# FILE="$HOME/.config/waybar/style.css"
+
+# sed -i 's/\/\* \(.*animation:.*\) \*\//\1/g' $FILE
+# if [ "$HYPRGAMEMODE" = 1 ]; then
+#         sed -i 's/^\(.*animation:.*\)$/\/\* \1 \*\//g' $FILE
+# fi
+
+killall waybar
+waybar >/dev/null 2>&1 &
+
+# Hyprland
 if [ "$HYPRGAMEMODE" = 1 ]; then
   hyprctl --batch "\
         keyword animations:enabled 0;\
@@ -13,8 +24,9 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword general:border_size 1;\
         keyword decoration:rounding 0"
 
-  swww kill
+  # swww kill
   exit
 fi
 
-hyprctl reload && swww-daemon --format xrgb >/dev/null 2>&1 &
+# hyprctl reload && swww-daemon --format xrgb >/dev/null 2>&1 &
+hyprctl reload >/dev/null 2>&1 &
