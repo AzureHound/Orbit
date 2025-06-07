@@ -3,21 +3,27 @@
   "custom/arch": {
     "format": "󰣇",
     "on-click": "rofi -show drun -theme ~/.config/rofi/config.rasi",
+    "tooltip": false,
   },
   "cpu": {
     "interval": 10,
     "format": "<span color=\"#f38ba8\"></span>  {}%",
     "max-length": 10,
+    "on-click": "pypr toggle btop",
+    "tooltip": false,
   },
   "memory": {
     "interval": 30,
     "format": "<span color=\"#89b4fa\"> </span> {used} GiB",
+    "on-click": "pypr toggle btop",
+    "tooltip": false,
   },
   "disk": {
     "interval": 30,
     "format": "<span color=\"#f9e2af\"> </span> {specific_used:0.2f} GB",
     //"path": "/",
     "unit": "GB",
+    "tooltip": false,
   },
   "mpris": {
     "interval": 0,
@@ -32,14 +38,9 @@
     "on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
     "smooth-scrolling-threshold": 1,
     "player-icons": {
-      "chromium": " ",
-      "default": " ",
       "firefox": " ",
-      "kdeconnect": " ",
-      "mopidy": " ",
-      "mpv": " ",
+      "mpv": " ",
       "spotify": " ",
-      "vlc": "󰕼 ",
     },
     "status-icons": {
       "paused": "󰐎 ",
@@ -48,6 +49,7 @@
     },
     // "ignored-players": ["firefox"]
     "max-length": 20,
+    "tooltip": false,
   },
   // PACMAN Style
   "hyprland/workspaces#pacman": {
@@ -68,17 +70,19 @@
     "format": "{icon}",
     "format-icons": {
       "active": " 󰮯 ",
-      "default": "󰊠",
-      "persistent": "󰊠",
+      "default": "󰊠 ",
+      "persistent": "󰊠 ",
       "empty": "",
     },
+    "tooltip": false,
   },
   "bluetooth": {
     "format-disabled": "off",
-    "format": " ",
-    "on-click": "blueman-manager",
+    "format": "󰂯",
+    "on-click": "pypr toggle bluetooth",
     "max-length": 10,
-    "on-click-right": "rfkill toggle bluetooth",
+    "on-click-right": "pypr toggle bluetooth",
+    "tooltip": false,
   },
   "group/sys-settings": {
     "modules": ["battery", "group/network-drawer"],
@@ -109,9 +113,11 @@
       "children-class": "network-drawer",
       "transition-duration": 500,
       "transition-left-to-right": true,
+      "tooltip": false,
     },
     "modules": ["network#icon", "network#name"],
     "orientation": "horizontal",
+    "tooltip": false,
   },
   "network#icon": {
     "format": "{icon}",
@@ -124,7 +130,7 @@
     "interval": 30,
     "on-click": "kitty -e 'nmtui'",
     "on-click-right": "rfkill toggle wifi",
-    "tooltip": true,
+    "tooltip": false,
     "tooltip-format": "interface:\t{ifname}\n\nconnected to {essid} at {signalStrength}% strength",
     "tooltip-format-disconnected": "interface: {ifname}\nconnected to {essid}\nat {signalStrength}% strength",
   },
@@ -138,8 +144,9 @@
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": " Disconnected",
     "format-alt": " {ipaddr}",
+    "tooltip": false,
   },
-  "pulseaudio": {
+  "pipewire": {
     "format": "<span color=\"#c6a0f6\">{icon}</span> {volume}%",
     "format-bluetooth": "<span color=\"#c6a0f6\">󰂰 </span>{volume}%",
     "format-muted": " ",
@@ -157,6 +164,7 @@
     "scroll-step": 1,
     "on-click": "pavucontrol",
     "ignored-sinks": ["Easy Effects Sink"],
+    "tooltip": false,
   },
   "custom/updates": {
     "interval": 10,
@@ -169,13 +177,32 @@
     "exec": "checkupdates | wc -l",
     "exec-if": "[[ $(checkupdates | wc -l) ]]",
     "on-click": "kitty -e ~/.config/hypr/scripts/update.sh",
-    "tooltip": true,
+    "tooltip": false,
     "tooltip-format": "Left click to update packages",
+  },
+  "cava": {
+    "exec": "$HOME/.config/waybar/scripts/cava",
+    "format": "{}",
+    "format-icons": [
+      "<span foreground='#cba6f7'>▁</span>",
+      "<span foreground='#cba6f7'>▂</span>",
+      "<span foreground='#cba6f7'>▃</span>",
+      "<span foreground='#cba6f7'>▄</span>",
+      "<span foreground='#89b4fa'>▅</span>",
+      "<span foreground='#89b4fa'>▆</span>",
+      "<span foreground='#89b4fa'>▇</span>",
+      "<span foreground='#89b4fa'>█</span>",
+    ],
+    // "on-click": "kitty --class center-float-mini cava",
+    // "on-click-right": "qpwgraph",
+    // "on-click-middle": "easyeffects",
+    "tooltip": false,
   },
   "clock": {
     "format": "{:%OI:%OM %p}",
     "format-alt": "{:%A, %b %e}",
     "interval": 60,
+    "tooltip": false,
   },
   "tray": {
     "icon-size": 14,
