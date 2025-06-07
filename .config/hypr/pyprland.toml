@@ -38,12 +38,6 @@ unfocus = "hide"
 hysteresis = 0.1
 lazy = true
 
-[scratchpads.explorer]
-command = "kitty --class scratchpad-larger explorer"
-unfocus = "hide"
-hysteresis = 0.1
-lazy = true
-
 [scratchpads.gpt]
 command = "kitty --class scratchpad-large tgpt -m"
 unfocus = "hide"
