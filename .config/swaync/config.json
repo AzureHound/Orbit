@@ -23,12 +23,12 @@
   "transition-time": 200,
   "hide-on-clear": true,
   "hide-on-action": true,
-  "widgets": ["title", "buttons-grid", "dnd", "notifications", "mpris"],
+  "widgets": ["title", "dnd", "notifications", "mpris"],
   "widget-config": {
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": " 󰎟 "
+      "button-text": ""
     },
     "dnd": {
       "text": "Do Not Disturb"
@@ -42,11 +42,11 @@
       "image-radius": 6,
       "blur": false
     },
-    "_volume": {
+    "volume": {
       "label": "󰕾",
       "show-per-app": true
     },
-    "_buttons-grid": {
+    "buttons-grid": {
       "actions": [
         {
           "label": "󰐥",
