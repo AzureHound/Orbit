@@ -81,6 +81,7 @@ libzen
 linux
 linux-firmware
 linux-headers
+linux-zen
 liquidctl
 llvm
 lolcat
@@ -177,6 +178,7 @@ vim
 virt-manager
 virt-viewer
 vivid
+waybar
 wf-recorder
 wget
 wiki-tui

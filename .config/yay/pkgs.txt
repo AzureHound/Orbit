@@ -1,3 +1,4 @@
+adwsteamgtk
 android-sdk-platform-tools
 ani-skip-git
 apple-fonts
