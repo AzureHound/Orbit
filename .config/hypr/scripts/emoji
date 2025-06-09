@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Run the original emoji script
+~/.local/bin/emoji
+
+# Wait a moment to ensure clipboard operations complete
+sleep 0.1
+
+# Kill the terminal process
+kill -9 $PPID
