@@ -83,6 +83,12 @@ command = "kitty --class scratchpad-large quick-note"
 unfocus = "hide"
 lazy = true
 
+[scratchpads.sounds]
+command = "kitty --class scratchpad-larger sounds"
+unfocus = "hide"
+hysteresis = 0.1
+lazy = true
+
 [scratchpads.superfile]
 command = "kitty --class scratchpad-larger fish -c spf"
 unfocus = "hide"
