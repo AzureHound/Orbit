@@ -1,0 +1,12 @@
+@theme "~/.config/rofi/style.rasi"
+
+// font settings
+* {
+    font: "JetBrainsMono Nerd Font 11";
+}
+
+// Window
+window {
+  width:                       500px;
+  height:                      500px;
+}
