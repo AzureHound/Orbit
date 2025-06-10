@@ -15,7 +15,7 @@ sleep 0.4 && $HOME/.config/hypr/scripts/random_wallpaper &
 
 ## Live Wallpaper
 # mpvpaper -f -p &
-# $HOME/.config/hypr/scripts/live_wallpaper &
+# $HOME/.config/hypr/scripts/random_live_wallpaper &
 
 # Pyprland Daemon
 pypr --debug /tmp/pypr.log &
