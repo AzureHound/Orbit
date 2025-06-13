@@ -4,7 +4,9 @@ ya pkg add yazi-rs/plugins:hide-preview
 ya pkg add yazi-rs/plugins:smart-filter
 ya pkg add yazi-rs/plugins:full-border
 ya pkg add imsi32/yatline-githead
+ya pkg add yazi-rs/plugins:mount
 ya pkg add yazi-rs/plugins:git
+ya pkg add GianniBYoung/rsync
 ya pkg add Lil-Dank/lazygit
 ya pkg add Reledia/glow
 
