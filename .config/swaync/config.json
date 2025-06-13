@@ -50,15 +50,15 @@
       "actions": [
         {
           "label": "",
-          "command": ""
+          "command": "swaync-client -cp && $HOME/.config/rofi/scripts/powermenu/powermenu"
         },
         {
-          "label": "",
+          "label": "",
           "command": ""
         },
         {
           "label": "󰌾",
-          "command": "hyprlock"
+          "command": "swaync-client -cp && hyprlock"
         },
         {
           "label": "",
@@ -74,11 +74,11 @@
         },
         {
           "label": "󰂯",
-          "command": ""
+          "command": "swaync-client -cp && pypr toggle bluetooth"
         },
         {
           "label": "",
-          "command": ""
+          "command": "swaync-client -cp && $HOME/.config/hypr/scripts/wf_recorder_selection"
         }
       ]
     }
