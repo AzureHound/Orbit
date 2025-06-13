@@ -14,12 +14,15 @@ $docker_context\
 $golang\
 $java\
 $jobs\
+$kotlin\
 $lua\
+$nix_shell\
 $nodejs\
 $python\
 $package\
 $ruby\
 $rust\
+$swift\
 $cmd_duration\
 $line_break\
 $character"""
@@ -36,6 +39,9 @@ format = '[$symbol]($style) '
 disabled = false
 
 [os.symbols]
+Alpine = "[ ](fg:blue)"
+Amazon = "[ ](fg:yellow)"
+Android = "[ ](fg:green)"
 Arch = "[󰣇](fg:blue)"
 Debian = "[󰣚](fg:#d70a53)"
 Ubuntu = "[](fg:#E95420)"
@@ -124,15 +130,16 @@ symbol = ' '
 format = '[$symbol$branch ]($style)'
 
 [git_status]
-format = '([$conflicted$ahead_behind$diverged$staged$stashed$renamed$modified$untracked$deleted]($style) )'
+format = '([$conflicted$ahead_behind$diverged$staged$stashed$renamed$modified$untracked$deleted$up_to_date]($style) )'
 conflicted = '=${count}'
 ahead = '↑${count}'
 behind = '↓${count}'
-diverged = '⇕↑${ahead_count}↓${behind_count}'
+diverged = ' ↑${ahead_count}↓${behind_count}'
 untracked = '?${count}'
 stashed = '●${count}'
 modified = '!${count}'
 renamed = '>${count}'
+up_to_date = '[](green) '
 staged = "${count}"
 deleted = "✘${count}"
 style = 'fg:red'
@@ -153,8 +160,18 @@ style = 'red'
 number_threshold = 1
 format = '[$symbol]($style)'
 
+[kotlin]
+symbol = " "
+style = 'blue'
+format = '[${symbol}(${version})]($style)'
+
 [lua]
 symbol = ' '
+style = 'blue'
+format = '[${symbol}(${version})]($style)'
+
+[nix_shell]
+symbol = " "
 style = 'blue'
 format = '[${symbol}(${version})]($style)'
 
@@ -181,6 +198,11 @@ format = '[${symbol}(${version})]($style)'
 
 [rust]
 symbol = ' '
+style = 'peach'
+format = '[${symbol}(${version})]($style)'
+
+[swift]
+symbol = ' '
 style = 'peach'
 format = '[${symbol}(${version})]($style)'
 
