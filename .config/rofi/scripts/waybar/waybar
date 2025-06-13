@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Define directories
-styles_dir="$HOME/.config/waybar/bars"
 waybar_config_dir="$HOME/.config/waybar"
+styles_dir="$HOME/.config/waybar/bars"
 config_file="config.jsonc"
 style_file="style.css"
 
@@ -27,7 +27,7 @@ refresh_waybar() {
 
 # Main function
 main() {
-  selected_version=$(menu | rofi -dmenu -config ~/.config/rofi/scripts/waybar/waybar.rasi -p "Select a version:")
+  selected_version=$(menu | rofi -dmenu -config ~/.config/rofi/scripts/waybar/style.rasi -p "Select a version:")
 
   if [[ -z "$selected_version" ]]; then
     echo "No version selected. Exiting."
