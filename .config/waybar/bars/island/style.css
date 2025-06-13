@@ -1,18 +1,18 @@
-@import "colors/catppuccin.css";
+@import "colors/macchiato.css";
 
 window#waybar {
   background-color: transparent;
 }
 
 window > box {
-  background-color: @background;
+  background-color: @base;
   margin: 6px 8px;
 }
 
 * {
   font-family: JetBrainsMono Nerd Font;
   font-weight: 600;
-  font-size: 9px;
+  font-size: 13px;
   padding: 0;
   border-radius: 6px;
 }
@@ -25,7 +25,7 @@ window > box {
 #custom-launcher,
 #workspaces,
 #clock,
-#bluetooth.connected,
+/* #bluetooth.connected, */
 #custom-spotify,
 #network,
 #network.linked,
@@ -35,11 +35,11 @@ window > box {
 box#sys-tray {
   color: @text;
   margin: 2px;
-  background-color: @background;
+  background-color: @base;
 }
 
 #custom-launcher {
-  color: @color12;
+  color: @blue;
   padding-left: 14px;
 }
 
@@ -48,22 +48,22 @@ box#sys-tray {
 }
 
 #workspaces button {
-  color: @textlight;
+  color: @subtext1;
   padding: 0px 5px;
 }
 
 #workspaces button.active {
-  color: @background;
-  background-color: @color12;
+  color: @base;
+  background-color: @blue;
 }
 
 #workspaces button.urgent {
-  color: @color6;
+  color: @maroon;
 }
 
 #workspaces button:hover {
-  color: @color12;
-  background-color: @background;
+  color: @blue;
+  background-color: @base;
 }
 
 box#sys-tray {
@@ -71,17 +71,17 @@ box#sys-tray {
 }
 
 #backlight {
-  color: @textlight;
+  color: @subtext1;
 }
 #pulseaudio {
-  color: @textlight;
+  color: @subtext1;
 }
 #battery {
-  color: @textlight;
+  color: @subtext1;
 }
 
 .pulseaudio-grp {
-  color: @textlight;
+  color: @subtext1;
 }
 
 #battery.text {
@@ -107,40 +107,40 @@ box#sys-tray {
   color: @textlight;
   padding: 2px 4px 2px 10px;
   margin: 2px;
-  background-color: @background;
+  background-color: @base;
 }
 
 #network,
 #network.disconnected,
 #network.disabled {
-  color: @textlight;
+  color: @subtext1;
   padding: 2px 8px;
 }
 
 #custom-spotify {
-  background-color: @backgrounddark;
+  background-color: @base;
   padding: 2px 10px;
 }
 
 #custom-powermenu {
-  color: @color13;
+  color: @lavender;
   padding-right: 14px;
 }
 
 tooltip {
   padding: 25px;
-  background-color: @background;
+  background-color: @base;
   color: @text;
   font-family: JetBrains Nerd Font;
 }
 
 tooltip label {
   padding: 15px;
-  color: @textlight;
+  color: @subtext1;
 }
 
 label:focus {
-  background-color: @background;
+  background-color: @base;
 }
 
 #clock {

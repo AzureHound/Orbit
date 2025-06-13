@@ -2,13 +2,13 @@
 
 /* Waybar styling */
 window#waybar {
-  background-color: transparent;
+  base-color: transparent;
 }
 
 window > box {
-  background-color: @mantle;
+  base-color: @mantle;
   padding: 0px 5px;
-  margin: 5px 50px 0px 50px;
+  margin: 5px 10px 0px 10px;
 }
 
 * {
@@ -16,7 +16,7 @@ window > box {
   font-weight: 600;
   font-size: 13px;
   padding: 0;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 #cpu,
@@ -32,7 +32,7 @@ window > box {
 #network.linked,
 #network.ethernet,
 #network.wifi {
-  background-color: @base;
+  base-color: @base;
 }
 
 #custom-arch {
@@ -91,7 +91,7 @@ window > box {
 
 #workspaces button:hover {
   color: @yellow;
-  background-color: @base;
+  base-color: @base;
 }
 
 #bluetooth {
@@ -116,7 +116,7 @@ window > box {
 
 tooltip {
   padding: 25px;
-  background-color: @mantle;
+  base-color: @mantle;
   color: @surface1;
   font-family: JetBrainsMono Nerd Font;
 }

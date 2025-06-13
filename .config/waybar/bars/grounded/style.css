@@ -1,11 +1,11 @@
-@import "colors/catppuccin.css";
+@import "colors/macchiato.css";
 
 window#waybar {
-  background-color: transparent;
+  base-color: transparent;
 }
 
 window > box {
-  background-color: @backgrounddark;
+  base-color: @base;
   margin: 0px 0px 8px 0px;
   padding: 0px 2px;
 }
@@ -13,7 +13,7 @@ window > box {
 * {
   font-family: JetBrainsMono Nerd Font;
   font-weight: 600;
-  font-size: 10px;
+  font-size: 13px;
   padding: 0;
   border-radius: 8px;
 }
@@ -35,7 +35,7 @@ window > box {
 #network.linked,
 #network.ethernet,
 #network.wifi {
-  background-color: @background;
+  base-color: @surface0;
 }
 
 #custom-launcher {
@@ -49,7 +49,7 @@ window > box {
   border-radius: 100px;
   padding: 0px 10px;
   margin: 6px 2px;
-  background-color: @backgrounddark;
+  base-color: @base;
 }
 
 #cpu,
@@ -63,18 +63,18 @@ window > box {
   margin: 6px 2px;
   padding: 0px 20px;
   border-radius: 100px;
-  background-color: @background;
+  base-color: @surface0;
 }
 
 #mpris {
-  background-color: @background;
+  base-color: @surface0;
   border-radius: 100px 0px 0px 100px;
   color: @text;
   padding: 0px 20px 0px 0px;
 }
 
 #custom-cava {
-  background-color: @background;
+  base-color: @surface0;
   border-radius: 0px 100px 100px 0px;
   color: @text;
 }
@@ -86,25 +86,25 @@ window > box {
 }
 
 #workspaces button {
-  color: @color8;
+  color: @green;
   padding: 0px 2px;
 }
 
 #workspaces button.urgent {
-  color: @color5;
+  color: @red;
 }
 
 #workspaces button.empty {
-  color: @textlight;
+  color: @subtext1;
 }
 
 #workspaces button.active {
-  color: @color4;
+  color: @mauve;
 }
 
 #workspaces button:hover {
   border-radius: 100px;
-  background-color: @background;
+  base-color: @base;
 }
 
 #pownet {
@@ -128,12 +128,12 @@ window > box {
 #bluetooth {
   margin-right: 6px;
   font-size: 10px;
-  color: @color12;
+  color: @blue;
 }
 
 @keyframes blink {
   to {
-    color: #a6da95;
+    color: @green;
   }
 }
 
@@ -167,7 +167,7 @@ window > box {
 }
 
 #custom-power-button {
-  color: @color14;
+  color: @peach;
   padding: 0px 10px;
   margin: 6px 2px;
 }
@@ -179,17 +179,17 @@ window > box {
 
 tooltip {
   padding: 25px;
-  background-color: @background;
+  base-color: @base;
   color: @text;
 }
 
 tooltip label {
   padding: 15px;
-  color: @textlight;
+  color: @subtext1;
 }
 
 label:focus {
-  background-color: @background;
+  base-color: @base;
 }
 
 #pulseaudio-slider {
@@ -204,8 +204,8 @@ label:focus {
 #pulseaudio-slider slider {
   min-width: 40px;
   min-height: 20px;
-  color: @color12;
-  background: transparent;
+  color: @blue;
+  base: transparent;
   box-shadow: none;
   padding: 0px;
 }
@@ -213,5 +213,5 @@ label:focus {
 #pulseaudio-slider trough {
   min-width: 70px;
   border-radius: 4px;
-  background-color: @foreground;
+  base-color: @surface1;
 }
