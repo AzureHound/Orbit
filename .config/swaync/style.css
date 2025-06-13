@@ -26,6 +26,7 @@
   font-size: initial;
   border-radius: 5px;
   background: #363a4f;
+  box-shadow: none;
 }
 
 .widget-dnd > switch:checked {
@@ -74,8 +75,8 @@
 
 /* volume */
 .widget-volume {
-  padding: 4px;
-  margin: 6px;
+  padding: 6px 6px 6px 14px;
+  margin: 0px;
   border-radius: 6px;
   background: #494d64;
   color: #cad3f5;
@@ -99,6 +100,11 @@
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
   background: #6e738d;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:active {
+  background: #eed49f;
+  color: #24273a;
 }
 
 /* notifications */
