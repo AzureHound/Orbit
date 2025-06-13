@@ -11,6 +11,10 @@
 [safe]
   directory = ~/Developer
 
+[commit]
+  template = ~/.config/git/gitmessage
+  ; gpgsign = true
+
 [core]
   editor = nvim
   pager = delta #--dark --diff-so-fancy
