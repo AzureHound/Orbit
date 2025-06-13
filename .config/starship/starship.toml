@@ -187,9 +187,7 @@ format = ' [${symbol}(${version})]($style)'
 [python]
 symbol = ' '
 style = 'teal'
-format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
-pyenv_version_name = false
-pyenv_prefix = 'pyenv'
+format = '[${symbol}(${version}) ($virtualenv)]($style)'
 
 [ruby]
 symbol = ' '
