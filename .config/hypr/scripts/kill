@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-# Close the window, except for Thunderbird and Obsidian.
-hyprctl activewindow -j | jq -r .title | grep -E "Obsidian|Steam" || hyprctl dispatch killactive
+hyprctl activewindow -j | jq -r .title | grep -E "Steam" || hyprctl dispatch killactive
