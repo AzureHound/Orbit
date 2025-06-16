@@ -44,7 +44,7 @@ echo -e "\n${OVERLAY2}Homebrew ${YELLOW} ${RESET}\n"
 brew update
 brew upgrade
 brew autoremove
-brew bundle dump --force --file=$HOME/.config/brew/Brewfile
+brew bundle dump --force --file=$HOME/.config/brew/Brewfile --no-vscode
 
 echo -e "\n${OVERLAY2}Flatpak ${LAVENDER}󰏖 ${RESET}\n"
 flatpak update
