@@ -1,10 +1,12 @@
 # Configs
+.config/AdwSteamGtk
 .config/BraveSoftware
 .config/borg
 .config/carapace
 .config/cava
 .config/dconf
 .config/eden
+.config/Electron
 .config/fastanime
 .config/gh
 .config/github-copilot
