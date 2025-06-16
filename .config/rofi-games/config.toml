@@ -1,0 +1,7 @@
+box_art_dir = "/home/eyes/.config/rofi-games/box-arts"
+hide_entries_without_box_art = false
+
+# Sheepy
+[[entries]]
+title = "Sheepy: A Short Adventure"
+path_box_art = "sheepy.png"
