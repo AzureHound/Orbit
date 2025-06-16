@@ -9,7 +9,6 @@ base-devel
 bat
 bc
 bluetui
-bluez
 bluez-utils
 bridge-utils
 btop
@@ -21,6 +20,7 @@ cliphist
 cmake
 cowsay
 cpio
+cronie
 ddcutil
 direnv
 dkms
@@ -34,14 +34,13 @@ efibootmgr
 eza
 fastfetch
 fd
-ffmpeg
 ffmpegthumbnailer
 figlet
 firefox
 fish
 flatpak
-fzf
 gamescope
+ghostty
 git
 git-delta
 github-cli
@@ -63,11 +62,9 @@ hyprlock
 hyprpaper
 hyprpicker
 hyprpolkitagent
+hyprshot
 hyprsunset
-imagemagick
-iptables-nft
 iwd
-jq
 keepassxc
 kitty
 kvantum-qt5
@@ -82,6 +79,7 @@ linux
 linux-firmware
 linux-headers
 linux-zen
+linux-zen-headers
 liquidctl
 llvm
 lolcat
@@ -97,6 +95,7 @@ mpd
 nano
 nautilus
 nautilus-image-converter
+nautilus-python
 navi
 neovide
 neovim
@@ -162,7 +161,6 @@ thunderbird
 timeshift
 tinyxml2
 tldr
-tmux
 tmuxp
 trash-cli
 ttf-font-awesome
@@ -173,6 +171,7 @@ ttf-nerd-fonts-symbols-mono
 udiskie
 ufw
 unzip
+uwsm
 vde2
 vim
 virt-manager
@@ -191,9 +190,7 @@ xdg-desktop-portal-wlr
 xdg-utils
 xorg-server
 xorg-xinit
-yajl
 yazi
-yt-dlp
 zathura-cb
 zathura-pdf-mupdf
 zed

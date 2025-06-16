@@ -9,19 +9,18 @@ bibata-cursor-theme-bin
 bottles
 brave-bin
 carapace-bin
-cbonsai
+cbonsai-git
 devify
 dipc
 dooit
 dooit-extras
-eden
+eden-bin
 evdevhook2-git
 fastanime
 gallery-dl
 gitmux
 hyprfreeze-git
 hyprls-git
-hyprshot
 jelly
 jftui
 keyb
@@ -52,4 +51,5 @@ unimatrix-git
 vscodium-bin
 webcamize
 yay
+yay-debug
 zen-browser-bin
