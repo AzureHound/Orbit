@@ -42,6 +42,7 @@ export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 
 # Bin
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
 
 # Path
 export PATH="$XDG_BIN_HOME:$XDG_BIN_HOME/color-scripts:$GOPATH/bin:$CARGO_HOME/bin:$XDG_SCRIPT_HOME:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/lib/rustup/bin:/usr/lib/go/bin:$HOME/.dotnet/tools:$XDG_DATA_HOME/nvim:$XDG_DATA_HOME/nvim/mason/bin:$XDG_DATA_HOME/npm/bin:$HOME/.yarn/bin:$XDG_DATA_HOME/pnpm:$PATH"
