@@ -1,121 +1,21 @@
 #!/usr/bin/env bash
 
-# Steam paths
-XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-STEAM_DIR="$XDG_DATA_HOME/Steam"
-STEAM_LIB="$STEAM_DIR/config/libraryfolders.vdf"
-STEAM_THUMB="$STEAM_DIR/appcache/librarycache"
-
-# Try alt paths if needed
-if [ ! -f "$STEAM_LIB" ]; then
-  for alt_path in "$HOME/.steam/steam" "$HOME/.steam/root"; do
-    if [ -f "$alt_path/config/libraryfolders.vdf" ]; then
-      STEAM_DIR="$alt_path"
-      STEAM_LIB="$STEAM_DIR/config/libraryfolders.vdf"
-      STEAM_THUMB="$STEAM_DIR/appcache/librarycache"
-      break
-    fi
-  done
-
-  if [ ! -f "$STEAM_LIB" ]; then
-    notify-send "Steam Library Not Found!" "Please ensure Steam is installed correctly."
-    exit 1
-  fi
+# Check for rofi
+if ! command -v rofi &>/dev/null; then
+  notify-send "rofi not found" "Please install rofi first"
+  exit 1
 fi
 
-# Get library paths
-declare -A lib_paths
-lib_paths["$STEAM_DIR"]=1
-
-while IFS= read -r line; do
-  [[ "$line" =~ \"path\"[[:space:]]+\"(.+)\" ]] && lib_paths["${BASH_REMATCH[1]}"]=1
-done <"$STEAM_LIB"
-
-# Find manifest files
-MANIFEST_LIST=()
-for path in "${!lib_paths[@]}"; do
-  [ -d "$path/steamapps" ] &&
-    while IFS= read -r file; do
-      MANIFEST_LIST+=("$file")
-    done < <(find "$path/steamapps/" -type f -name "appmanifest_*.acf" 2>/dev/null)
-done
-
-# Temp file for Rofi
-TMP_FILE=$(mktemp)
-ID_FILE=$(mktemp)
-
-# Process games
-for acf in "${MANIFEST_LIST[@]}"; do
-  appid=$(grep '"appid"' "$acf" 2>/dev/null | head -1 | cut -d '"' -f 4)
-  game=$(grep '"name"' "$acf" 2>/dev/null | head -1 | cut -d '"' -f 4)
-
-  # Skip system apps
-  [[ "$game" == *"Proton"* || "$game" == *"Runtime"* || "$game" == *"Redistributable"* ]] && continue
-
-  # Find thumbnails - first check hierarchical structure
-  icon_path=""
-  game_thumb_dir="${STEAM_THUMB}/${appid}"
-
-  # Check hierarchical structure first (newer Steam versions)
-  if [ -d "$game_thumb_dir" ]; then
-    for format in "library_600x900.jpg" "header.jpg" "library_hero.jpg" "capsule_616x353.jpg" "logo.png"; do
-      [ -f "${game_thumb_dir}/${format}" ] && icon_path="${game_thumb_dir}/${format}" && break
-    done
-  fi
-
-  # Fallback to flat structure if needed (older Steam versions)
-  if [ -z "$icon_path" ]; then
-    for format in "library_600x900.jpg" "header.jpg" "library_hero.jpg" "capsule_616x353.jpg" "logo.png"; do
-      [ -f "${STEAM_THUMB}/${appid}_${format}" ] && icon_path="${STEAM_THUMB}/${appid}_${format}" && break
-    done
-  fi
-
-  # Download missing thumbnails
-  if [ -z "$icon_path" ] && [ -n "$appid" ] && command -v curl &>/dev/null; then
-    # Create directory for hierarchical structure if it doesn't exist
-    mkdir -p "${game_thumb_dir}" 2>/dev/null
-
-    # Download to the hierarchical location
-    download_path="${game_thumb_dir}/library_600x900.jpg"
-    curl -s "https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/library_600x900.jpg" -o "$download_path" 2>/dev/null
-    [ -f "$download_path" ] && [ -s "$download_path" ] && icon_path="$download_path"
-  fi
-
-  # Add to list - store only game name for display
-  if [ -n "$appid" ] && [ -n "$game" ]; then
-    if [ -n "$icon_path" ]; then
-      echo -e "$game\0icon\x1f${icon_path}" >>"$TMP_FILE"
-    else
-      echo -e "$game" >>"$TMP_FILE"
-    fi
-    # Store ID in separate file at same line position
-    echo "$appid" >>"$ID_FILE"
-  fi
-done
-
-# Exit if no games
-[ ! -s "$TMP_FILE" ] && notify-send "No Steam games found" && rm -f "$TMP_FILE" "$ID_FILE" && exit 1
-
-# Sort games and keep IDs in sync
-paste "$TMP_FILE" "$ID_FILE" | sort -k1,1 | awk -F'\t' '{print $1 > "'$TMP_FILE'"; print $2 > "'$ID_FILE'"}'
-
-# Show game selector
-GAME_SEL=$(cat "$TMP_FILE" | rofi -dmenu -i \
-  -theme "$HOME/.config/rofi/scripts/game-launcher/style.rasi" \
-  -p "Game Launcher")
-
-# Exit if no selection
-[ -z "$GAME_SEL" ] && rm -f "$TMP_FILE" "$ID_FILE" && exit 0
-
-# Find the selected line number
-LINE_NUM=$(grep -n "^$GAME_SEL" "$TMP_FILE" | cut -d: -f1)
-
-# Get app ID from the same line in the ID file
-APP_ID=$(sed -n "${LINE_NUM}p" "$ID_FILE")
-
-if [ -n "$APP_ID" ]; then
-  steam "steam://rungameid/$APP_ID" &
+# Verify plugin
+if [ ! -f "/usr/lib/rofi/games.so" ]; then
+  notify-send "rofi-games plugin not found" "Please ensure rofi-games is installed correctly"
+  exit 1
 fi
 
-# Cleanup
-rm -f "$TMP_FILE" "$ID_FILE"
+# Set theme path
+THEME_FILE="$HOME/.config/rofi/scripts/game-launcher/style.rasi"
+
+# Launch with theme
+rofi -show games -theme "$THEME_FILE"
+
+exit $?
