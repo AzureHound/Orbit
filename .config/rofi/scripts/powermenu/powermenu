@@ -17,6 +17,9 @@ rofi_cmd() {
     -theme $HOME/.config/rofi/scripts/powermenu/style.rasi
 }
 
+# mpvlock
+mpvlock="$HOME/.config/hypr/scripts/mpvlock"
+
 confirm_cmd() {
   rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 350px;}' \
     -theme-str 'mainbox {children: [ "message", "listview" ];}' \
@@ -47,12 +50,14 @@ run_cmd() {
       systemctl reboot
     elif [[ $1 == '--suspend' ]]; then
       mpc -q pause
-      hyprlock
+      # hyprlock
+      $mpvlock
       systemctl suspend
     elif [[ $1 == '--logout' ]]; then
       hyprctl dispatch exit
     elif [[ $1 == '--lock' ]]; then
-      hyprlock
+      # hyprlock
+      $mpvlock
     fi
   else
     exit 0
