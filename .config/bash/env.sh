@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Bin
+export PATH="/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
+
 # Editor
 export EDITOR=nvim
 export VISUAL="$EDITOR"
