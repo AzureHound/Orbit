@@ -49,7 +49,7 @@ brew bundle dump --force --file=$HOME/.config/brew/Brewfile --no-vscode
 echo -e "\n${OVERLAY2}Flatpak ${LAVENDER}󰏖 ${RESET}\n"
 flatpak update
 flatpak uninstall --unused
-flatpak list --columns=application >$HOME/.config/flatpak/flatpaks.txt
+flatpak list --columns=application >$HOME/.config/flatpak/pkgs.txt
 
 echo -e "\n${OVERLAY2}Hyprland ${BLUE} ${RESET}\n"
 hyprpm update
