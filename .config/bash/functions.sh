@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Yazi
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

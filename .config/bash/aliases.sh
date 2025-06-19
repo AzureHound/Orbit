@@ -1,4 +1,3 @@
-# aliases
 alias c='clear'
 alias la='eza -a --icons'
 alias ls='eza --icons'

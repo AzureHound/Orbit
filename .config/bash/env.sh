@@ -1,7 +1,6 @@
-#!/usr/bin/env bash
-
-# Bin
-export PATH="/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
+# Colors
+export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Editor
 export EDITOR=nvim
@@ -22,16 +21,11 @@ export FZF_DEFAULT_OPTS="--height=100% --info=right --border=rounded --pointer='
 --bind='ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)' \
 --multi --prompt='󰥨 Search: '"
 
-# GCC
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 # Man
 export MANPAGER="vim -M +MANPAGER -"
-# export MANPAGER='nvim +Man!'
+#export MANPAGER='nvim +Man!'
 
-# MAN
+# NPM
+NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$PATH:$NPM_PACKAGES/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
-
-# Vivid
-export LS_COLORS="$(vivid generate catppuccin-macchiato)"
