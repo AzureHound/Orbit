@@ -95,6 +95,12 @@ unfocus = "hide"
 hysteresis = 0.1
 lazy = true
 
+[scratchpads.to-do]
+command = "kitty --class scratchpad-large dooit"
+unfocus = "hide"
+hysteresis = 0.1
+lazy = true
+
 [scratchpads.tt]
 command = "kitty --class scratchpad-large tt -theme $HOME/.config/tt/Catppuccin-Macchiato"
 unfocus = "hide"
