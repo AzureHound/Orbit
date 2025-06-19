@@ -50,6 +50,8 @@ gnome-firmware
 gnome-keyring
 gnome-themes-extra
 grim
+grub
+grub-btrfs
 gst-plugin-pipewire
 gtk-engine-murrine
 gvfs-smb
@@ -74,6 +76,7 @@ less
 libguestfs
 libmediainfo
 libpulse
+libreoffice-fresh
 libva-nvidia-driver
 libzen
 linux
@@ -127,8 +130,11 @@ powertop
 presenterm
 python-pipx
 qemu-full
+qt5-quickcontrols2
 qt5-wayland
 qt5ct
+qt6-multimedia-ffmpeg
+qt6-virtualkeyboard
 qt6-wayland
 qt6ct
 reflector
@@ -141,6 +147,7 @@ rust
 sassc
 satty
 scrcpy
+sddm
 serpl
 silicon
 slurp
