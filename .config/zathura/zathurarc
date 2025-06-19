@@ -25,4 +25,4 @@ map [fullscreen] f toggle_fullscreen
 set selection-clipboard clipboard
 set window-title-page true
 
-includu catppucin-macchiato
+include catppuccin-macchiato
