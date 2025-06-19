@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Settings
-WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+WALLPAPER_DIR="$HOME/Videos/Wallpapers"
 
 # GPU optimizations
 MPV_OPTIONS="no-audio loop gpu-api=vulkan vo=libmpv hwdec=nvdec vd-lavc-threads=$(nproc)"
