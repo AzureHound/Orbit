@@ -26,12 +26,14 @@ set -xg GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 set -xg W3M_DIR $XDG_DATA_HOME/w3m
 set -xg DOTNET_CLI_HOME $XDG_DATA_HOME/dotnet
 set -xg PNPM_HOME $XDG_DATA_HOME/pnpm
+set -xg NPM_PACKAGES "$HOME/.npm-packages"
 
 # Path
 fish_add_path $XDG_BIN_HOME
 fish_add_path $XDG_BIN_HOME/color-scripts/
 fish_add_path $GOPATH/bin
 fish_add_path $CARGO_HOME/bin
+fish_add_path $NPM_PACKAGES/bin
 fish_add_path $XDG_SCRIPT_HOME
 fish_add_path /usr/local/bin
 fish_add_path /usr/local/sbin
@@ -80,29 +82,9 @@ set -xg FZF_DEFAULT_OPTS "--height=100% --info=right --border rounded --pointer=
 set -xg GPG_TTY (tty)
 
 # Man
-set -x MANPATH /usr/share/man:/usr/local/man:/usr/local/share/man
 set -x MANPAGER "vim -M +MANPAGER -"
 # set -x MANPAGER "nvim +Man!"
-
-# Npm
-set NPM_PACKAGES "$HOME/.npm-packages"
-set PATH $PATH $NPM_PACKAGES/bin
-set MANPATH $NPM_PACKAGES/share/man $MANPATH
+set -x MANPATH $NPM_PACKAGES/share/man $MANPATH
 
 # Starship
 set -xg STARSHIP_LOG error
-
-# Vivid
-if type -q vivid
-    set -xg LS_COLORS (vivid generate catppuccin-macchiato)
-end
-
-# Yazi
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-    end
-    rm -f -- "$tmp"
-end
