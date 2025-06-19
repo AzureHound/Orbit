@@ -11,18 +11,18 @@ path_box_art = "sheepy.png"
 # title = "Eden"
 # launch_command = "/usr/bin/Eden"
 # path_box_art = "eden.png"
-# path_game_dir = "~/.local/share/eden/games"
+# path_game_dir = "/mnt/Drive/Eden/games"
 
 # BOTW
 [[entries]]
 title = "Breath of the Wild"
-launch_command = "/usr/bin/Eden \"/home/eyes/.local/share/eden/games/The Legend of Zelda Breath of the Wild [01007EF00011E000][v0].nsp\""
+launch_command = "/usr/bin/Eden \"/mnt/Drive/Eden/games/The Legend of Zelda Breath of the Wild [01007EF00011E000][v0].nsp\""
 path_box_art = "botw.png"
-path_game_dir = "~/.local/share/eden/games/The Legend of Zelda Breath of the Wild [01007EF00011E000][v0].nsp"
+path_game_dir = "/mnt/Drive/Eden/games/The Legend of Zelda Breath of the Wild [01007EF00011E000][v0].nsp"
 
 # TOTK
 [[entries]]
 title = "Tears of the Kingdom"
-launch_command = "/usr/bin/Eden \"/home/eyes/.local/share/eden/games/The Legend of Zelda Tears of the Kingdom [0100F2C0115B6000][v0][US].nsp\""
+launch_command = "/usr/bin/Eden \"/mnt/Drive/Eden/games/The Legend of Zelda Tears of the Kingdom [0100F2C0115B6000][v0][US].nsp\""
 path_box_art = "totk.png"
-path_game_dir = "~/.local/share/eden/games/The Legend of Zelda Tears of the Kingdom [0100F2C0115B6000][v0][US].nsp"
+path_game_dir = "/mnt/Drive/Eden/games/The Legend of Zelda Tears of the Kingdom [0100F2C0115B6000][v0][US].nsp"
