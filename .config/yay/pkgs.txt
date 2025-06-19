@@ -17,7 +17,7 @@ dooit-extras
 eden-bin
 evdevhook2-git
 fastanime
-gallery-dl
+gallery-dl-bin
 gitmux
 hyprfreeze-git
 hyprls-git
