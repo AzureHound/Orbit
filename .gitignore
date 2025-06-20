@@ -41,6 +41,10 @@
 .config/fish/functions
 .config/fish/themes
 
+# neomutt
+.config/msmtp
+.config/mutt
+
 # tmux
 .config/tmux/plugins
 
