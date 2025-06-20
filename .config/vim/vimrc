@@ -113,6 +113,7 @@ map <leader>p :call TogglePaste()<cr>
 
 " NERDTree settings
 let NERDTreeShowHidden=1
+let g:NERDTreeWinPos = "right"
 function! NerdTreeToggleFind()
     if exists("g:NERDTree") && g:NERDTree.IsOpen()
         NERDTreeClose
