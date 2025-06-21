@@ -1,0 +1,122 @@
+set date_format = "%a %d %h %H:%M"
+set index_format="  %zc %zs %zt  | %-35.35L   %@attachment_info@  %?M?~(%M)&? %-30.100s %> %?Y?%Y&? %{%a %d %h %H:%M}  "
+set pager_format=" %n %zc  %T %s%* 󰃭 %{!%d %b · %H:%M} %?X?  %X ? %P  "
+set status_format = " %f%?r?%r?  %m %?n?  %n ? | %?d?  %d ?%?t?  %t ?%?F?  %F? %> %?p?   %p ?"
+set compose_format="-- NeoMutt: Compose  [Approx. msg size: %l   Atts: %a]%>-"
+set vfolder_format = " %N %?n?%3n&   ?  %8m  · %f"
+set attach_format = "%u%D  %T%-75.75d %?T?   ? %5s · %m/%M"
+set sidebar_format = '%D%?Z? [%Z]?%* %?S?%S?'
+index-format-hook attachment_info '=B text/calendar ~X 1' '  '
+index-format-hook attachment_info '=B text/calendar' "   "
+index-format-hook attachment_info '~X 1' "  "
+index-format-hook attachment_info '~A' "   "
+
+# Colors
+color normal color254 default                  # normal text
+color error color211 color61                   # error text
+color message color254 default                 # messages
+color prompt color183 default                  # prompts
+color search default color73                   # search highlights
+
+# Status bar
+color status color183 default                                 # status bar
+color status green default ' '                            # unread count
+color status color117 default ' '                            # read count
+color status yellow default ' '                            # flagged
+color status red default ' '                            # deleted
+color status brightblack blue '(.*)' 1
+color status blue black '.*()' 1
+color status black blue '\s* [0-9]+\s*'
+color status blue black '().*$' 1
+color status yellow black '()\s*\s*[0-9]+\s*' 1
+color status black yellow '\s*\s*[0-9]+\s*'
+color status blue yellow '() ([0-9]+%|all|end) \s*' 1
+color status black blue ' ([0-9]+%|all|end) \s*'
+color status yellow black '()\s*' 1
+color status default black '|'
+
+# Index
+color index color254 default '~N'              # new messages
+color index color146 default '~R'              # read messages
+color index color146 default '~Q'              # replied messages
+color index_collapsed color111 default         # collapsed threads
+color index color183 default '!~Q^~p'          # sent to me only
+color index color108 default '~h X-Label.. '  # labeled messages
+color index color183 default '~F'              # flagged
+color index color183 default '~F~N'            # new flagged
+color index color117 default '~F~R'            # read flagged
+color index color211 default '~D'              # deleted
+color index color211 default '~D~N'            # new deleted
+color index color217 default '~D~R'            # read deleted
+color index color222 default '~T'              # tagged
+color index color222 default '~T~N'            # new tagged
+color index color223 default '~T~R'            # read tagged
+color tree color60 color60                     # thread tree
+color indicator default color60                # selected message
+color index_date color146 default              # date
+color index_label color183 default             # labels
+
+# Sidebar
+color sidebar_indicator color117 default       # selected mailbox
+color sidebar_highlight color254 color60       # highlighted mailbox
+color sidebar_ordinary color146 default        # normal mailboxes
+color sidebar_divider color60 default          # dividers
+color sidebar_flagged color211 default         # flagged mail
+color sidebar_new color108 default             # new mail
+color sidebar_unread color254 default          # unread mail
+color sidebar_unread color254 default          # unread mail
+
+# Headers
+color hdrdefault color146 default              # headers
+
+# Message body
+
+# Attachments
+color attachment color146 default             # attachments
+
+# Signature
+color signature color146 default              # signatures
+
+# Hide mailto links
+color body color0 color0 '<mailto:[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+>'
+
+# URLs
+color body color222 default '(https?|ftp)://[-\.,/%~_:?&=\#a-zA-Z0-9\+]+'
+
+# Dividers
+color body color60 default '(^[-_]*$)'
+
+# Calendar Info
+color body color183 default '^(Date\/Time|Location|Organiser|Invitees|Teams Meeting)(:| \~\~)'
+
+# Quote levels
+color quoted color111 default                 # quote level 1
+color quoted1 color117 default                # quote level 2
+color quoted2 color73 default                 # quote level 3
+color quoted3 color222 default                # quote level 4
+color quoted4 color211 default                # quote level 5
+
+# Headers in body
+color body color146 default '(^(To|From|Sent|Subject):.*)'
+
+# Icons & indicators
+set to_chars="      "
+set status_chars = "    "
+ifdef crypt_chars set crypt_chars = "󰒘"
+set flag_chars = "          "
+
+# Tag
+set hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encrypted"
+tag-transforms "replied" " "  \
+               "encrytpted" "󰒘 " \
+               "signed" " " \
+               "attachment" "" \
+
+# Tag formats
+tag-formats "replied" "GR" \
+            "encrypted" "GE" \
+            "signed" "GS" \
+            "attachment" "GA" \
+
+# No '+' for wrapped lines
+set markers=no
