@@ -44,6 +44,7 @@
 # neomutt
 .config/msmtp
 .config/mutt
+!.config/mutt/styles.muttrc
 
 # tmux
 .config/tmux/plugins
@@ -67,9 +68,6 @@ docker
 
 # Spotify
 .config/spotify
-
-# TT
-.tt/.errors
 
 # VSCodium
 .config/VSCodium
