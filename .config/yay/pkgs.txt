@@ -15,6 +15,7 @@ dipc
 dooit
 dooit-extras
 eden-bin
+espeak
 evdevhook2-git
 fastanime
 gallery-dl-bin
@@ -29,6 +30,7 @@ lazynpm
 lowfi
 mpv-sponsorblock-minimal-git
 mpvpaper
+mutt-wizard
 nvitop
 oh-my-posh
 overskride
