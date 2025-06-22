@@ -5,7 +5,7 @@
     default_album_art_path: None,
     draw_borders: true,
     show_song_table_header: false,
-    symbols: (song: "󰎋", dir: " ", marker: "\u{e0b0}"),
+    symbols: (song: "󰎋", dir: " ", marker: " "),
     layout: Split(
         direction: Vertical,
         panes: [
