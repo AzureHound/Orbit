@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-SESSION_NAME="Notes"
-WINDOW_NAME="Obsidian"
+SESSION_NAME="Work"
+WINDOW_NOTES="Obsidian"
+WINDOW_TODOS="To-Do"
 FOLDER="$HOME/Developer/repos/Notes"
 
-# If inside tmux, switch to the session if it exists
+# In tmux? Switch if session exists
 if [ -n "$TMUX" ]; then
   if tmux has-session -t $SESSION_NAME 2>/dev/null; then
     tmux switch-client -t $SESSION_NAME
@@ -12,14 +13,18 @@ if [ -n "$TMUX" ]; then
   fi
 fi
 
-# Check if the session already exists
+# Create session if missing
 if ! tmux has-session -t $SESSION_NAME 2>/dev/null; then
-  # Create a new session, name the window, start in the specified folder, then open nvim
-  tmux new-session -d -s $SESSION_NAME -n $WINDOW_NAME -c "$FOLDER"
-  tmux send-keys -t $SESSION_NAME "cd $FOLDER && nvim; tmux kill-session -t $SESSION_NAME" C-m
+  tmux new-session -d -s $SESSION_NAME -n $WINDOW_NOTES -c "$FOLDER"
+  tmux send-keys -t $SESSION_NAME "cd $FOLDER && nvim; tmux kill-window" C-m
+
+  tmux new-window -t $SESSION_NAME -n "$WINDOW_TODOS"
+  tmux send-keys -t "$SESSION_NAME:$WINDOW_TODOS" "dooit; tmux kill-window" C-m
+
+  tmux select-window -t "$SESSION_NAME:$WINDOW_NOTES"
 fi
 
-# If not inside tmux, attach to the session
+# Attach or switch to session
 if [ -z "$TMUX" ]; then
   exec tmux attach-session -t $SESSION_NAME
 else
