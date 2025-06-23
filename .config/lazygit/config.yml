@@ -144,8 +144,8 @@ keybinding:
     viewPullRequestOptions: "O"
     checkoutBranchByName: "c"
     forceCheckoutBranch: "F"
-    rebaseBranch: "r"
-    renameBranch: "R"
+    rebaseBranch: "R"
+    renameBranch: "r"
     mergeIntoCurrentBranch: "M"
     viewGitFlowOptions: "i"
     fastForward: "f" # fast-forward this branch from its upstream
