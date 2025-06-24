@@ -2,9 +2,8 @@
 
 # Keybindings
 bindkey -e
-bindkey '^[|' zsh_gh_copilot_explain
-bindkey '^[\' zsh_gh_copilot_suggest
-bindkey '^[[B' history-search-forward
-bindkey '^[[A' history-search-backward
+bindkey '^[[A' _atuin_search_widget
+# bindkey '^[[A' history-search-backward
+# bindkey '^[[B' history-search-forward
 bindkey '^[w' kill-region
 bindkey '^Z' undo
