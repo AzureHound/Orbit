@@ -6,7 +6,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_BIN_HOME="$HOME/.local/bin"
-export PATH="$HOME/.atuin/bin:$PATH"
 
 # XDG User Directories
 XDG_DESKTOP_DIR="$HOME/Desktop"
@@ -19,7 +18,6 @@ XDG_TEMPLATES_DIR="$HOME/Templates"
 XDG_VIDEOS_DIR="$HOME/Videos"
 
 # Respect XDG Specification
-export CONAN_USER_HOME="$XDG_CONFIG_HOME"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
@@ -39,13 +37,6 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export W3M_DIR="$XDG_DATA_HOME/w3m"
 export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-
-# Bin
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
-
-# Path
-export PATH="$XDG_BIN_HOME:$XDG_BIN_HOME/color-scripts:$GOPATH/bin:$CARGO_HOME/bin:$XDG_SCRIPT_HOME:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/lib/rustup/bin:/usr/lib/go/bin:$HOME/.dotnet/tools:$XDG_DATA_HOME/nvim:$XDG_DATA_HOME/nvim/mason/bin:$XDG_DATA_HOME/npm/bin:$HOME/.yarn/bin:$XDG_DATA_HOME/pnpm:$PATH"
 
 # History
 export LESSHISTFILE="$XDG_CACHE_HOME/less/less_history"
