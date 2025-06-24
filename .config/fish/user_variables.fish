@@ -6,7 +6,6 @@ set -xg XDG_STATE_HOME $HOME/.local/state
 set -xg XDG_BIN_HOME $HOME/.local/bin
 
 # Respect XDG Specification
-set -xg CONAN_USER_HOME $XDG_CONFIG_HOME
 set -xg GOPATH $XDG_DATA_HOME/go
 set -xg GOMODCACHE $XDG_CACHE_HOME/go/mod
 set -xg RUSTUP_HOME $XDG_DATA_HOME/rustup
