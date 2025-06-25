@@ -31,7 +31,6 @@ dua-cli
 duf
 easyeffects
 efibootmgr
-emacs
 eza
 fastfetch
 fd
@@ -131,6 +130,7 @@ playerctl
 polkit-kde-agent
 powertop
 presenterm
+pulseaudio-alsa
 python-pipx
 qemu-full
 qt5-quickcontrols2
@@ -140,7 +140,9 @@ qt6-multimedia-ffmpeg
 qt6-virtualkeyboard
 qt6-wayland
 qt6ct
+qutebrowser
 reflector
+rhvoice
 ripgrep
 ripgrep-all
 rmpc
