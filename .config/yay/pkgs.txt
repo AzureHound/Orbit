@@ -27,6 +27,7 @@ jftui
 keyb
 lazydocker
 lazynpm
+lazysql-bin
 lowfi
 mpv-sponsorblock-minimal-git
 mpvpaper
