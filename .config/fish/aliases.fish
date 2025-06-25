@@ -28,3 +28,4 @@ alias private='fish -P'
 alias preview='kitten icat'
 alias tt="tt -theme '$HOME/.config/tt/Catppuccin-Macchiato'"
 alias zed='zeditor'
+alias weather='gust -f'
