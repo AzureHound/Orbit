@@ -66,6 +66,9 @@ docker
 .config/obs-studio/*
 !.config/obs-studio/themes
 
+# qutebrowser
+.config/qutebrowser/bookmarks
+
 # Spotify
 .config/spotify
 

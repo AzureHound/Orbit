@@ -1,0 +1,60 @@
+/* Standard, serif, and sans-serif fonts */
+body,
+html,
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+ul,
+ol,
+td,
+th,
+table,
+section,
+article {
+  font-family: "Josefin Sans", sans-serif !important;
+}
+
+/* Monospace (fixed-width) fonts - extended selectors */
+pre,
+code,
+kbd,
+samp,
+tt,
+textarea,
+input[type="text"],
+input[type="password"],
+/* Common code block containers & classes */
+div[class*="highlight"],
+div[class*="code"],
+pre[class*="highlight"],
+pre[class*="code"],
+code[class*="language-"],
+pre[class*="language-"],
+pre > code,
+code[class],
+pre code,
+pre span,
+div[class*="blob-code"],
+td[class*="blob-code"],
+div[class*="source"], 
+div[class*="syntax"], 
+div[class*="hljs"], 
+span[class*="hljs-"],
+/* GitHub */
+.markdown-body pre,
+.markdown-body code,
+.markdown-body tt,
+.markdown-body kbd {
+  font-family:
+    "JetBrainsMono Nerd Font", "JetBrainsMono Nerd Font Mono",
+    "JetBrainsMonoNL Nerd Font", "JetBrainsMonoNL Nerd Font Mono", monospace !important;
+  font-size: 1em !important;
+}
