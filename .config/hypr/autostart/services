@@ -26,9 +26,6 @@ pypr --debug /tmp/pypr.log &
 # Notification Daemon
 swaync &
 
-# OSD Window
-swayosd-server &
-
 # Filter
 hyprsunset &
 
