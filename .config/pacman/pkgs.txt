@@ -199,6 +199,7 @@ wget
 wiki-tui
 wireless_tools
 wireplumber
+wob
 wpa_supplicant
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland

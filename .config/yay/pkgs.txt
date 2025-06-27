@@ -43,7 +43,6 @@ pyprland
 qimgv
 rofi-games
 spicetify-cli
-swayosd-git
 sysz
 tint-tetris
 tt
