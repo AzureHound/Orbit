@@ -20,6 +20,7 @@ evdevhook2-git
 fastanime
 gallery-dl-bin
 gitmux
+goread
 hyprfreeze-git
 hyprls-git
 jelly
@@ -34,6 +35,7 @@ mpvpaper
 mutt-wizard
 nvitop
 oh-my-posh
+opencode
 overskride
 pacseek
 pokemon-colorscripts-git
