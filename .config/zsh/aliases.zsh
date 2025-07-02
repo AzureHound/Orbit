@@ -25,7 +25,6 @@ alias bonsai='cbonsai --seed 119'
 alias clock='tty-clock -DScC6b'
 alias gen='tgpt -i'
 alias histwipe="cliphist wipe"
-alias lofi='lowfi'
 alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"
 alias powertop='sudo powertop'
 alias preview='kitten icat'
