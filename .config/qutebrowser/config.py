@@ -62,7 +62,8 @@ c.content.blocking.enabled = True
 # Privacy
 config.set("content.webgl", False, "*")
 config.set("content.geolocation", False)
-config.set("content.canvas_reading", False)
 config.set("content.cookies.store", True)
+config.set("content.canvas_reading", False)
 config.set("content.cookies.accept", "all")
+config.set("content.private_browsing", True)
 config.set("content.webrtc_ip_handling_policy", "default-public-interface-only")
