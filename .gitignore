@@ -41,6 +41,9 @@
 .config/fish/functions
 .config/fish/themes
 
+# goread
+.config/goread/urls.yml
+
 # neomutt
 .config/msmtp
 .config/mutt
@@ -67,6 +70,7 @@ docker
 !.config/obs-studio/themes
 
 # qutebrowser
+.config/qutebrowser/autoconfig.yml
 .config/qutebrowser/bookmarks
 
 # Spotify
