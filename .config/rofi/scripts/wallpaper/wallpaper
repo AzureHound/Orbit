@@ -23,6 +23,7 @@ choice=$(
 [ -z "$choice" ] && exit 0
 
 wallpaper="$wallpapers_dir/$choice"
+SYMLINK_PATH="$HOME/.config/hypr/theme/lock"
 
 if pgrep -x "hyprpaper" >/dev/null; then
   hyprctl hyprpaper reload ,"$wallpaper"
@@ -33,5 +34,7 @@ elif pgrep -x "swww" >/dev/null; then
     --transition-duration 2 \
     --transition-fps 30
 fi
+
+ln -sf "$wallpaper" "$SYMLINK_PATH"
 
 exit 0
