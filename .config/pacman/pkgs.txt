@@ -3,7 +3,6 @@ android-file-transfer
 android-tools
 asciinema
 atuin
-baobab
 base
 base-devel
 bat
@@ -17,11 +16,11 @@ cava
 chafa
 chess-tui
 cliphist
-cmake
 cowsay
 cpio
 cronie
 ddcutil
+delfin
 direnv
 dkms
 dnsmasq
@@ -39,12 +38,14 @@ figlet
 firefox
 fish
 flatpak
+fragments
 gamescope
 ghostty
 git
 git-delta
 github-cli
 glow
+gnome-calculator
 gnome-disk-utility
 gnome-firmware
 gnome-keyring
@@ -56,7 +57,6 @@ gst-plugin-pipewire
 gtk-engine-murrine
 gvfs-smb
 helvum
-htop
 hugo
 hypridle
 hyprland
@@ -66,6 +66,8 @@ hyprpicker
 hyprpolkitagent
 hyprshot
 hyprsunset
+identity
+impression
 iptables-nft
 iwd
 keepassxc
@@ -97,6 +99,7 @@ mediainfo
 meson
 mpc
 mpd
+mpd-mpris
 nano
 nautilus
 nautilus-image-converter
@@ -113,6 +116,7 @@ nushell
 nvidia-dkms
 nvm
 nwg-look
+obfuscate
 obsidian
 ollama-cuda
 onefetch
@@ -141,6 +145,7 @@ qt6-virtualkeyboard
 qt6-wayland
 qt6ct
 qutebrowser
+raider
 reflector
 rhvoice
 ripgrep
@@ -192,7 +197,6 @@ virt-manager
 virt-viewer
 vivid
 w3m
-waybar
 webp-pixbuf-loader
 wf-recorder
 wget
