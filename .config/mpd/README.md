@@ -1,4 +1,5 @@
 ```
 cd ~/.config/mpd
-touch mpd.db log mpd.conf pid playlists state sticker.sql
+touch mpd.db log mpd.conf pid state sticker.sql
+mkdir -p ~/.config/mpd/playlists
 ```
