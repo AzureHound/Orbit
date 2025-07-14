@@ -25,7 +25,6 @@
 .config/ripgrep-all
 .config/systemd
 .config/whoozle.github.io
-.config/wttr
 .config/zsh/.zcompdump
 
 .config/gtk-4.0/servers
@@ -33,6 +32,14 @@
 .config/electron-builder.json
 .config/QtProject.conf
 .config/pavucontrol.ini
+
+# bin
+.local/bin/spotdl
+.local/bin/cyberdrop-dl
+.local/bin/googleimagesdownload
+
+# Docker
+docker
 
 # fish
 .config/fish/fish_variables
@@ -44,40 +51,35 @@
 # goread
 .config/goread/urls.yml
 
+# Hypr
+.config/hypr/theme/lock
+
 # neomutt
 .config/msmtp
 .config/mutt
 !.config/mutt/styles.muttrc
 
-# tmux
-.config/tmux/plugins
-
-# yazi
-.config/yazi/flavors
-.config/yazi/plugins
-.config/yazi/package.toml
-
-# Bin
-.local/bin/spotdl
-.local/bin/cyberdrop-dl
-.local/bin/googleimagesdownload
-
-# Docker
-docker
-
 # OBS Studio
 .config/obs-studio/*
 !.config/obs-studio/themes
 
-# qutebrowser
+# Qutebrowser
 .config/qutebrowser/autoconfig.yml
 .config/qutebrowser/bookmarks
 
 # Spotify
 .config/spotify
 
+# tmux
+.config/tmux/plugins
+
 # VSCodium
 .config/VSCodium
 !.config/VSCodium/User/extensions.txt
 !.config/VSCodium/User/keybindings.json
 !.config/VSCodium/User/settings.json
+
+# yazi
+.config/yazi/flavors
+.config/yazi/plugins
+.config/yazi/package.toml
