@@ -25,6 +25,7 @@ hyprfreeze-git
 hyprls-git
 jelly
 jftui
+kanata-bin
 keyb
 lazydocker
 lazynpm
@@ -37,7 +38,9 @@ nvitop
 oh-my-posh
 opencode
 overskride
+packet
 pacseek
+parabolic
 pokemon-colorscripts-git
 portal-bin
 proton-ge-custom-bin
@@ -46,6 +49,7 @@ qimgv
 rofi-games
 spicetify-cli
 sysz
+timr
 tint-tetris
 tt
 ttf-ms-win11-auto
