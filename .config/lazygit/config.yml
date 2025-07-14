@@ -1,11 +1,32 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 recentrepos:
   - repo
+
+disableStartupPopups: true
+notARepository: "skip"
+promptToReturnFromSubprocess: false
+
 gui:
   scrollHeight: 10
   scrollPastBottom: false
   sidePanelWidth: 0.22
   expandFocusedSidePanel: true
+  showBottomLine: false
+  nerdFontsVersion: "3"
+  showNumstatInFilesView: true
+  commandLogSize: 5
+  showDivergenceFromBaseBranch: "arrowAndNumber"
+  filterMode: "fuzzy"
+  showPanelJumps: false
+  skipRewordInEditorWarning: false
+  border: "rounded"
+  statusPanelView: allBranchesLog
+  commitLength:
+    show: true
+  branchColors:
+    "release": "#eed49f"
+    "hotfix": "#ed8796"
+    "feature": "#a6da95"
   theme:
     activeBorderColor:
       - "#a6da95"
@@ -26,40 +47,25 @@ gui:
       - "#cad3f5"
     searchingActiveBorderColor:
       - "#eed49f"
-  commitLength:
-    show: true
-  branchColors:
-    "release": "#eed49f"
-    "hotfix": "#ed8796"
-    "feature": "#a6da95"
-  showBottomLine: false
-  nerdFontsVersion: "3"
-  showNumstatInFilesView: true
-  commandLogSize: 5
-  showDivergenceFromBaseBranch: "arrowAndNumber"
-  filterMode: "fuzzy"
-  showPanelJumps: false
-  skipRewordInEditorWarning: false
-  border: "rounded"
-  statusPanelView: allBranchesLog
+
 git:
+  overrideGpg: true
+  autoFetch: true
+  parseEmoji: true
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' {{branchName}} --"
+  allBranchesLogCmds:
+    - git log --graph --all --color=always --abbrev-commit  --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
   paging:
     colorArg: always
     pager: delta --paging=never --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
   merging:
     manualCommit: false
     args: ""
-  autoFetch: true
-  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' {{branchName}} --"
-  parseEmoji: true
-  allBranchesLogCmds:
-    - git log --graph --all --color=always --abbrev-commit  --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+
 os:
   editPreset: "nvim-remote"
   # edit: '[ -z "$NVIM" ] && (nvim -- {{filename}}) || (nvim --server "$NVIM" --remote-send "q" && nvim --server "$NVIM" --remote {{filename}})'
-disableStartupPopups: true
-notARepository: "skip"
-promptToReturnFromSubprocess: false
+
 keybinding:
   universal:
     quit: "q"
@@ -184,6 +190,7 @@ keybinding:
     init: "i"
     update: "u"
     bulkMenu: "b"
+
 customCommands:
   - key: "<c-n>"
     description: "New branch with prefix"
@@ -235,9 +242,7 @@ customCommands:
             value: "--reviewer peterbornerup,farhadh,benjaminbruun"
           - name: "None"
             value: ""
-    command: >
-      gh pr create --assignee @me --title "{{.Form.title}}" --fill {{ if ne .Form.base "" }}--base "{{.Form.base}}"{{ end }} {{.Form.draft}} {{ if eq .Form.reviewers "other" }}--reviewer "{{.Form.customReviewers}}"{{ else }}{{.Form.reviewers}}{{ end }}
-
+    command: gh pr create --assignee @me --title "{{.Form.title}}" --fill {{ if ne .Form.base "" }}--base "{{.Form.base}}"{{ end }} {{.Form.draft}} {{ if eq .Form.reviewers "other" }}--reviewer "{{.Form.customReviewers}}"{{ else }}{{.Form.reviewers}}{{ end }}
     loadingText: "Creating pull request on GitHub"
   - key: "o"
     command: "gh repo view --web"
