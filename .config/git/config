@@ -22,6 +22,10 @@
   compression = 9
   excludesfile = ~/.config/git/ignore
 
+[color]
+  ui = true
+  grep = auto
+
 [interactive]
   diffFilter = delta
 
@@ -35,9 +39,10 @@
   line-numbers-right-format = "│ "
 
 [status]
-  branch = true
   short = true
+  branch = true
   showStash = true
+  submoduleSummary = true
   showUntrackedFiles = all
 
 [pull]
@@ -48,7 +53,7 @@
   default = current
 
 [merge]
-    conflictstyle = zdiff3
+  conflictstyle = zdiff3
 
 [diff]
   colorMoved = default
