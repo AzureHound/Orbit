@@ -2,16 +2,14 @@
 
 DISPLAY="DP-1"
 WALLPAPER_DIR="$HOME/Videos/Wallpapers"
-THUMBNAILS_DIR="$HOME/.cache/live-wallpapers"
 SOCKET_PATH="/tmp/mpv-socket"
-
-mkdir -p "$THUMBNAILS_DIR"
+THUMBNAILS_DIR="$HOME/.cache/live-wallpapers"
+MPV_OPTIONS="input-ipc-server=$SOCKET_PATH no-audio loop --no-resume-playback vo=libmpv gpu-api=vulkan hwdec=nvdec vd-lavc-threads=$(nproc) vf=fps=30"
 
 build_theme() {
   rows=$1
   cols=$2
   icon_size=$3
-
   echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
 }
 
@@ -20,7 +18,6 @@ generate_thumbnails() {
     if [ -f "$video" ]; then
       video_name=$(basename "$video")
       thumbnail_path="$THUMBNAILS_DIR/${video_name}.jpg"
-
       if [ ! -f "$thumbnail_path" ] || [ "$video" -nt "$thumbnail_path" ]; then
         ffmpeg -y -i "$video" -vframes 1 -ss 00:00:05 "$thumbnail_path" &>/dev/null
       fi
@@ -30,23 +27,48 @@ generate_thumbnails() {
 
 is_mpvpaper_running_with_socket() {
   if pgrep mpvpaper >/dev/null && [ -S "$SOCKET_PATH" ]; then
-    return 0 # true
+    return 0
   else
-    return 1 # false
+    return 1
   fi
 }
 
 change_wallpaper_via_ipc() {
   local video_path="$1"
-  echo "loadfile \"$video_path\" replace" | socat - "$SOCKET_PATH"
+  echo "loadfile \"$video_path\" replace" | socat - "$SOCKET_PATH" 2>/dev/null
   return $?
 }
 
+change_wallpaper() {
+  local video_to_play="$1"
+
+  if [ ! -d "$WALLPAPER_DIR" ]; then
+    return 1
+  fi
+
+  if [ -z "$video_to_play" ]; then
+    return 1
+  fi
+
+  CURRENT_WALLPAPER=$(pgrep mpvpaper -a 2>/dev/null | grep -o "$WALLPAPER_DIR/.*" | head -n 1)
+  if [ "$video_to_play" = "$CURRENT_WALLPAPER" ]; then
+    return 0
+  fi
+
+  if is_mpvpaper_running_with_socket; then
+    if change_wallpaper_via_ipc "$video_to_play"; then
+      return 0
+    fi
+  fi
+
+  pkill mpvpaper 2>/dev/null || true
+  mpvpaper "$DISPLAY" -f -p -s -o "$MPV_OPTIONS" "$video_to_play"
+}
+
+mkdir -p "$THUMBNAILS_DIR"
 generate_thumbnails
 
 THEME="$HOME/.config/rofi/scripts/live-wallpaper/style.rasi"
-
-ROFI_CMD="rofi -dmenu -i -show-icons -theme-str $(build_theme 4 3 12) -theme ${THEME}"
 
 CHOICE=$(
   ls --escape "$WALLPAPER_DIR/" |
@@ -54,7 +76,7 @@ CHOICE=$(
       thumbnail_path="$THUMBNAILS_DIR/${A}.jpg"
       echo -en "$A\x00icon\x1f$thumbnail_path\n"
     done |
-    $ROFI_CMD
+    rofi -dmenu -i -show-icons -theme-str "$(build_theme 4 4 10)" -theme "${THEME}"
 )
 
 if [ -z "$CHOICE" ]; then
@@ -62,21 +84,6 @@ if [ -z "$CHOICE" ]; then
 fi
 
 WALLPAPER="$WALLPAPER_DIR/$CHOICE"
-
-CURRENT_WALLPAPER=$(pgrep mpvpaper -a 2>/dev/null | grep -o "/home/.*\.mp4" | head -n 1)
-
-if [ "$WALLPAPER" = "$CURRENT_WALLPAPER" ]; then
-  exit 0
-else
-  if is_mpvpaper_running_with_socket; then
-    if change_wallpaper_via_ipc "$WALLPAPER"; then
-      exit 0
-    fi
-  fi
-
-  pkill mpvpaper 2>/dev/null || true
-
-  mpvpaper "$DISPLAY" -o "input-ipc-server=$SOCKET_PATH no-audio loop gpu-api=vulkan vo=libmpv hwdec=nvdec vd-lavc-threads=$(nproc)" "$WALLPAPER"
-fi
+change_wallpaper "$WALLPAPER"
 
 exit 0
