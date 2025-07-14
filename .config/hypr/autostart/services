@@ -3,60 +3,59 @@
 # █▀ █▀▀ █▀█ █ █ █ █▀▀ █▀▀ █▀
 # ▄█ ██▄ █▀▄ ▀▄▀ █ █▄▄ ██▄ ▄█
 
-# Removable Media Automounter
-udiskie &
+# Polkit Authentication
+systemctl --user start hyprpolkitagent &
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Wallpaper
-hyprpaper &
-# swww-daemon --format xrgb &
+# Audio
+easyeffects --gapplication-service &
 
-# Random Wallpaper
-sleep 0.4 && $HOME/.config/hypr/scripts/random_wallpaper &
+# Screen Lock Idle Daemon
+hypridle &
 
-## Live Wallpaper
-# mpvpaper -f -p &
-# $HOME/.config/hypr/scripts/random_live_wallpaper &
+# Kanata
+kanata -c $HOME/.config/kanata/config.kdb &
 
 # Pyprland Daemon
 pypr --debug /tmp/pypr.log &
 
-# Bar
-# waybar &
-
 # Notification Daemon
 swaync &
-
-# Filter
-hyprsunset &
-
-# Filter Automation
-sleep 0.4 && $HOME/.config/hypr/scripts/sunset &
-
-# Notify connecting & disconnecting devices
-# devify &
-
-# Screen Lock Idle Daemon
-hypridle &
 
 # Clipboard
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 
-# Polkit Authentication
-systemctl --user start hyprpolkitagent &
-# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# Removable Media Automounter
+udiskie &
+
+# Notify connecting & disconnecting devices
+# devify &
+
+# Sync
+syncthing -no-browser &
 
 # Screen sharing & Portals
 $HOME/.config/hypr/scripts/portal &
 # xwaylandvideobridge & # Off when using Vesktop instead of Discord
 
-# Audio
-easyeffects --gapplication-service &
+# Wallpaper Engine
+hyprpaper &
+# swww-daemon --format xrgb &
+sleep 0.4 && $HOME/.config/hypr/scripts/wallpaper &
+
+# Live Wallpaper
+# $HOME/.config/hypr/scripts/mpvpaper -i 30 &
+
+# Filter
+hyprsunset &
+sleep 0.4 && $HOME/.config/hypr/scripts/sunset &
+
+# Bar
+# waybar &
+
+# OSD Server
+mkfifo "$XDG_RUNTIME_DIR/wob.sock" && tail -f "$XDG_RUNTIME_DIR/wob.sock" | wob &
 
 # RGB
 openrgb --startminimized -p "Profile 1" &
-
-# Sync
-syncthing -no-browser &
-
-# Systemd services

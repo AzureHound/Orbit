@@ -1,6 +1,3 @@
-# █░█░█ ▄▀█ █░░ █░░ █▀█ ▄▀█ █▀█ █▀▀ █▀█
-# ▀▄▀▄▀ █▀█ █▄▄ █▄▄ █▀▀ █▀█ █▀▀ ██▄ █▀▄
-
 #!/usr/bin/env bash
 
 WALLPAPER_DIR="$HOME/Developer/repos/Wallpapers"
@@ -9,6 +6,7 @@ CURRENT_WALL=$(hyprctl hyprpaper listloaded)
 random=$(fd --base-directory "$WALLPAPER_DIR" --type f . | shuf -n 1)
 
 WALLPAPER="$WALLPAPER_DIR/$random"
+SYMLINK_PATH="$HOME/.config/hypr/theme/lock"
 
 if pgrep -x "hyprpaper" >/dev/null; then
   hyprctl hyprpaper reload ,"$WALLPAPER"
@@ -19,3 +17,5 @@ elif pgrep -x "swww" >/dev/null; then
     --transition-duration 2 \
     --transition-fps 30
 fi
+
+ln -sf "$WALLPAPER" "$SYMLINK_PATH"
