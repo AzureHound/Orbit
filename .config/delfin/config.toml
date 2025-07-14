@@ -1,0 +1,42 @@
+version = 2
+servers = []
+
+[window]
+width = 1896
+height = 1056
+maximized = true
+
+[general]
+restore_most_recent_login = true
+use_episode_image = true
+
+[video_player]
+position_update_frequency = 10
+volume = 1.0
+muted = false
+skip_backwards_amount = 10
+skip_forwards_amount = 30
+on_left_click = "PlayPause"
+duration_display = "Total"
+intro_skipper = true
+intro_skipper_auto_skip = true
+jellyscrub = true
+backend = "Mpv"
+hls_playback = false
+deinterlace = "Off"
+
+[video_player.subtitles]
+scale = 1.0
+colour = "#FFFFFFFF"
+background_colour = "#00000000"
+position = 100
+
+[video_player.subtitles.font]
+family = "Josefin Sans"
+size = 14
+bold = false
+italic = false
+
+[video_player.mpv_prefs]
+hardware_decoding = "AutoSafe"
+hardware_decoding_custom = ""
