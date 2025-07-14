@@ -96,8 +96,8 @@ style = 'fg:yellow'
 format = ' [$duration]($style)'
 
 [character]
-success_symbol = '[➜](green_bold)'
-error_symbol = '[➜](bold red)'
+success_symbol = '[](green_bold)'
+error_symbol = '[](bold red)'
 vimcmd_symbol = "[](green_bold)"
 # vimcmd_visual_symbol = "[](green_bold)"
 # vimcmd_replace_symbol = "[](green_bold)"
