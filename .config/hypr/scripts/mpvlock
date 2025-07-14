@@ -1,27 +1,21 @@
 #!/usr/bin/env bash
 
-# Settings
 WALLPAPER_DIR="$HOME/Videos/Wallpapers"
 
-# GPU optimizations
 MPV_OPTIONS="no-audio loop gpu-api=vulkan vo=libmpv hwdec=nvdec vd-lavc-threads=$(nproc)"
 
-# Get video files
 VIDEO_FILES=()
 while IFS= read -r file; do
   VIDEO_FILES+=("$file")
 done < <(find "$WALLPAPER_DIR" -type f \( -name "*.mp4" -o -name "*.mkv" -o -name "*.webm" -o -name "*.avi" -o -name "*.mov" \))
 
-# Exit if no videos
 if [ ${#VIDEO_FILES[@]} -eq 0 ]; then
   echo "No video files found in $WALLPAPER_DIR"
   exit 1
 fi
 
-# Pick random video
 RANDOM_VIDEO="${VIDEO_FILES[RANDOM % ${#VIDEO_FILES[@]}]}"
 
-# Launch video lockscreen
 mpvpaper -l overlay -vs -o "$MPV_OPTIONS" '*' "$RANDOM_VIDEO" -f
 sleep 0.5
 hyprlock

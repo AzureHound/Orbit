@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Change Hyprland Layouts (Master or Dwindle) on the fly
 
 notif="/usr/share/icons/Adwaita/scalable/places/network-workgroup.svg"
 

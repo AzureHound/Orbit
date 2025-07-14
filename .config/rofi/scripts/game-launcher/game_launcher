@@ -1,21 +1,17 @@
 #!/usr/bin/env bash
 
-# Check for rofi
 if ! command -v rofi &>/dev/null; then
   notify-send "rofi not found" "Please install rofi first"
   exit 1
 fi
 
-# Verify plugin
 if [ ! -f "/usr/lib/rofi/games.so" ]; then
   notify-send "rofi-games plugin not found" "Please ensure rofi-games is installed correctly"
   exit 1
 fi
 
-# Set theme path
 THEME_FILE="$HOME/.config/rofi/scripts/game-launcher/style.rasi"
 
-# Launch with theme
 rofi -show games -theme "$THEME_FILE"
 
 exit $?

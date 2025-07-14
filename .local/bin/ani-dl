@@ -9,9 +9,7 @@ fi
 read -rp "Latest Episodes! " latest_count
 
 if [[ -z "$latest_count" ]]; then
-  # Download all episodes
   fastanime --sub download -t "$anime_title" -r ':'
 else
-  # Download latest N episodes
   fastanime --sub download -t "$anime_title" -r "-$latest_count:"
 fi

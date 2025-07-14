@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 
-# Get list of orphaned packages
 ORPHANS=$(pacman -Qtdq)
 
-# Check if orphans were found
 if [[ -n "$ORPHANS" ]]; then
   echo "=> Orphaned packages found:"
-  # Show details about orphaned packages
   pacman -Qi $(echo $ORPHANS)
 
   echo -e "\nRemoving orphaned packages..."

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# variables
 uptime="$(uptime -p | sed -e 's/up //g')"
 shutdown='󰐥'
 reboot='󰜉'
@@ -40,7 +39,6 @@ run_rofi() {
   echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
 }
 
-# Execute Command
 run_cmd() {
   selected="$(confirm_exit)"
   if [[ "$selected" == "$yes" ]]; then
@@ -64,7 +62,6 @@ run_cmd() {
   fi
 }
 
-# Actions
 chosen="$(run_rofi)"
 case ${chosen} in
 $shutdown)

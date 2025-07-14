@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Hypr sunset daemon - adjusts screen temperature every 20 minutes
-# Temperature in Kelvin (lower=warmer/orange, higher=cooler/blue)
+# Adjust temp every 20min
+# K: low=warm, high=cool
 
-# Early morning
+# Dawn
 TEMP_00_00=2700
 TEMP_00_20=2700
 TEMP_00_40=2700
@@ -17,7 +17,7 @@ TEMP_03_00=2800
 TEMP_03_20=2850
 TEMP_03_40=2900
 
-# Sunrise period
+# Sunrise
 TEMP_04_00=3000
 TEMP_04_20=3200
 TEMP_04_40=3400
@@ -36,7 +36,7 @@ TEMP_08_00=6300
 TEMP_08_20=6400
 TEMP_08_40=6500
 
-# Daytime
+# Day
 TEMP_09_00=6600
 TEMP_09_20=6650
 TEMP_09_40=6700
@@ -89,10 +89,9 @@ TEMP_23_00=2700
 TEMP_23_20=2700
 TEMP_23_40=2700
 
-# Cache for efficiency
+# Cache
 LAST_TEMP=""
 
-# Reset on exit
 cleanup() {
   hyprctl hyprsunset temperature 6500 2>/dev/null
   exit 0
@@ -100,7 +99,6 @@ cleanup() {
 
 trap cleanup SIGINT SIGTERM
 
-# Calculate wait time until next 20-min interval
 calculate_next_check() {
   current_minute=$(date +%M)
   current_second=$(date +%S)
@@ -117,7 +115,6 @@ calculate_next_check() {
   echo $wait_seconds
 }
 
-# Update temperature based on time
 update_temperature() {
   current_hour=$(date +%H)
   current_minute=$(date +%M)
@@ -133,14 +130,12 @@ update_temperature() {
   var_name="TEMP_${current_hour}_${minute_key}"
   temp_value=${!var_name:-6500}
 
-  # Only update if temperature changed
   if [ "$LAST_TEMP" != "$temp_value" ]; then
     hyprctl hyprsunset temperature $temp_value 2>/dev/null
     LAST_TEMP=$temp_value
   fi
 }
 
-# Main loop
 while true; do
   update_temperature
   sleep_time=$(calculate_next_check)
