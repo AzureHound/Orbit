@@ -2,8 +2,8 @@
 
 # History
 HISTFILE=$XDG_CACHE_HOME/zsh/zsh_history
-SAVEHIST=10000
 SAVEHIST=$HISTSIZE
+SAVEHIST=10000
 HISTDUP=erase
 
 # Filter ZSH Error History
