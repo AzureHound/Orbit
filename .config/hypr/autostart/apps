@@ -8,6 +8,6 @@
 # obsidian &
 
 # Terminal Apps
-# kitty --class btop btop &
-# kitty --class nvitop nvitop &
+# $term --class btop btop &
+# $term --class nvitop nvitop &
 ghostty --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false &

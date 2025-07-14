@@ -63,7 +63,7 @@ hysteresis = 0.1
 lazy = true
 
 [scratchpads.neovim]
-command = "kitty --class scratchpad-larger $terminal nvim"
+command = "kitty --class scratchpad-larger $term nvim"
 unfocus = "hide"
 hysteresis = 0.1
 lazy = true
