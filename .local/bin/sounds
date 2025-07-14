@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-if ! pgrep -x "mpd" >/dev/null; then
+if pgrep -x "mpd" >/dev/null; then
+  if ! pgrep -x "mpd-mpris" >/dev/null; then
+    mpd-mpris &>/dev/null &
+  fi
+else
   mpd
+  mpd_state=1
+  mpd-mpris &>/dev/null &
 
   if command -v wpctl &>/dev/null; then
     SYSTEM_VOL=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null | grep -o '[0-9]\.[0-9]\+' | head -1 | awk '{print int($1*100)}')
@@ -15,6 +21,10 @@ if ! pgrep -x "mpd" >/dev/null; then
   fi
 fi
 
-trap 'pkill -x mpd' EXIT
+if [ -n "$mpd_state" ]; then
+  trap 'pkill -x mpd; pkill -x mpd-mpris' EXIT
+else
+  trap 'pkill -x mpd-mpris' EXIT
+fi
 
 exec rmpc
