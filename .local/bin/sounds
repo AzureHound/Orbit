@@ -1,30 +1,28 @@
 #!/usr/bin/env bash
 
+export MPD_HOST="/tmp/mpd_socket"
+
 if pgrep -x "mpd" >/dev/null; then
-  if ! pgrep -x "mpd-mpris" >/dev/null; then
-    mpd-mpris &>/dev/null &
-  fi
+  true
 else
-  mpd
-  mpd_state=1
-  mpd-mpris &>/dev/null &
-
-  if command -v wpctl &>/dev/null; then
-    SYSTEM_VOL=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null | grep -o '[0-9]\.[0-9]\+' | head -1 | awk '{print int($1*100)}')
-    [[ -n "$SYSTEM_VOL" ]] && mpc volume "$SYSTEM_VOL" >/dev/null
-  elif command -v pactl &>/dev/null; then
-    SYSTEM_VOL=$(pactl get-sink-volume @DEFAULT_SINK@ 2>/dev/null | grep -o '[0-9]\+%' | head -1 | tr -d '%')
-    [[ -n "$SYSTEM_VOL" ]] && mpc volume "$SYSTEM_VOL" >/dev/null
-  elif command -v amixer &>/dev/null; then
-    SYSTEM_VOL=$(amixer -D pulse get Master 2>/dev/null | grep -o '[0-9]\+%' | head -1 | tr -d '%')
-    [[ -n "$SYSTEM_VOL" ]] && mpc volume "$SYSTEM_VOL" >/dev/null
-  fi
+  nohup mpd &>/dev/null &
+  sleep 1
 fi
 
-if [ -n "$mpd_state" ]; then
-  trap 'pkill -x mpd; pkill -x mpd-mpris' EXIT
-else
-  trap 'pkill -x mpd-mpris' EXIT
+if command -v wpctl &>/dev/null; then
+  SYSTEM_VOL=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null | grep -o '[0-9]\.[0-9]\+' | head -1 | awk '{print int($1*100)}')
+  [[ -n "$SYSTEM_VOL" ]] && mpc -h /tmp/mpd_socket volume "$SYSTEM_VOL" >/dev/null
+elif command -v pactl &>/dev/null; then
+  SYSTEM_VOL=$(pactl get-sink-volume @DEFAULT_SINK@ 2>/dev/null | grep -o '[0-9]\+%' | head -1 | tr -d '%')
+  [[ -n "$SYSTEM_VOL" ]] && mpc -h /tmp/mpd_socket volume "$SYSTEM_VOL" >/dev/null
 fi
 
-exec rmpc
+if ! pgrep -x "mpd-mpris" >/dev/null; then
+  nohup mpd-mpris -network unix -host /tmp/mpd_socket &>/dev/null &
+fi
+
+if pgrep -x "rmpc" >/dev/null; then
+  true
+else
+  exec rmpc
+fi
