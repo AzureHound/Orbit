@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# Constants
 gfetch="gfetch -d churn contributors --no-color-palette --no-title"
 ls="eza --header --icons --all --color=always --group-directories-first --hyperlink"
 projects_dir="$HOME/Developer"

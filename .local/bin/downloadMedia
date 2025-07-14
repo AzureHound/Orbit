@@ -3,7 +3,6 @@
 image_folder="$HOME/Pictures/"
 video_folder="$HOME/Videos/"
 
-# Utils
 notify() {
   notify-send "Media Download" "$1" -i ~/.local/share/icons/Catppuccin-SE/64x64/mimetypes/application-x-partial-download.svg --app-name=gallery-dl
 }
@@ -20,7 +19,6 @@ download_videos() {
   gallery-dl -d "$video_folder" --download-archive "$video_folder/{$1}/archive.sqlite3" "$2" --filter "$3"
 }
 
-# Download Sites
 download_pinterest() {
   download_images "pinterest" "$1" "extension not in ('mp4', 'gif')"
   download_videos "pinterest" "$1" "extension in ('mp4', 'gif')"
