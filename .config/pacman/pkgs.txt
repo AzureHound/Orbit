@@ -100,6 +100,7 @@ meson
 mpc
 mpd
 mpd-mpris
+msedit
 nano
 nautilus
 nautilus-image-converter
@@ -135,6 +136,7 @@ polkit-kde-agent
 powertop
 presenterm
 pulseaudio-alsa
+python-mutagen
 python-pipx
 qemu-full
 qt5-quickcontrols2
