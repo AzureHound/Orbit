@@ -12,7 +12,7 @@ build_theme() {
 
 theme="$HOME/.config/rofi/scripts/wallpaper/style.rasi"
 
-rofi_cmd="rofi -dmenu -i -show-icons -theme-str $(build_theme 4 4 10) -theme ${theme}"
+rofi_cmd="rofi -dmenu -i -show-icons -theme-str $(build_theme 5 5 10) -theme ${theme}"
 
 choice=$(
   ls --escape "$wallpapers_dir" | grep -v "README.md" | sort -V |
