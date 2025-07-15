@@ -20,7 +20,7 @@
         method: Auto,
         max_size_px: (width: 1200, height: 1200),
         disabled_protocols: ["http://", "https://"],
-        vertical_align: Center,
+        vertical_align: Top,
         horizontal_align: Center,
     ),
     cava: (
@@ -142,8 +142,8 @@
                         pane: Split(
                             direction: Vertical,
                             panes: [
-                                (size: "80%", pane: Pane(AlbumArt)),
-                                (size: "20%", pane: Pane(Cava)),
+                                (size: "70%", pane: Pane(AlbumArt), vertical_align: Bottom),
+                                (size: "30%", pane: Pane(Cava), vertical_align: Center),
                             ],
                         ),
                     ),
@@ -161,8 +161,8 @@
                         pane: Split(
                             direction: Vertical,
                             panes: [
-                                (size: "80%", pane: Pane(AlbumArt), vertical_align: Bottom),
-                                (size: "20%", pane: Pane(Cava)),
+                                (size: "70%", pane: Pane(AlbumArt), vertical_align: Bottom),
+                                (size: "30%", pane: Pane(Cava), vertical_align: Center),
                             ],
                         ),
                     ),
