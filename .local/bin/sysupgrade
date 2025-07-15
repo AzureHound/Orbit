@@ -76,8 +76,7 @@ echo -e "\n${OVERLAY2}Spicetify ${GREEN} ${RESET}\n"
 spicetify update
 
 echo -e "\n${OVERLAY2}Submodules ${TEAL} ${RESET}\n"
-cd ~/Developer/repos/Orbit
-and git submodule update --init --recursive
+cd ~/Developer/repos/Orbit && git submodule update --init --recursive && echo -e "${GREEN}done${RESET}"
 cd ~
 
 end_time=$(date +%s)
