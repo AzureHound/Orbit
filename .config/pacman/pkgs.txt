@@ -100,7 +100,6 @@ meson
 mpc
 mpd
 mpd-mpris
-msedit
 nano
 nautilus
 nautilus-image-converter
