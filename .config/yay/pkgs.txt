@@ -8,6 +8,7 @@ bash-pipes
 bibata-cursor-theme-bin
 bottles
 brave-bin
+calcure
 carapace-bin
 cbonsai-git
 devify
