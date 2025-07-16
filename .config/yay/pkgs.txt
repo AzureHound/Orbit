@@ -24,6 +24,7 @@ gitmux
 goread
 hyprfreeze-git
 hyprls-git
+iwgtk
 jelly
 jftui
 kanata-bin
