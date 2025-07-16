@@ -1,0 +1,303 @@
+- name: Global/Generic Bindings
+  keybinds:
+    - name: Enter Command Mode
+      key: ":"
+    - name: Show Help
+      key: "?"
+    - name: Redraw Screen
+      key: "Ctrl + L"
+    - name: Exit Current Menu/Quit
+      key: "q"
+    - name: Refresh Current Mailbox
+      key: "R"
+    - name: Invoke Shell Command
+      key: "!"
+    - name: Print Version
+      key: "v (at main prompt, not index)"
+    - name: Push String to Input Buffer
+      key: "~"
+
+- name: Index (Mailbox List) Navigation
+  keybinds:
+    - name: Go to Next Message
+      key: "j / Down Arrow"
+    - name: Go to Previous Message
+      key: "k / Up Arrow"
+    - name: Go to First Message
+      key: "g / Home"
+    - name: Go to Last Message
+      key: "G / End"
+    - name: Page Down
+      key: "z / Page Down"
+    - name: Page Up
+      key: "Z / Page Up"
+    - name: Half Page Down
+      key: "Ctrl + D"
+    - name: Half Page Up
+      key: "Ctrl + U"
+    - name: Go to Next Unread Message
+      key: "n"
+    - name: Go to Previous Unread Message
+      key: "N"
+    - name: Go to Next New Message
+      key: "Tab"
+    - name: Go to Previous New Message
+      key: "Shift + Tab (Backtab)"
+    - name: Open Message in Pager
+      key: "Enter / l"
+    - name: Open Mailbox List
+      key: "="
+    - name: Mark Message Read
+      key: "M"
+    - name: Mark Message New (Unread)
+      key: "N"
+    - name: Search (Forward)
+      key: "/"
+    - name: Search (Backward)
+      key: "?"
+    - name: Next Search Match
+      key: "n"
+    - name: Previous Search Match
+      key: "N"
+    - name: Repeat Last Search
+      key: "&"
+    - name: Limit View (apply filter)
+      key: "l"
+    - name: Clear Limit View
+      key: "C"
+    - name: Sort Messages
+      key: "o"
+    - name: Reverse Sort Order
+      key: "O"
+
+- name: Index (Mailbox List) Thread Operations
+  keybinds:
+    - name: Toggle Collapse Thread
+      key: "Space / v"
+    - name: Toggle Collapse All Threads
+      key: "Esc + V"
+    - name: Move to Parent Message
+      key: "P"
+    - name: Move to Next Thread
+      key: "}"
+    - name: Move to Previous Thread
+      key: "{"
+    - name: Break Thread
+      key: "#"
+    - name: Link Tagged Message to Current Thread
+      key: "&"
+
+- name: Index (Mailbox List) Message Actions
+  keybinds:
+    - name: Compose New Message
+      key: "m"
+    - name: Reply to Sender
+      key: "r"
+    - name: Reply to All (Group Reply)
+      key: "R"
+    - name: Forward Message
+      key: "f"
+    - name: Bounce Message
+      key: "b"
+    - name: Delete Message
+      key: "d"
+    - name: Undelete Message
+      key: "u"
+    - name: Undelete All Deleted
+      key: "U"
+    - name: Save Message to Mailbox
+      key: "s"
+    - name: Copy Message to Mailbox
+      key: "C"
+    - name: Pipe Message to Command
+      key: "|"
+    - name: Print Message
+      key: "p"
+    - name: Create Alias from Sender
+      key: "a"
+    - name: Display Full Address of Sender
+      key: "@"
+    - name: Change Folder
+      key: "c"
+    - name: Save Changes to Mailbox (Synchronize)
+      key: "$"
+
+- name: Index (Mailbox List) Tagging
+  keybinds:
+    - name: Tag Current Message
+      key: "t"
+    - name: Tag All Messages
+      key: "T"
+    - name: Untag All Messages
+      key: "U"
+    - name: Apply Next Function to Tagged Messages Only
+      key: "; (semicolon)"
+    - name: Untag All and Untag
+      key: "u (on tagged message)"
+    - name: Tag Messages by Pattern
+      key: "Ctrl + T"
+
+- name: Pager (Message View) Navigation
+  keybinds:
+    - name: Scroll Down One Line
+      key: "J / Down Arrow"
+    - name: Scroll Up One Line
+      key: "K / Up Arrow"
+    - name: Scroll Down One Page
+      key: "Space / Page Down"
+    - name: Scroll Up One Page
+      key: "b / Page Up"
+    - name: Scroll Down Half Page
+      key: "Ctrl + D"
+    - name: Scroll Up Half Page
+      key: "Ctrl + U"
+    - name: Go to Top of Message
+      key: "g / Home"
+    - name: Go to Bottom of Message
+      key: "G / End"
+    - name: Search (Forward)
+      key: "/"
+    - name: Search (Backward)
+      key: "?"
+    - name: Next Search Match
+      key: "n"
+    - name: Previous Search Match
+      key: "N"
+    - name: View Next Message (in current folder)
+      key: "Enter / l"
+    - name: View Previous Message (in current folder)
+      key: "Backspace"
+    - name: Toggle Raw View
+      key: "H"
+
+- name: Pager (Message View) Actions
+  keybinds:
+    - name: Reply to Sender (from pager)
+      key: "r"
+    - name: Reply to All (from pager)
+      key: "R"
+    - name: Forward Message (from pager)
+      key: "f"
+    - name: Save Message (from pager)
+      key: "s"
+    - name: Pipe Message to Command (from pager)
+      key: "|"
+    - name: Print Message (from pager)
+      key: "p"
+    - name: View Attachments Menu
+      key: "v"
+    - name: Next Part/Attachment
+      key: "Tab"
+    - name: Previous Part/Attachment
+      key: "Shift + Tab"
+
+- name: Attachments Menu
+  keybinds:
+    - name: View Selected Attachment
+      key: "Enter"
+    - name: Save Selected Attachment
+      key: "s"
+    - name: Pipe Selected Attachment
+      key: "|"
+    - name: Print Selected Attachment
+      key: "p"
+    - name: Delete Selected Attachment
+      key: "d"
+    - name: Undelete Selected Attachment
+      key: "u"
+    - name: Tag Selected Attachment
+      key: "t"
+    - name: Untag All Attachments
+      key: "U"
+    - name: Next Attachment
+      key: "j / Down Arrow"
+    - name: Previous Attachment
+      key: "k / Up Arrow"
+    - name: Go to Parent Message (Exit Attachments)
+      key: "Escape / q"
+
+- name: Compose Menu
+  keybinds:
+    - name: Send Message
+      key: "y"
+    - name: Postpone Message
+      key: "L"
+    - name: Resume Postponed Message
+      key: "P (at main prompt)"
+    - name: Edit Headers
+      key: "H"
+    - name: Edit Subject
+      key: "s (on Subject line)"
+    - name: Add Attachment
+      key: "a"
+    - name: View/Edit Attachments
+      key: "v"
+    - name: Edit Message Body
+      key: "e"
+    - name: Insert File
+      key: "i"
+    - name: Toggle PGP/MIME Signing
+      key: "S"
+    - name: Toggle PGP/MIME Encryption
+      key: "X"
+    - name: Toggle PGP/MIME Both
+      key: "Y"
+    - name: Toggle PGP/MIME None
+      key: "N"
+    - name: Cancel Compose
+      key: "q"
+
+- name: Sidebar Navigation
+  keybinds:
+    - name: Toggle Sidebar Visibility
+      key: "B (common custom, not a true default function)"
+    - name: Select Next Mailbox in Sidebar
+      key: "Ctrl + J / Ctrl + N"
+    - name: Select Previous Mailbox in Sidebar
+      key: "Ctrl + K / Ctrl + P"
+    - name: Page Down in Sidebar
+      key: "Page Down"
+    - name: Page Up in Sidebar
+      key: "Page Up"
+    - name: Open Highlighted Mailbox
+      key: "Enter / Right Arrow"
+    - name: Select Next Mailbox with New Mail
+      key: "Ctrl + O"
+    - name: Select Previous Mailbox with New Mail
+      key: "Ctrl + P"
+
+- name: Query/Alias Menu
+  keybinds:
+    - name: Select Entry
+      key: "Enter"
+    - name: Next Entry
+      key: "j / Down Arrow"
+    - name: Previous Entry
+      key: "k / Up Arrow"
+    - name: Page Down
+      key: "z / Page Down"
+    - name: Page Up
+      key: "Z / Page Up"
+    - name: Exit Menu
+      key: "q"
+
+- name: Browser (File Selection) Menu
+  keybinds:
+    - name: Enter Directory/Select File
+      key: "Enter"
+    - name: Change Directory
+      key: "c"
+    - name: Up Directory
+      key: "u"
+    - name: Next Entry
+      key: "j / Down Arrow"
+    - name: Previous Entry
+      key: "k / Up Arrow"
+    - name: Page Down
+      key: "z / Page Down"
+    - name: Page Up
+      key: "Z / Page Up"
+    - name: Refresh Browser
+      key: "R"
+    - name: Exit Browser
+      key: "q"
