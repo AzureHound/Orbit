@@ -4,7 +4,7 @@
 [pyprland]
 plugins = ["scratchpads", "magnify"]
 
-[scratchpads.terminal]
+[scratchpads.term]
 command = "kitty --class scratchpad-large"
 lazy = true
 
