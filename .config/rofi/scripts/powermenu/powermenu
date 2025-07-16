@@ -16,7 +16,6 @@ rofi_cmd() {
     -theme $HOME/.config/rofi/scripts/powermenu/style.rasi
 }
 
-# mpvlock
 # mpvlock="$HOME/.config/hypr/scripts/mpvlock"
 
 confirm_cmd() {
@@ -50,12 +49,14 @@ run_cmd() {
       mpc -q pause
       hyprlock
       # $mpvlock
+      # $mpvlock -p $HOME/Videos/Wallpapers/lock
       systemctl suspend
     elif [[ $1 == '--logout' ]]; then
       hyprctl dispatch exit
     elif [[ $1 == '--lock' ]]; then
       hyprlock
       # $mpvlock
+      # $mpvlock -p $HOME/Videos/Wallpapers/lock
     fi
   else
     exit 0
