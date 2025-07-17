@@ -63,6 +63,7 @@
 
 [rebase]
   autoStash = true
+  missingCommitsCheck = warn
 
 [color "diff"]
   old = red strike
