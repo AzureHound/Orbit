@@ -16,6 +16,7 @@ cava
 chafa
 chess-tui
 cliphist
+cmake
 cowsay
 cpio
 cronie
