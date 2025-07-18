@@ -164,6 +164,10 @@ require("yatline-githead"):setup({
 
 	commit_symbol = " ",
 
+	show_behind_ahead = true,
+	behind_symbol = " ",
+	ahead_symbol = " ",
+
 	show_stashes = true,
 	stashes_symbol = " ",
 
