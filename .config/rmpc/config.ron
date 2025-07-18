@@ -53,7 +53,7 @@
             "<S-Tab>": PreviousTab,
             "1":        SwitchToTab("Queue"),
             "2":        SwitchToTab("Lyrics"),
-            "3":        SwitchToTab("Playlists"),
+            "3":        SwitchToTab("Directories"),
             "4":        SwitchToTab("Search"),
             "q":        Quit,
             ">":        NextTrack,
@@ -170,8 +170,8 @@
             ),
         ),
         (
-            name: "Playlists",
-            pane: Pane(Playlists),
+            name: "Directories",
+            pane: Pane(Directories),
         ),
         (
             name: "Search",
