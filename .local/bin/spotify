@@ -53,5 +53,3 @@ else
 fi
 
 currentdirname=${PWD##*/}
-
-ls | grep -v "$currentdirname.m3u" >"$currentdirname.m3u"
