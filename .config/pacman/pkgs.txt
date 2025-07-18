@@ -21,6 +21,7 @@ cowsay
 cpio
 cronie
 ddcutil
+decibels
 delfin
 direnv
 dkms
