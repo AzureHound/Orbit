@@ -3,7 +3,7 @@ set -euo pipefail
 
 LRCLIB_API="https://lrclib.net/api/get"
 
-RMPC_LYRICS_DIR="$HOME/Music/Lyrics"
+RMPC_LYRICS_DIR="$HOME/.local/share/Lyrics"
 
 if [ $# -ne 1 ]; then
   echo "Usage: $0 \"/path/to/directory_containing_songs\""
@@ -71,16 +71,16 @@ fetch_and_store() {
   fi
 
   if [ -z "$lyrics" ] || [ "$lyrics" == "null" ]; then
-    echo "✗ No lyrics for: \"$artist_p - $title_p\""
+    echo "$(tput setaf 1)✗$(tput sgr0) No lyrics for: \"$artist_p - $title_p\""
     return 1
   fi
 
   echo "$lyrics" | sed -E '/^\[(ar|al|ti):/d' >"$target_lrc_path"
-  echo "✔ Saved lyrics to: $(basename "$target_lrc_path") (in $SOURCE_DIR_BASENAME dir)"
+  echo "$(tput setaf 2)✔$(tput sgr0) Saved lyrics to: $(basename "$target_lrc_path") (in $SOURCE_DIR_BASENAME dir)"
   return 0
 }
 
-echo "▶ Fetching lyrics for all .mp3 in: $SOURCE_DIR"
+echo "$(tput setaf 4)▶$(tput sgr0) Fetching lyrics for all .mp3 in: $SOURCE_DIR"
 echo "  Target lyrics directory: $TARGET_LYRICS_SUBDIR"
 echo
 
