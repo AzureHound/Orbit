@@ -27,15 +27,27 @@ local catppuccin_palette = {
 	crust = "#181926",
 }
 
--- Plugins
+-- eza
+require("eza-preview"):setup({
+	default_tree = true,
+	level = 3,
+	follow_symlinks = true,
+	dereference = true,
+	all = true,
+})
+
+-- full-border
 require("full-border"):setup({
 	type = ui.Border.ROUNDED,
 })
 
-require("zoxide"):setup({
-	update_db = true,
-})
+-- git
+require("git"):setup()
 
+-- gvfs
+require("gvfs"):setup({})
+
+-- searchjump
 require("searchjump"):setup({
 	unmatch_fg = catppuccin_palette.overlay0,
 	match_str_fg = catppuccin_palette.peach,
@@ -51,8 +63,9 @@ require("searchjump"):setup({
 	search_patterns = {}, -- demo:{"%.e%d+","s%d+e%d+"}
 })
 
+-- yatline
 require("yatline"):setup({
-	section_separator = { open = "", close = "" },
+	section_separator = { open = "", close = "" },
 	inverse_separator = { open = "", close = "" },
 	part_separator = { open = "|", close = "|" },
 
@@ -142,6 +155,7 @@ require("yatline"):setup({
 	},
 })
 
+-- yatline-githead
 require("yatline-githead"):setup({
 	show_branch = true,
 	branch_prefix = "",
@@ -176,9 +190,10 @@ require("yatline-githead"):setup({
 	untracked_color = catppuccin_palette.pink,
 })
 
-require("git"):setup()
-
-require("eza-preview"):setup({})
+-- zoxide
+require("zoxide"):setup({
+	update_db = true,
+})
 
 -- Functions
 function Linemode:size_and_mtime()

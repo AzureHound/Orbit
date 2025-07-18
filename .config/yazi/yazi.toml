@@ -13,6 +13,7 @@ prepend_keymap = [
     # glow.yazi
     { on = ["<C-e>"], run = "seek 5" },
     { on = ["<C-y>"], run = "seek -5" },
+
     { on = [ "E" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
     { on = [ "-" ], run = "plugin eza-preview --args='--inc-level'", desc = "Increment tree level" },
     { on = [ "_" ], run = "plugin eza-preview --args='--dec-level'", desc = "Decrement tree level" },
@@ -108,12 +109,34 @@ run = "git"
 
 [plugin]
 prepend_preloaders = [
-  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { name = "/run/user/1000/gvfs/**/*", run = "noop" },
+  { name = "/run/media/USER_NAME/**/*", run = "noop" },
+
   { mime = "application/subrip", run = "mediainfo" },
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+
+  { name = "*.docx", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
 ]
+
 prepend_previewers = [
   { name = "*/", run = "eza-preview" },
+
   { name = "*.md", run = "glow" },
-  { mime = "{audio,video,image}/*", run = "mediainfo"},
+
   { mime = "application/subrip", run = "mediainfo" },
+  { mime = "{audio,video,image}/*", run = "mediainfo"},
+
+  { name = "*.docx", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+
+  { name = "*/", run = "folder", sync = true },
+  { name = "/run/user/1000/gvfs/**/*", run = "noop" },
+  { name = "/run/media/USER_NAME/**/*", run = "noop" },
 ]
