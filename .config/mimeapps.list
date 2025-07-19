@@ -25,6 +25,7 @@ x-scheme-handler/mailto=userapp-Thunderbird-AKWC82.desktop
 x-scheme-handler/mid=userapp-Thunderbird-AKWC82.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
+application/json=dev.zed.Zed.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
@@ -52,3 +53,4 @@ x-scheme-handler/mailto=userapp-Thunderbird-AKWC82.desktop;userapp-Thunderbird-5
 x-scheme-handler/mid=userapp-Thunderbird-AKWC82.desktop;userapp-Thunderbird-55T372.desktop;userapp-Thunderbird-BH7B52.desktop;userapp-Thunderbird-7H7W02.desktop;userapp-Thunderbird-XO5T02.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
+application/json=dev.zed.Zed.desktop;
