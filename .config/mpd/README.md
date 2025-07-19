@@ -1,5 +1,3 @@
 ```
-cd ~/.config/mpd
-touch mpd.db log mpd.conf pid state sticker.sql
-mkdir -p ~/.config/mpd/playlists
+cd ~/.config/mpd && touch mpd.db log mpd.conf pid state sticker.sql
 ```
