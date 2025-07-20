@@ -15,6 +15,7 @@ devify
 dipc
 dooit
 dooit-extras
+downgrade
 eden-bin
 espeak
 evdevhook2-git
