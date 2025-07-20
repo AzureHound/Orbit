@@ -36,12 +36,12 @@ export W3M_DIR="$XDG_DATA_HOME/w3m"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
-export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
+export ZSH_COMPDUMP="$XDG_CONFIG_HOME/zsh/.zcompdump"
 
 # History
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/less_history"
-export PYTHON_HISTORY="$XDG_CACHE_HOME_HOME/python/history"
+export PYTHON_HISTORY="$XDG_CACHE_HOME/python/history"
 
 # Editor
 export EDITOR="nvim"
