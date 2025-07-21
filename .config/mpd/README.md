@@ -1,3 +1,3 @@
 ```
-cd ~/.config/mpd && touch mpd.db log mpd.conf pid state sticker.sql
+cd ~/.config/mpd && touch data.db logs mpd.db pid state sticker.sql
 ```
