@@ -7,6 +7,7 @@ base
 base-devel
 bat
 bc
+bind
 bluetui
 bluez-utils
 bridge-utils
@@ -119,6 +120,7 @@ nvidia-dkms
 nvm
 nwg-look
 obfuscate
+obs-studio
 obsidian
 ollama-cuda
 onefetch
