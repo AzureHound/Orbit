@@ -44,12 +44,6 @@ unfocus = "hide"
 hysteresis = 0.1
 lazy = true
 
-[scratchpads.htop]
-command = "kitty --class scratchpad-large htop"
-unfocus = "hide"
-hysteresis = 0.1
-lazy = true
-
 [scratchpads.lazydocker]
 command = "kitty --class scratchpad-large lazydocker"
 unfocus = "hide"
