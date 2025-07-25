@@ -3,7 +3,7 @@
 )
 
 (defsrc
-  a s d f h j k l ; spc b n g m ,
+  a s d f h j k l ; spc w e u i o p b n g m ,
 )
 
 (defvar
@@ -22,18 +22,24 @@
   ; (multi f24 (tap-hold $tap-time $hold-time ; rmet))
 
   moe (tap-hold $tap-time $hold-time spc (layer-toggle mouse))
-  mleft (movemouse-left 3 1)
-  mdown (movemouse-down 3 1)
-  mup (movemouse-up 3 1)
-  mright (movemouse-right 3 1)
+  mleft (movemouse-left 3 2)
+  mdown (movemouse-down 3 2)
+  mup (movemouse-up 3 2)
+  mright (movemouse-right 3 2)
   mwup (mwheel-up 50 120)
   mwdown (mwheel-down 50 120)
+  mwleft (mwheel-left 20 120)
+  mwright (mwheel-right 20 120)
+  fwd (multi lalt right)
+  bwd (multi lalt left)
+  fst (movemouse-speed 300)
+  slw (movemouse-speed 10)
 )
 
 (deflayer base
-  @a @s @d @f h @j @k @l @; @moe b n g m ,
+  @a @s @d @f h @j @k @l @; @moe _ _ _ _ _ _ b n g m ,
 )
 
 (deflayer mouse
-  _ _ _ _ @mleft @mdown @mup @mright _ _ mlft @mwdown mmid @mwup mrgt
+  _ _ _ _ @mleft @mdown @mup @mright _ _ @fst @slw @mwleft @fwd @bwd @mwright mlft @mwdown mmid @mwup mrgt
 )
