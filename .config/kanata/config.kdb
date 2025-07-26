@@ -41,5 +41,5 @@
 )
 
 (deflayer mouse
-  _ _ _ _ @mleft @mdown @mup @mright _ _ @fst @slw @mwleft @fwd @bwd @mwright mlft @mwdown mmid @mwup mrgt
+  _ _ _ _ @mleft @mdown @mup @mright _ _ @fst @slw @mwleft @bwd @fwd @mwright mlft @mwdown mmid @mwup mrgt
 )
