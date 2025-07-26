@@ -1,0 +1,64 @@
+[global]
+key_bindings = [
+ { key = "q", command = "quit" },
+ { key = "ctrl+g", command = "vault_selector_modal_toggle" },
+ { key = "?", command = "help_modal_toggle" },
+]
+
+[splash]
+key_bindings = [
+ { key = "k", command = "splash_up" },
+ { key = "j", command = "splash_down" },
+ { key = "up", command = "splash_up" },
+ { key = "down", command = "splash_down" },
+ { key = "enter", command = "splash_open" },
+]
+
+[explorer]
+key_bindings = [
+ { key = "k", command = "explorer_up" },
+ { key = "j", command = "explorer_down" },
+ { key = "up", command = "explorer_up" },
+ { key = "down", command = "explorer_down" },
+ { key = "t", command = "explorer_toggle" },
+ { key = "s", command = "explorer_sort" },
+ { key = "tab", command = "explorer_switch_pane" },
+ { key = "enter", command = "explorer_open" },
+ { key = "ctrl+b", command = "explorer_toggle" },
+ { key = "ctrl+u", command = "explorer_scroll_up_half_page" },
+ { key = "ctrl+d", command = "explorer_scroll_down_half_page" },
+]
+
+[note_viewer]
+key_bindings = [
+ { key = "k", command = "note_viewer_scroll_up_one" },
+ { key = "j", command = "note_viewer_scroll_down_one" },
+ { key = "up", command = "note_viewer_scroll_up_one" },
+ { key = "down", command = "note_viewer_scroll_down_one" },
+ { key = "t", command = "note_viewer_toggle_explorer" },
+ { key = "tab", command = "note_viewer_switch_pane" },
+ { key = "ctrl+b", command = "note_viewer_toggle_explorer" },
+ { key = "ctrl+u", command = "note_viewer_scroll_up_half_page" },
+ { key = "ctrl+d", command = "note_viewer_scroll_down_half_page" },
+]
+
+[help_modal]
+key_bindings = [
+ { key = "esc", command = "help_modal_close" },
+ { key = "k", command = "help_modal_scroll_up_one" },
+ { key = "j", command = "help_modal_scroll_down_one" },
+ { key = "up", command = "help_modal_scroll_up_one" },
+ { key = "down", command = "help_modal_scroll_down_one" },
+ { key = "ctrl+u", command = "help_modal_scroll_up_half_page" },
+ { key = "ctrl+d", command = "help_modal_scroll_down_half_page" },
+]
+
+[vault_selector_modal]
+key_bindings = [
+ { key = "k", command = "vault_selector_modal_up" },
+ { key = "j", command = "vault_selector_modal_down" },
+ { key = "up", command = "vault_selector_modal_up" },
+ { key = "down", command = "vault_selector_modal_down" },
+ { key = "enter", command = "vault_selector_modal_open" },
+ { key = "esc", command = "vault_selector_modal_close" },
+]
