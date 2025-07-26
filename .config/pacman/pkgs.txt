@@ -75,6 +75,7 @@ iptables-nft
 iwd
 keepassxc
 kitty
+kooha
 kvantum-qt5
 lazygit
 less
@@ -120,7 +121,6 @@ nvidia-dkms
 nvm
 nwg-look
 obfuscate
-obs-studio
 obsidian
 ollama-cuda
 onefetch
@@ -187,7 +187,6 @@ tinyxml2
 tldr
 tmuxp
 trash-cli
-ttf-font-awesome
 ttf-jetbrains-mono-nerd
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-common
@@ -210,6 +209,7 @@ wireless_tools
 wiremix
 wireplumber
 wob
+woff2-font-awesome
 wpa_supplicant
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
