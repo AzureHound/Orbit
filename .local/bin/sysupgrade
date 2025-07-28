@@ -76,6 +76,8 @@ echo -e "\n${OVERLAY2}Spicetify ${GREEN} ${RESET}\n"
 spicetify update
 spicetify apply
 
+rm ~/.zcompdump
+
 echo -e "\n${OVERLAY2}Submodules ${TEAL} ${RESET}\n"
 cd ~/Developer/repos/Orbit && git submodule update --init --recursive && echo -e "${GREEN}done${RESET}"
 cd ~
