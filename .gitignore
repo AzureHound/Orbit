@@ -5,6 +5,7 @@
 .config/calcure
 .config/carapace
 .config/cava
+.config/configstore
 .config/dconf
 .config/eden
 .config/Electron
