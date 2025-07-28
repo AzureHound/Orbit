@@ -5,9 +5,9 @@ io.gitlab.theevilskeleton.Upscaler
 org.freedesktop.Platform.Compat.i386
 org.freedesktop.Platform.GL.default
 org.freedesktop.Platform.GL.default
-org.freedesktop.Platform.GL.nvidia-575-64-03
+org.freedesktop.Platform.GL.nvidia-575-64-05
 org.freedesktop.Platform.GL32.default
-org.freedesktop.Platform.GL32.nvidia-575-64-03
+org.freedesktop.Platform.GL32.nvidia-575-64-05
 org.freedesktop.Platform.ffmpeg-full
 org.freedesktop.Platform.ffmpeg_full.i386
 org.freedesktop.Platform.openh264
