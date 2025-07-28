@@ -10,6 +10,7 @@ bc
 bind
 bluetui
 bluez-utils
+bob
 bridge-utils
 btop
 btrfs-progs
@@ -111,7 +112,6 @@ nautilus-python
 navi
 neomutt
 neovide
-neovim
 nodejs
 noto-fonts-cjk
 noto-fonts-emoji
