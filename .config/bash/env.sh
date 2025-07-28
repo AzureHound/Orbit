@@ -18,6 +18,7 @@ XDG_VIDEOS_DIR="$HOME/Videos"
 # Respect XDG Specification
 export ATUIN_PATH="$HOME/.atuin/bin"
 export PATH="$ATUIN_PATH:$XDG_BIN_HOME:$PATH"
+export HISTFILE="$HOME/.cache/bash/.bash_history"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
