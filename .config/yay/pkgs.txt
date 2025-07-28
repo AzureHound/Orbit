@@ -34,6 +34,7 @@ lazydocker
 lazynpm
 lazysql-bin
 lowfi
+lsfg-vk-git
 mechsim
 mpv-sponsorblock-minimal-git
 mpvpaper
