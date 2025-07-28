@@ -102,9 +102,7 @@ format = ' [$duration]($style)'
 [character]
 success_symbol = '[](green_bold)'
 error_symbol = '[](bold red)'
-vimcmd_symbol = "[](green_bold)"
-# vimcmd_visual_symbol = "[](green_bold)"
-# vimcmd_replace_symbol = "[](green_bold)"
+vimcmd_symbol = '[](green)'
 
 # Custom entries
 [custom.docker]
@@ -118,7 +116,7 @@ style = "bold blue"
 format = "[ ]($style)"
 
 [custom.giturl]
-# disabled = true
+disabled = false
 description = "Display symbol for remote Git server"
 command = """
 GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
@@ -128,8 +126,10 @@ elif [[ "$GIT_REMOTE" =~ "gitlab" ]]; then
     GIT_REMOTE_SYMBOL=" "
 elif [[ "$GIT_REMOTE" =~ "bitbucket" ]]; then
     GIT_REMOTE_SYMBOL=" "
+elif [[ "$GIT_REMOTE" =~ "aur" ]]; then
+    GIT_REMOTE_SYMBOL="󰣇 "
 elif [[ "$GIT_REMOTE" =~ "git" ]]; then
-    GIT_REMOTE_SYMBOL=" "
+    GIT_REMOTE_SYMBOL="󰊢 "
 else
     GIT_REMOTE_SYMBOL=" "
 fi
