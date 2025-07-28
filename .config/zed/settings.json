@@ -36,6 +36,7 @@
   "relative_line_numbers": false,
   "hide_mouse": "on_typing_and_movement",
   "cursor_shape": "bar",
+  "cursor_blink": true,
   // Panels
   "project_panel": {
     "default_width": 300,
@@ -94,6 +95,7 @@
     }
   },
   // Tweaks
+  "tab_size": 2,
   "format_on_save": "on",
   "ensure_final_newline_on_save": false,
   "remove_trailing_whitespace_on_save": true,
