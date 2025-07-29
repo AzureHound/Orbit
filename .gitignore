@@ -30,6 +30,7 @@
 .config/ripgrep-all
 .config/systemd
 .config/whoozle.github.io
+.config/yt-x
 .config/zsh/.zcompdump
 
 .config/gtk-4.0/servers
