@@ -29,6 +29,7 @@
 .config/pulse
 .config/ripgrep-all
 .config/systemd
+.config/Upscayl
 .config/whoozle.github.io
 .config/yt-x
 .config/zsh/.zcompdump
