@@ -4,5 +4,5 @@ sudo -v
 
 if [ $? -eq 0 ]; then
   nohup sudo liquidctl --match "NZXT Kraken X" set pump speed 20 >/dev/null 2>&1 &
-  nohup mechsim -V 60 -s cherrymx-black-pbt >/dev/null 2>&1 &
+  nohup mechsim -V 50 -s cherrymx-black-pbt >/dev/null 2>&1 &
 fi
