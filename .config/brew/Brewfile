@@ -1,6 +1,7 @@
 tap "dart-lang/dart"
 tap "josephburgess/formulae"
 tap "sass/sass"
+brew "gemini-cli"
 brew "mailsy"
 brew "uv"
 brew "josephburgess/formulae/gust"
