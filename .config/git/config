@@ -1,10 +1,14 @@
 [include]
   path = ~/.config/git/themes/catppuccin.gitconfig
+  path = ~/.config/git/alias.conf
 
 [user]
   name = Wolf
   email = 183492338+AzureHound@users.noreply.github.com
-	signingkey = D37104E7AF99F817
+  signingkey = D37104E7AF99F817
+
+[gpg]
+  program = /sbin/gpg
 
 [init]
   defaultBranch = main
