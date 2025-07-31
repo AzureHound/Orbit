@@ -35,6 +35,7 @@ lazynpm
 lazysql-bin
 lowfi
 lsfg-vk-git
+maplemono-nf-unhinted
 mechsim
 mpv-sponsorblock-minimal-git
 mpvpaper
