@@ -48,6 +48,7 @@ ghostty
 git
 git-delta
 github-cli
+glab
 glow
 gnome-calculator
 gnome-disk-utility
@@ -82,6 +83,7 @@ lazygit
 less
 libguestfs
 libmediainfo
+libnewt
 libpulse
 libreoffice-fresh
 libva-nvidia-driver
