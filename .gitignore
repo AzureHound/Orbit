@@ -13,6 +13,7 @@
 .config/fragments
 .config/gh
 .config/github-copilot
+.config/glab-cli
 .config/go
 .config/go-attend
 .config/gust
