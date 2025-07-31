@@ -16,7 +16,7 @@ dipc
 dooit
 dooit-extras
 downgrade
-eden-bin
+eden
 espeak
 evdevhook2-git
 fastanime
@@ -52,6 +52,7 @@ proton-ge-custom-bin
 pyprland
 qimgv
 rofi-games
+scc
 spicetify-cli
 sysz
 timr
@@ -61,8 +62,10 @@ ttf-ms-win11-auto
 tty-clock
 ueberzugpp-new-git
 unimatrix-git
+upscayl-bin
 vscodium-bin
 webcamize
 yay
 yay-debug
+yt-x
 zen-browser-bin
