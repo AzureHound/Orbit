@@ -1,5 +1,5 @@
 source $HOME/.config/vim/configs/xdg.vim
-source $HOME/.config/vim/configs/settings.vim
+source $HOME/.config/vim/configs/options.vim
 source $HOME/.config/vim/configs/plugins.vim
 source $HOME/.config/vim/configs/binds.vim
 source $HOME/.config/vim/configs/functions.vim
