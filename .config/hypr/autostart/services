@@ -23,6 +23,7 @@ pypr --debug /tmp/pypr.log &
 swaync &
 
 # Clipboard
+rm ~/.cache/cliphist.db
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 
