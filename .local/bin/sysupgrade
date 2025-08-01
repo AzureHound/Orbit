@@ -63,6 +63,9 @@ fish -c "fish_update_completions"
 echo -e "\n${OVERLAY2}Zinit ${GREEN}󱐋 ${RESET}\n"
 zsh -i -c 'zinit self-update && zinit update'
 
+echo -e "\n${OVERLAY2}bob ${BLUE}󰅩 ${RESET}\n"
+bob update --all
+
 echo -e "\n${OVERLAY2}Yazi ${YELLOW} ${RESET}\n"
 ya pkg upgrade
 
@@ -76,7 +79,8 @@ echo -e "\n${OVERLAY2}Spicetify ${GREEN} ${RESET}\n"
 spicetify update
 spicetify apply
 
-rm ~/.zcompdump
+echo -e "\n${OVERLAY2}HomeSweeping ${YELLOW} ${RESET}\n"
+rm ~/.zcompdump ~/.wget-hsts
 
 echo -e "\n${OVERLAY2}Submodules ${TEAL} ${RESET}\n"
 cd ~/Developer/repos/Orbit && git submodule update --init --recursive && echo -e "${GREEN}done${RESET}"
