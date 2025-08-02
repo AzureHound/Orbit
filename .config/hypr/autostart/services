@@ -5,7 +5,6 @@
 
 # Polkit Authentication
 systemctl --user start hyprpolkitagent &
-# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Audio
 easyeffects --gapplication-service &
@@ -23,9 +22,9 @@ pypr --debug /tmp/pypr.log &
 swaync &
 
 # Clipboard
-rm ~/.cache/cliphist.db
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
+rm ~/.cache/cliphist/db &
 
 # Removable Media Automounter
 udiskie &
@@ -43,7 +42,7 @@ $HOME/.config/hypr/scripts/portal &
 # Wallpaper Engine
 hyprpaper &
 # swww-daemon --format xrgb &
-sleep 0.4 && $HOME/.config/hypr/scripts/wallpaper &
+sleep 0.6 && $HOME/.config/hypr/scripts/wallpaper &
 
 # Live Wallpaper
 # $HOME/.config/hypr/scripts/mpvpaper -i 30 &
@@ -51,6 +50,7 @@ sleep 0.4 && $HOME/.config/hypr/scripts/wallpaper &
 # Filter
 hyprsunset &
 sleep 0.4 && $HOME/.config/hypr/scripts/sunset &
+sleep 0.6 && $HOME/.config/hypr/scripts/sunset &
 
 # Bar
 # waybar &
