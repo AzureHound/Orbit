@@ -49,7 +49,6 @@ sleep 0.6 && $HOME/.config/hypr/scripts/wallpaper &
 
 # Filter
 hyprsunset &
-sleep 0.4 && $HOME/.config/hypr/scripts/sunset &
 sleep 0.6 && $HOME/.config/hypr/scripts/sunset &
 
 # Bar
